@@ -87,5 +87,51 @@ clases y objetos. Si se sabe como acceder a un módulo en particular, se puede u
 
 Comencemos la discusión con uno de los módulos más utilizados, el que lleva por nombre ```math```. Su nombre habla por sí mismo: el  
 módulo contiene una rica colección de entidades (no solo funciones) que permiten a un programador implementar efectivamente  
-cálculos que exigen el uso de funciones matemáticas, como *sen()* p *log()*.
+cálculos que exigen el uso de funciones matemáticas, como *sen()* p *log()*.  
+  
 
+## Importando un módulo  
+  
+Para que un módulo sea utilizable, hay que **importarlo** (piensa en ello como sacar un libro del estante). La importación de un módulo  
+se realiza mediante una instrucción llamada ```import```. Nota: ```import``` es también una palabra clave reservada (con todas sus  
+implicaciones).  
+
+![palabraimport](../img/palabraimport.jpg)
+  
+Supongamos que deseas utilizar dos entidades proporcionadas por el módulo ```math```:  
+  
+- Un símbolo (constante) que representa un valor preciso (tan preciso como sea posible usando aritmética de punto flotante  
+doble) de PI (aunque usar una letra griega para nombrar una variable es totalmente posible en Python, el símbolo se llama **pi**: es  
+una solución más conveniente, especialmente para esa parte del mundo que ni tiene ni va a usar un Teclado Griego).
+- Una función llamada ```sin()``` (el equivaente informático de la función matemática seno).  
+
+Ambas entidades están disponibles a través del módulo ```math```, pero la forma en que se pueden usar depende en gran medida de  
+como se haya realizado la importación.  
+  
+La forma más sencilla de importar un módulo en particular es usar la instrucción para importar de la siguiente manera:  
+```
+import math
+```  
+  
+La cláusula contiene:  
+- La palabra reservada ```import```.
+- El **nombre del módulo** que se va a importar.
+
+La instrucción puede colocarse en cualquier parte del código, pero debe colocarse **antes del primer uso de cualquiera de las**  
+**entidades del módulo**.  
+  
+  
+Si se desea (o se tiene que) importar más de un módulo, se puede hacer repitiendo la cláusula ```import```, como aquí:
+```
+import math
+import sys
+```
+  
+o enumerando los módulos después de la palabra clave reservada ```import```, como aquí:
+```
+import math, sys
+```
+  
+La instrucción importa dos módulos, primero uno llamado ```math``` y luego un segundo llamado ```sys```.  
+  
+  
