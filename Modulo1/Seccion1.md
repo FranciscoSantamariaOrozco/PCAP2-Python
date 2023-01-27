@@ -11,7 +11,7 @@ En este módulo, aprenderás como:
 paquetes listos para usar de PyPI.  
 
 <p align="center">
-![modulo1](../img/modulo1.jpg)
+<img src="../img/modulo1.jpg">
 </p>
   
 ## Qué es un módulo?
