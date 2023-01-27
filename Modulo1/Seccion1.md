@@ -134,4 +134,75 @@ import math, sys
   
 La instrucción importa dos módulos, primero uno llamado ```math``` y luego un segundo llamado ```sys```.  
   
+La lista de módulos puede ser arbitrariamente larga.  
+  
+## Importando un módulo: continuación  
+  
+Para continuar, debes familiarizarte con un término importante: **namespace**. No te preocupes, no entraremos en detalles: esta  
+explicación será lo más breve posible.  
+  
+Un **namespace** es un espacio (entendido en un contexto no físico) en el que existen algunos nombres y los nombres no entran en  
+conflicto entre sí (es decir, no hay dos objetos diferentes con el mismo nombre). Podemos decir que cada grupo social es un  
+namespace - el grupo tiende a nombrar a cada uno de sus miembros de una manera única (por ejemplo, los padres no darían a sus  
+hijos el mismo nombre).  
+  
+![conceptonamespace](../img/conceptonamespace.jpg)  
+  
+Esta singularidad se puede lograr de muchas maneras, por ejemplo, mediante el uso de apodos junto con los nombres(funcionará  
+dentro de un grupo pequeño como una clase en una escuela) o asignando identificadores especiales a todos los miembros del grupo  
+(el número de Seguro Social de EE.UU. es un buen ejemplo de tal práctica).  
+  
+**Dentro de un determinado namespace, cada nombre debe permanecer único**. Esto puede significar que algunos nombres pueden  
+desaparecer cuando cualquier otra entidad de un nombre ya conocido ingresa al namespace. Mostraremos como funciona y como  
+controlarlo, pero primero, volvamos a las importaciones.  
+  
+Si el m+odulo de un nombre especificado **existe y es accesible** (un módulo es de hecho un **archivo fuente de Python**), Python  
+importa su contenido, **se hacen conocidos todos los nombres definidos en el módulo**, pero no ingresan al namespace del código.  
+  
+Esto significa que puedes tener tus propias entidades llamadas ```sin``` o ```pi``` y no serán afectadas en alguna manera  
+por la importación.  
+  
+![namespacemathypi](../img/namespacemathypi.jpg)  
+  
+En este punto, es posible que te estes preguntando como acceder al ```pi``` el cual viene con el módulo ```math```.  
+  
+Para hacer esto, se debe mandar llamar el ```pi``` con el nombre del módulo original.  
+  
+## Importando un módulo:  continuación
+  
+Observa el fragmento a continuación, esta es la forma en que se habilitan los nombres de ```pi``` y ```sin``` con el  
+nombre de su módulo de origen:  
+  
+```
+math.pi
+math.sin
+```  
+  
+Es sencillo, se pone:  
+  
+- El **nombre del módulo**(```math```).
+- Un **punto**.
+- El **nombre de la entidad**(```pi```).
+
+Tal forma indica claramente el namespace en el que existe el nombre.  
+  
+Nota: el uso de esto es **obligatorio** si un módulo ha sido importado con la instrucción ```import```. No importa si  
+alguno de los nombres del código y del namespace del módulo están en conflicto o no.  
+  
+  
+Este primer ejemplo no será muy avanzado: solo se desea imprimir el valor de **sin(½π)**.  
+  
+Observa el código en el editor. Así es como se prueba.  
+```
+import math
+print(math.sin(math.pi/2))
+```
+El código genera el valor esperado: ```1.0```.  
+  
+Nota: el eliminar cualquiera de las dos indicaciones del nombre del módulo hará que el código sea erróneo. No  
+hay otra forma de entrar al namespace de ```math``` si se hizo lo siguiente:  
+```
+import math
+
+```  
   
