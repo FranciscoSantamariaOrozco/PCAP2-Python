@@ -1,4 +1,5 @@
-# **EJERCICIOS SECCION 1**
+# **EJERCICIOS SECCION 1**  
+
 ## **Ejercicio 1**  
   
 Quieres invocar la función ```make_money()``` contenida en el módulo llamado ```mint```. Tu código comienza con la siguiente línea:  
