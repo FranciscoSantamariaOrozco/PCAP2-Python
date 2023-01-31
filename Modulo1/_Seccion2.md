@@ -209,7 +209,7 @@ Afortunadamente, Python realiza dicha inicialización al importar el módulo.
   
 ## Funciones seleccionadas del módulo *random*  
   
-# **La función** *random*  
+### **La función** *random*  
   
 La función general llamada ```random()``` (no debe confundirse con el nombre del módulo) **produce un número**  
 **flotante** ```x``` **entre el rango** ```(0.0 , 1.0)``` - en otras palabras: (0.0 <= x < 1.0).  
@@ -232,7 +232,7 @@ Ejecuta el programa. Esto es lo que tenemos:
 0.02116716297022092
 ```  
   
-# **La función** *seed*  
+### **La función** *seed*  
   
 La funcion ```seed()``` es capaz de directamente **establecer la semilla del generador**. Te mostramos dos de sus  
 variantes:  
@@ -271,7 +271,7 @@ precisa o menos precisa, pero la diferencia se verá bastante lejos del punto de
   
 ## **Fuentes seleccionadas del módulo** *random*: **continuación**  
   
-# **Las funciones** *randrange* **y** *randint*  
+### **Las funciones** *randrange* **y** *randint*  
   
 Si deseas valores aleatorios enteros, una de las siguientes funciones encajaría mejor:  
   
@@ -302,7 +302,7 @@ print(randrange(0, 1, 1), end=' ')
 print(randint(0, 1))
 ```
   
-## **Fuentes seleccionadas del módulo** *random*: **continuación**
+### **Fuentes seleccionadas del módulo** *random*: **continuación**
   
 Las funciones anteriores tienen una desventaja importante: pueden producir valores repetidos incluso si el  
 número de invocaciones posteriores no es mayor que el rango especificado.  
@@ -319,7 +319,7 @@ for i in range(10):
 Esto es lo que se obtuvo al ejecutarlo:
 ```9,4,5,4,5,8,9,4,8,4,```  
   
-# **Las funciones** *choice* **y** *sample*  
+### **Las funciones** *choice* **y** *sample*  
   
 Como puedes ver, esta no es una buena herramienta para generar números para la lotería. Afortunadamente,  
 existe una mejor solución que escribir tu propio código para verificar la singularidad de los números  
@@ -363,3 +363,266 @@ Nuevamente, la salida del programa no es predecible. Nuestros resultados se ven 
 A veces, puede ser necesario encontrar información no relacionada con Python. Por ejemplo, es posible  
 que necesites conocer la ubicación de tu programa dentro del entorno de la computadora.  
   
+Imagina el entorno de tu programa como una pirámide que consta de varias capas o plataformas.  
+  
+![CapasEntornoPrograma](../img/CapasEntornoPrograma.jpg)  
+  
+Las capas son:  
+  
+- El código (en ejecución) se encuentra en la parte superior.  
+- Python (mejor dicho, su entorno de ejecución) se encuentra directamente debajoi de el.  
+- La siguiente capa de la pirámide se llena con el SO (sistema operativo): el entorno de Python proporciona algunas de sus  
+funcionalidades utilizando los servicios del sistema operativo. Python, aunque es muy potente, no es omnipotente: se ve  
+obligado a usar muchos ayudantes si va a procesar archivos o comunicarse con dispositivos físicos.  
+-  La capa más inferior es el hardware: el procesador (o procesadores), las interfaces de red, los dispositivos de interfaz humana  
+(ratones, teclados, etc.) y toda otra maquinaria necesaria para hacer funcionar la computadora: el sistema operativo sabe como  
+emplearlos y utiliza muchos trucos para trabajar con todas las partes en un ritmo constante.  
+  
+Esto significa que algunas de las acciones del programa tienen que recorrer un largo camino para ejecutarse con éxito, imagina que:  
+  
+- **Tu código** quiere crear un archivo, por lo que invoca una de las funciones de Python. 
+- **Python** acepta la orden, la reorganiza para cumplir con los requisitos del sistema operativo local, es como poner el sello  
+"aprobado" en una solicitud, y lo envía (esto puede recordarte una cadena de mando).
+- El **SO** comprueba si la solicitud es razonable y válida (por ejemplo, si el nombre del archivo se ajusta a algunas reglas de sintaxis)  
+e intenta crear el archhivo. Tal operación, aparentemente es muy simple, no es atómica: consiste de muchos pasos menores  
+tomados por:  
+- El **hardware**, el cual es responsable de activar los dispositivos de almacenamiento (disco duro, dispositivos de estado sólido, etc.)  
+para satisfacer las necesidades del sistema operativo.  
+  
+Por lo general, no eres consciente de todo ese alboroto: quieres que se cree el archivo y eso es todo.  
+  
+Pero a veces quieres saber más, por ejemplo, el nombre del sistema operativo que aloja Python y algunas características que  
+describen el hardware qiue aloja el sistema operativo.  
+  
+Hay un módulo que proporciona algunos medios para permitir saber dónde se encuentra y qué componentes funcionan. El módulo  
+se llama platform. Veamos algunas de las funciones que brinda para ti.  
+  
+  
+## **Funciones seleccionados del módulo** *platform*  
+  
+### **La función** *platform*  
+  
+El módulo ```platform``` permite acceder a los datos de la plataforma subyacente, es decir, hardware, sistema  
+operativo e información sobre la versión del interprete.  
+  
+Existe también una función que puede mostrar todas las capas subyacentes en un solo vistazo, llamada  
+```platform```. Simplemente devuelve una cadena que describe el entorno; por lo tanto, su salida está más  
+dirigida a los humanos que al procesamiento automatizado (lo verás pronto).  
+  
+Así es como se puede invocar:  
+```
+platform(aliased = False, terse = False)
+```  
+  
+Y ahora:  
+  
+- ```aliased``` -> cuando se establece a ```True``` (o cualquier valor distinto a cero) puede hacer que la función  
+presente los nombres de capa subyacentes alternativos en lugar de los comunes.  
+- ```terse``` -> cuando se establace a ```True``` (o cualquier valor distinto de cero) puede convencer a la función  
+de presentar una forma más breve del resultado (si lo fuera posible).  
+  
+Ejecutamos el programa usando tres plataformas diferentes, esto es lo que se obtuvo:  
+  
+**Intel x86 + Windows® Vista (32 bit)**
+```
+Windows-Vista-6.0.6002-SP2
+Windows-Vista-6.0.6002-SP2
+Windows-Vista
+```  
+  
+**Intel x86 + Gentoo Linux (64 bit):**
+```
+Linux-3.18.62-g6-x86_64-Intel-R-_Core-TM-_i3-2330M_CPU_@_2.20GHz-with-gentoo-2.3
+Linux-3.18.62-g6-x86_64-Intel-R-_Core-TM-_i3-2330M_CPU_@_2.20GHz-with-gentoo-2.3
+Linux-3.18.62-g6-x86_64-Intel-R-_Core-TM-_i3-2330M_CPU_@_2.20GHz-with-glibc2.3.4
+```  
+  
+**Raspberry PI2 + Raspbian Linux (32 bit):**
+```
+Linux-4.4.0-1-rpi2-armv7l-with-debian-9.0
+Linux-4.4.0-1-rpi2-armv7l-with-debian-9.0
+Linux-4.4.0-1-rpi2-armv7l-with-glibc2.9
+```  
+  
+También puedes ejecutar el programa en el IDLE de tu máquina local para ferificar que salida tendrá.  
+  
+  
+## **Funciones seleccionadas del módulo** *platform:* **Continuación**  
+  
+### **La función** *machine*  
+  
+En ocasiones, es posible que solo se desee conocer el nombre genérico del procesador que ejecuta el sistema  
+operativo junto con Python y el código, una función llamada ```machine()``` te lo dirá. Como anteriormente, la  
+función devuelve una cadena.  
+  
+Nuevamente ejecutamos el programa en tres plataformas diferentes:  
+  
+**Intel x86 + Windows ® Vista (32 bit):**
+```
+x86
+```  
+  
+**Intel x86 + Gentoo Linux (64 bit):**
+```
+x86_64
+```  
+  
+**Raspberry PI2 + Raspbian Linux (32 bit):**
+```
+armv7l
+```
+  
+## **Funciones seleccionadas del módulo** *platform:* **Continuación**  
+  
+### **La función** *processor*  
+  
+La función ```processor()``` devuelve una cadena con el nombre real del procesador (si fuese posible).  
+  
+Una vez más, ejecutamos el programa en tres plataformas diferentes:  
+
+**Intel x86 + Windows ® Vista (32 bit):**
+```
+x86
+```  
+  
+**Intel x86 + Gentoo Linux (64 bit):**
+```
+Intel(R) Core(TM) i3-2330M CPU @ 2.20GHz
+```  
+  
+**Raspberry PI2 + Raspbian Linux (32 bit):**
+```
+armv7l
+```  
+  
+Prueba esto en tu máquina local.  
+  
+  
+## **Funciones seleccionadas del módulo** *platform:* **Continuación**  
+  
+### **La función** *system*  
+  
+Una función llamada ```system()``` devuelve el nombre genérico del sistema operativo en una cadena.  
+  
+Nuestras plataformas de ejemplo se presentan de la siguiente manera:  
+  
+**Intel x86 + Windows ® Vista (32 bit):**
+```
+Windows
+```  
+  
+**Intel x86 + Gentoo Linux (64 bit):**
+```
+Linux
+```  
+  
+**Raspberry PI2 + Raspbian Linux (32 bit):**
+```
+Linux
+```  
+  
+  
+## **Funciones seleccionadas del módulo** *platform:* **Continuación**  
+  
+### **La función** *version*  
+  
+La versión del sistema operativo se proporciona como una cadena por la función ```version()```.  
+  
+Ejecuta el código y verifica su salida. Esto es lo que tenemos:  
+  
+**Intel x86 + Windows ® Vista (32 bit):**
+```
+6.0.6002
+```  
+  
+**Intel x86 + Gentoo Linux (64 bit):**
+```
+#1 SMP PREEMPT Fri Jul 21 22:44:37 CEST 2017
+```  
+  
+**Raspberry PI2 + Raspbian Linux (32 bit):**
+```
+#1 SMP Debian 4.4.6-1+rpi14 (2016-05-05)
+```  
+  
+  
+## **Funciones seleccionadas del módulo** *platform:* **Continuación**  
+  
+### **Las funciones** *python_implementation* y *python_version_tuple*  
+  
+Si necesitas saber que versión de Python está ejecutando tu código, puedes verificarlo utilizando una serie de  
+funciones dedicadas, aquí hay dos de ellas:  
+  
+- ```python_implementation()``` -> devuelve una cadena que denota la implementación de Python (espera  
+```CPython``` aquí, a menos que decidas utilizar cualquier rama de Python no canónica). 
+- ```python_version_tuple()``` -> devuelve una tupla de tres elementos la cual contiene:
+  - La parte **mayor** de la versión de Python.
+  - La parte **menor**.
+  - El número del nivel de **parche**.  
+  
+Nuestro programa de ejemplo:
+```
+from platform import python_implementation, python_version_tuple
+
+print(python_implementation())
+
+for atr in python_version_tuple():
+    print(atr)
+```  
+  
+Produjo el siguiente resultado:
+```
+CPython
+3
+7
+7
+```  
+  
+Es muy probable que tu versión de Python sea diferente.
+  
+  
+## **Índice de Módulos de Python**  
+  
+Aquí solo hemos cubierto los conceptos básicos de los módulos de Python. Los módulos de Python conforman su propio universo, en  
+el que Python es solo una galaxia, y nos aventuraríamos a decir que explorar las profundidades de estos módulos puede llevar mucho  
+más tiempo que familiarizarse con Python "puro".  
+  
+Además, la comunicad de Python en todo el mundo crea y mantiene cientos de módulos adicionales utilizados en aplicaciones muy  
+específicas como la genética, la psicología o incluso la astrología.  
+  
+Estos módulos no están (y no serán) distribuidos junto con Python, o a través de canales oficiales, lo que hace el universo de  
+Python sea más amplio, casi infinito.  
+  
+Puedes leer sobre todos los módulos estándar de Python aquí: ![Index de Módulos de Python](https://docs.python.org/3/py-modindex.html)  
+  
+No te preocupes, no necesitarás todos estos módulos. Muchos de ellos son muy específicos.  
+  
+Todo lo que se necesita hacer es encontrar los módulos que se desean y aprender a cómo usarlos. Es fácil.  
+
+![moduleindex](../img/moduleindex.jpg)
+  
+En la siguiente sección veremos algo más. Te mostraremos cómo escribir tu propio módulo.  
+  
+  
+## **Puntos Clave**  
+  
+1. Una función llamada ```dir()``` puede mostrarte una lista de las entidades contenidas dentro de un módulo importado. Por ejemplo:  
+```
+import os
+dir(os)
+```  
+  
+Imprime una lista de todo el contenido del módulo ```os```, el cual puedes usar en tu código.  
+  
+2. El módulo ```math``` contiene más de 50 funciones y constantes que realizan operaciones matemáticas (como ```sine()```, ```pow()```)  
+```factorial()```) o aportando valores importantes (como π y la constante de Euler e).  
+  
+3. El módulo ```random``` agrupa más de 60 entidades diseñadas para ayudarte a usar números pseudoaleatorios. No olvides el prefijo  
+"pseudo", ya que no existe un número aleatorio real cuando se trata de generarlos utilizando los algoritmos de la computadora.  
+  
+4. El módulo ```platform``` contiene alrededor de 70 funciones que te permiten sumergirte en las capas subyacentes del sistema  
+operativo y el hardware.  Usarlos te permite aprender más sobre el entorno en el que se ejecuta tu código.  
+  
+5. El **índice de módulos de Python** es un directorio de módulos impulsado por la  
+comunidad disponible en el universo de Python. Si deseas encontrar un módulo que se adapte a tus necesidades, comienza tu  
+búsqueda allí.
