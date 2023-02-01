@@ -440,4 +440,137 @@ Proviene del módulo *psi* el cual esta almacenado en el subpaquete *ugly* del p
   
 Ahora se deben responder dos preguntas:  
   
-- 
+- Cómo se transforma este árbol (en realidad, un subárbol) en un paquete real de Python (en otras palabras, cómo convence a  
+Python de que dicho árbol no es solo un montón de archivos bnasura, sino un conjunto de módulos)?  
+- Dónde se coloca el subarbol para que Python pueda acceder a él?  
+  
+La primera pregunta tiene una respuesta sorprendente: **los paquetes, como los módulos, pueden requerir inicialización**.  
+  
+La inicialización de un módulo se realiza mediante un código *independiente* (que no forma parte de ninguan función) ubicado dentro  
+del archivo del módulo. Como un paquete no es un archivo, esta técnica es inútil para inicializar paquetes.  
+  
+En su lugar, debes usar un truco diferente: Python espera que haya un archivo con un nombre muy exclusivo dentro de la carpeta del  
+paquete: *\__init\__.py*.  
+  
+El contenido del archivo se ejecuta cuando se **importa** cualquiera de los módulos del paquete. Si no deseas ninguna inicialización  
+especial, puedes dejar el archivo vacío, pero no debes omitirlo.  
+  
+  
+## **Tu primer paquete: paso 5**  
+  
+Recuerda: **la presencia del archivo** \__init.py\__ **finalmente compone el paquete**:  
+  
+![primerpaquetepaso5](../img/primerpaquetepaso5.jpg)  
+  
+Nota: no solo la carpeta *raiz* puede contener el archivo \__*init.py*\__, también puedes ponerlo dentro de cualquiera de sus  
+subcarpetas (subpaquetes). Puede ser útil si algunos de los subpaquetes requieren tratamiento individual o un tipo especial de  
+inicialización.  
+  
+Ahora es el momento de responder la segunda pregunta, Dónde se coloca el subárbol para que sea accesible para Python? La  
+respuesta es simple: **donde quiera**. Solo tienes que asegurarte de que Python conozca la ubicación del paquete. Ya sabes como hacer  
+eso.  
+  
+Estás listo para usar tu primer paquete.  
+  
+  
+## **Tu primer paquete: paso 6**  
+  
+Supongamos que el entorno de trabajo se ve de la siguiente manera:  
+  
+![primerpaquetepaso6](../img/primerpaquetepaso6.jpg)  
+  
+Hemos preparado un archivo zip que contiene todos los archivos de la rama de paquetes. Puedes descargarlo y usarlo para tus  
+propios experimentos, pero **recuerda desempaquetarlo en la carpeta presentada en el esquema**, de lo contrario, no será  
+accesible para el código.  
+  
+Continuarás tus experimentos empleando el archivo *main2.py*.  
+  
+  
+## **Tu primer paquete: paso 7**  
+  
+Vamos a acceder a la función ```funI()``` del módulo *iota* del paquete *extra*. Nos obliga a usar nombres de paquetes calificados  
+(asocia esto al nombramiento de carpetas y subcarpetas).  
+  
+Así es como se hace:  
+  
+![primerpaquetepaso7.jpg](../img/primerpaquetepaso7.jpg)
+```
+from sys import path
+path.append('..\\packages')
+
+import extra.iota
+print(extra.iota.funI())
+```  
+  
+Nota:  
+  
+- Hemos modificado la variable ```path``` para que sea accesible a Python.  
+- El ```import``` no apunta directamente al módulo, pero especifica la ruta completa desde la parte superior del paquete.  
+  
+El reemplazar ```import extra.iota``` con ```import iota``` causará un error.  
+  
+La siguiente variable también es válida:  
+  
+![primerpaquetepaso8](../img/primerpaquetepaso7-2.jpg)  
+```
+from sys import path
+path.append('..\\packages')
+
+from extra.iota import funI
+print(funI())
+```  
+  
+Nota el nombre calificado del módulo *iota*.  
+  
+  
+## **Tu primer paquete: paso 8**  
+  
+Ahora vamos hasta el final del árbol: así es como se obtiene acceso a los módulos *sigma* y *tau*.  
+  
+![primerpaquetepaso8](../img/primerpaquetepaso8.jpg)  
+```
+from sys import path
+
+path.append('..\\packages\\extrapack.zip')
+
+import extra.good.best.sigma as sig
+import extra.good.alpha as alp
+from extra.iota import funI
+from extra.good.beta import funB
+
+print(sig.funS())
+print(alp.funA())
+print(funI())
+print(funB())
+```  
+  
+Si deseas realizar tus propios experimentos con el paquete que hemos creado, puedes descargarlo a continuación. Te alentamos a  
+que lo hagas.  
+  
+Ahora puedes crear módulos y combinarlos en paquetes. Es hora de comenzar una discusión completamente diferente: sobre errores  
+y fallas.  
+  
+  
+## **Puntos clave**  
+  
+1. Mientras que un **módulo** está diseñado para acoplar algunas entidades relacionadas como funciones, variables o constantes, un  
+**paquete** es un contenedor que permite el acoplamiento de varios módulos relacionados bajo un mismo nombre. Dicho contenedor se  
+puede distribuir tal cual (como un lote de archivos implementados en un subárbol de directorio) o se puede empaquetar dentro de un  
+archivo zip.  
+  
+2. Durante la primera importación del módulo, Python traduce su código fuente a un formato **semi-compilado** almacenado dentro de  
+los archivos **pyc** y los implementa en el directorio ```__pycache__``` ubicado en el directorio de inicio del módulo.  
+  
+3. Si deseas decirle al usuario del módulo que una entidad en particular debe tratarse como **privada** (es decir, no debe usarse  
+explícitamente fuera del módulo), puedes marcar su nombre con el prefijo ```_``` o ```__```. No olvides que esto es solo una recomendación,  
+no una orden.  
+  
+4. Los nombres *shabang, shebang, hasbang, poundbang y hashpling* describen el dígrafo escrito como ```#!```, se utiliza para instruir a  
+los sistemas operativos similares a Unix sobre cómo se debe iniciar el archivo fuente de Python. Esta convención no tiene efecto en MS  
+Windows.  
+  
+5. Si deseas convencer a Python de que debe tomar en cuenta el directorio de un paquete no estándar, su nombre debe  
+insertarse/agregarse en la lista de directorios de importación almacenada en la variable ```path``` contenida en el módulo ```sys```.  
+  
+6. Un archivo de Python llamado ```__init__.py``` se ejecuta implícitamente cuando un paquete que lo contiene está sujeto a  
+7. importación y se utiliza para inicializar un paquete y/o sus subpaquetes (si los hay). El archivo puede estar vacío, pero no debe faltar.  

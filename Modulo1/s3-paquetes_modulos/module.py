@@ -1,1 +1,0 @@
-print("Me gusta ser un módulo.")
