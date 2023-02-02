@@ -115,3 +115,185 @@ un factor muy importante.
 Comencemos con MS Windows.  
   
 
+## ***pip* en MS Windows**  
+  
+El instalador de Python para MS Windows ya contiene *pip*, por lo que no es necesario seguir ningún otro paso para instalarlo.  
+Desafortunadamente, si la variable PATH está mal configurada, es posible que *pip* no esté disponible.  
+  
+Para verificar que no te hemos engañado, intenta hacer esto:  
+  
+- Abre la consola de Windows (*CMD* o *PowerShell*, lo que sea que prefieras)
+- Ejecuta el siguiente comando:  
+```
+pip --version
+```  
+  
+- En el escenario más optimista (y realmente queremos que eso suceda) verás algo como esto:  
+  
+![pipversion](../img/pipversion.jpg)  
+  
+- La ausencia de este mensaje puede significar que la variable PATH apunta incorrectamente a la ubicación de los binarios de  
+Python o no apunta a ellos en absoluto; por ejemplo, nuestra variable PATH contiene la siguiente subcadena:  
+```
+C:\Program Files\Python3\Scripts\;C:\Program Files\Python3\;
+```  
+  
+- La forma más fácil de reconfigurar la variable PATH es **reinstalar Python**, indicando al instalador que lo configure por ti.  
+
+  
+## ***pip* en Linux**  
+  
+Diferentes distribuciones de Linux puede comportarse de manera diferente cuando se trata de usar *pip*. Algunas de ellas (como  
+*Gentoo*), que están estrechamente vinculadas a Python y que lo usan internamente, pueden tener *pip* preinstalado y están  
+instantáneamente listas para funcionar.  
+  
+No olvides que algunas distribuciones de Linux pueden utilizar más de una versión de Python al mismo tiempo, por ejemplo, un  
+Python 2 y un Python 3 coexistiendo uno al lado del otro. Estos sistemas pueden iniciar Python 2 como la versión predeterminada y  
+puede ser necesario especificar explícitamente el nombre del programa como Python3. En este caso, puede haber dos *pip* diferentes  
+identificados como *pip* (o *pip2*) y *pip3*. Compruébalo cuidadosamente.  
+  
+Abre la ventana de la terminal y emite el siguiente comando:  
+```
+pip --version
+```  
+  
+![pipverlinux](../img/pipverlinux.jpg)  
+  
+Una respuesta similar a la que se muestra en la imagen anterior determina que has iniciado *pip* desde Python 2, por lo que el siguiente  
+intento debería verse de la siguiente manera:  
+  
+![pipverlinux2](../img/pipverlinux2.jpg)  
+  
+Como puedes ver, ahora estamos seguros de que estamos utilizando la versión adecuada de *pip*.  
+  
+
+## ***pip* en Linux: continuación**  
+  
+Desafortunadamente, algunas distribuciones de Linux no tienen *pip* preinstalado, incluso si Python está instalado por defecto  
+(algunas versiones de Ubuntu pueden comportarse de esta manera). En este caso, tienes dos posibilidades:  
+  
+- Instalar *pip* como un paquete del sistema usando un administrador de paquetes dedicado (por ejemplo, *apt* en sistemas tipo  
+Debian).  
+- Instalar *pip* usando mecanismos internos de Python.  
+
+El primero es definitivamente mejor. Aunque hay algunos scripts inteligentes que pueden descargar e instalar *pip* ignorando el  
+sistema operativo, te recomendamos que no los utilices. Este método puede causarte problemas.  
+  
+Observa, intentamos iniciar *pip3* y fallamos. Nuestro sistema operativo (esta vez usamos *Ubuntu Budgie*) sugirió usar *apt* para instalar  
+el paquete llamado *python3-pip*:  
+  
+![pipnotfound](../img/pipnotfound.jpg)  
+  
+Este es un buen consejo y lo seguiremos, pero hay que decir que necesitaremos derechos administrativos para hacerlo. No olvides que  
+diferentes distribuciones de Linux pueden usar diferentes administradores de paquetes (por ejemplo, podría ser *pacman* si usas Arch  
+Linux, o *yum* usado por distribuciones derivadas de Red Hat).  
+  
+De cualquier manera, todos estos métodos deberían ayudarte en tener *pip* (o *pip3*) instalado y funcionando.  
+  
+Observa lo que sucedió cuando seguimos la sugerencia del sistema operativo:  
+  
+![pipaptinstall](../img/pipaptinstall.jpg)  
+  
+Como puedes ver, el sistema operativo decidió instalar no solo *pip* en sí, sino también un par de componentes adicionales necesarios  
+para *pip*. Esto es normal, no te alarmes.  
+  
+
+## ***pip* en Linux: continuación**  
+  
+Cuando *apt* termina su trabajo, finalmente podemos utilizar *pip3*:  
+  
+![pip3instaladolinux](../img/pip3instaladolinux.jpg)  
+  
+Si eres un usuario de Mac y has instalado Python 3 usando el instalador *brew*, *pip* ya está presente en tu sistema y listo para funcionar.  
+Compruébelo emitiendo el comando mencionado anteriormente:  
+```
+pip3 --version
+```  
+  
+y espera la respuesta.  
+  
+Esto es lo que nosotros vimos:  
+  
+![pipvermac](../img/pipvermac.jpg)  
+  
+  
+## **Dependencias**  
+  
+Ahora que estamos seguros de que *pip* está listo para usarse, vamos a limitar nuestro enfoque a MS Windows solamente, ya que su  
+comportamiento es (debería ser) el  mismo en todos los sistemas operativos, pero antes de comenzar, debemos explicar un asunto  
+importante e informarte sobre las **dependencias**.  
+  
+Imagina que has creado una brillante aplicación de Python llamada *redsuspenders*, capaz de predecir los tipos de cambio de la bolsa  
+de valores con un 99% de precisión (por cierto, si realmente lo haces, contáctanos de inmediato).  
+  
+Por supuesto, has utilizado algún código existente para lograr este objetivo, por ejemplo, tu aplicación importa un paquete llamado  
+*nyse* que contiene algunas funciones y clases cruciales. Además, el paquete *nyse* importa otro paquete llamado *wallstreet*, mientras  
+que el paquete *wallstreet* importa otros dos paquetes esenciales llamados *bull* y *bear*.  
+  
+Como probablemente ya habrás adivinado, las conexiones entre estos paquetes son cruciales, y si alguien decide usar tu código (pero  
+recuerda, ya lo hemos reclamado primero) también tendrás que asegurarte de que todos los paquetes requeridos están en su lugar.  
+  
+Para abreviar, podemos decir que **la dependencia es un fenómeno que aparece cada vez que vas a utilizar un software que**  
+**depende de otro software**. Ten en cuenta que la dependencia puede incluir (y generalmente incluye) más de un nivel de desarrollo  
+de software.  
+  
+Significa esto que un usuario potencial del paquete *nyse* está obligado a rastrear todas las dependencias e instalar manualmente  
+todos los paquetes necesarios? esto sería horrible, no?  
+  
+Sí definitivamente es horrible, por lo que no deberías sorprenderse de que el proceso de cumplir arduamente con todos los  
+rquisitos posteriores tenga su propio nombre, y se llame *infierno de dependencias*. 
+ 
+Cómo nos ocupamos de eso? Todos los usuarios están condenados a visitar el infierno para ejecutar el código por primera vez?  
+  
+Afortunadamente no, *pip* puede hacer todo esto por ti. Puede descubrir, identificar y resolver todas las dependencias. Además, puede  
+hacerlo de la manera más inteligente, evitando descargas y reinstalaciones innecesarias.  
+  
+  
+## **Cómo usar *pip***  
+  
+Ahora estamos listos para preguntarle a *pip* qué puede hacer por nosotros. Hagámoslo, emite el siguiente comando:  
+```
+pip help
+```  
+  
+y espera la respuesta de *pip*. Así es como se mira:  
+  
+![piphelp](../img/piphelp.jpg)  
+  
+No olvides que puedes necesitar reemplazar *pip* por *pip3* si tu entorno lo requiere.  
+  
+La lista producida por *pip* resume todas las operaciones disponibles, y la última de ellas es ```help```, la cual acabamos de usar.  
+  
+Si deseas saber más sobre cualquiera de las operaciones enumeradas, puedes utilizar la siguiente forma de invocación de *pip*:  
+```
+pip help (operación o comando)  
+```  
+  
+Por ejemplo, la línea:
+```
+pip help install
+```  
+  
+te mostrará información detallada sobre el uso y la parametrización del comando ```install```.  
+  
+Si deseas saber qué paquetes de Python se han instalado hasta ahora, puedes usar la operacin ```list```, justo como aquí:  
+```
+pip list
+```  
+  
+El resultado que verás es bastante impredecible. No te sorprendas si el contenido de tu pantalla termina siendo completamente  
+diferente. El nuestro es el siguiente:  
+  
+![piplist](../img/piplist.jpg)  
+  
+Como puedes ver, hay dos columnas en la lista, una muestra el nombre del paquete instalado y la otra muestra la versión del  
+paquete. No podemos predecir el estado de tu instalación de Python.  
+  
+Lo único que sabemos con certeza es que tu lista contiene las dos líneas que vemos en nuestra lista: *pip* y *setuptools*. Esto sucede  
+porque el sistema operativo está convencido de que un usuario que desee *pip* probablemente necesitará las *setuptools*(*herramientas*  
+*de configuración*). No está mal.  
+  
+
+## **Cómo usar *pip*: continuación**  
+  
+La 
