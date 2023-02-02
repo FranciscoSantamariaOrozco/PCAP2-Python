@@ -61,3 +61,57 @@ afirmar que "todos los caminos de Python conducen a PyPI", y eso no es una exage
   
 ## **El repositorio de PyPI: La tienda de quesos**  
   
+El repositorio de PyPI a veces se denomina **la tienda de quesos**.  
+  
+Te suena un poco extraño? No te preocupes, todo es perfectamente inocente.  
+  
+Nos referimos al repositorio como una tienda, por que vas allí por las mismas razones por las que vas a otras tiendas: para satisfacer  
+tus necesidades. Si quieres un poco de queso, ve a la quesería. Si deseas una pieza de software, ve a la tienda de software.  
+Afortunadamente, la analogía termina aquí: no necesitas dinero para sacar algún software de la tienda de repositorios.  
+  
+PyPI es completamente gratuito, puedes tomar un código y usarlo; no encontrarás cajero ni guardia de seguridad. Por supuesto, esto  
+no te exime deser cortés y honesto. Debees obedecer todos los términos de la licencia, así que no te olvides de leerlos.  
+  
+OK, se comprende lo de la tienda, pero qué tiene que ver el queso con Python?  
+  
+The Chesse Shop (La Tienda de Quesos) es uno de los sketches más famosos de Monty Python. Representa la aventura surrealista de  
+un inglés que intenta comprar queso. Desafortunadamente, la tienda que visita (llamada inmodestamente Ye National Chesse   
+Emporium) no tiene queso en existencia.  
+  
+Por supuesto, está destinado a ser irónico. Como ya sabes, PyPI tiene una gran cantidad de software en stock y está disponible las 24  
+horas del día, los 7 días de la semana. Tiene todo el derecho a identificarse como **Ye International Python Software Emporium**.  
+ 
+  
+## **El Repositorio de PyPI: La Tienda de Quesos (continuación)**  
+  
+PyPI es una tienda muy específica, no solo porque ofrece todos sus productos de forma gratuita, también requiere una herramienta  
+especial para hacer uso de ella.  
+  
+Afortunadamente, esta herramienta también es gratuita, por lo que si deseas hacer tu propia hamburguesa con queso digital  
+utilizando los productos que ofrece PyPI Shop, necesitarás una herramienta gratuita llamada *pip*.  
+  
+No, no has escuchado mal. Solo *pip*. Es otro acrónimo, claro, pero su naturaleza es más compleja que el PyPI mencionado  
+anteriormente, ya que es un ejemplo de acrónimo recursivo, lo que significa que el acrónimo se refiere a sí mismo, lo que significa que  
+explicarlo es un proceso infinito.  
+  
+Por qué? Por que *pip* significa *"pip instala paquetes"*, y el *pip* dentro de *"pip instala paquetes"* significa *"pip instala paquetes"* y...  
+  
+Detengámonos ahí. Gracias por tu cooperación.  
+  
+Por cierto, hay algunos otros acrónimos recursivos muy famosos. Uno de ellos es Linux, que se puede interpretar como *"Linux no es*  
+*unix"*.  
+  
+  
+## **Cómo instalar *pip***  
+  
+La pregunta que debería hacerse ahora es: cómo conseguir un cuchillo para un queso específico? En otras palabras, cómo  
+asegurarse de que *pip* está instalado y listo para funcionar?  
+  
+La respuesta más precisa es "depende"  
+  
+Algunas instalaciones de Python vienen con *pip*, otras no. Además, no solo depende del sistema operativo que utilices, aunque este es  
+un factor muy importante.  
+  
+Comencemos con MS Windows.  
+  
+
