@@ -12,7 +12,7 @@ lingüistas: todas estas personas ya usan Python, o si aún no lo hacen, estamos
 escapar de esa tendencia.  
 
 Por supuesto, no tiene ningún sentido hacer que todos los usuarios de Pyton escriban su código desde cero, manteniéndolos  
-perfectamente aislados del mundo exterior y de los logros de otros programadores. Esto ser+ia antinatural y contraproducente.  
+perfectamente aislados del mundo exterior y de los logros de otros programadores. Esto sería antinatural y contraproducente.  
   
 Lo más preferible y eficiente es permitir que todos los miembros de la comunidad de Python intercambien librement sus códigos y  
 experiencias. En este modelo, nadie está obligado a empezar a trabajar desde cero, ya que existe una alta probabilidad de que alguien  
@@ -41,10 +41,10 @@ grupo de trabajo llamado Packaging Working Group, una parte de la Python Softwar
 desarroladores de Python en la diseminación de código eficiente.  
   
 Puedes encontrar su sitio web aquí:  
-![https://wiki.python.org/psf/PackagingWG](https://wiki.python.org/psf/PackagingWG)  
+[https://wiki.python.org/psf/PackagingWG](https://wiki.python.org/psf/PackagingWG)  
   
 El sitio web de PyPI (administrado por PWG) se encuentra en la dirección:  
-![https://pypi.org/](https://pypi.org/)  
+[https://pypi.org/](https://pypi.org/)  
   
 En Julio de 2021 fuimos al sitio mencionado, y descubrimos que PyPI albergaba 315,000 proyectos, ue constan de más de 4,500,000  
 archivos administradors por 520,000 usuarios.  
@@ -311,7 +311,7 @@ pip show pip
   
 Parece un poco extraño no? A pesar de esto, funciona muy bien y la autopresentación de *pip* parece consistente y actual:  
   
-![pipshow](../img/pipshow.jpg.jpg)  
+![pipshow](../img/pipshow.jpg)  
   
 Puedes preguntar de dónde provienen estos datos? Es *pip* realmente tan perceptivo? En lo absoluto: la información que aparece en  
 la pantalla se toma del interior del paquete que se muestra. En otras palabras, el creador del paquete está obligado a equiparlo con  
@@ -353,7 +353,7 @@ pip search pip
 Produce más de 100 líneas de resultados. (pruébalo tu mismo, no te fíes de nuestra palabra). Por cierto, la búsqueda no distingue entre mayúsculas y minúsculas.  
   
 Si no eres fanático de la lectura en consola, puedes usar la forma lternativa de navegar por el contenido de PyPI que ofrece un motor  
-de búsqueda, disponible en ![https://pypi.org/search/](https://pypi.org/search/)  
+de búsqueda, disponible en [https://pypi.org/search/](https://pypi.org/search/)  
   
   
 ## **Cómo usar *pip*: continuación**  
@@ -376,7 +376,7 @@ Si no agregas esto, *pip* asume que eres un administrador del sistema y no hará
 En nuestro caso, vamos a instalar un paquete llamado pygame: es una biblioteca extendida y compleja que permite a los  
 programadores desarrollar juegos de computadora usando Python.  
   
-El proyecto ha estado en desarrollo desde el año 2000, por lo que es un código maduro y confiable. Si quieres saber más sobre el proyecto y sobre la comunidad que lo lidera, visita ![https://www.pygame.org](https://www.pygame.org)  
+El proyecto ha estado en desarrollo desde el año 2000, por lo que es un código maduro y confiable. Si quieres saber más sobre el proyecto y sobre la comunidad que lo lidera, visita [https://www.pygame.org](https://www.pygame.org)  
   
 Si eres administrador del sistema, puedes instalar pygame usando el siguiente comando:  
 ```
@@ -519,4 +519,35 @@ Esta es la razón por la que existen PyPI y *pip*. Utilízalos!
   
 ## **Puntos Claves**  
   
-1. 
+1. Un **repositorio** (o **repo** para abreviar) diseñado para recopilar y compartir código de Python gratuito lleva por nombre **Python**  
+**Package Index** (**PyPI**), aunque también es probable que te encuentres con el nombre de **The Cheese Shop** (**La Tienda de Queso**). Su  
+sitio web esta disponible en [https://pypi.org/](https://pypi.org/)  
+    
+2. Para hacer uso de The Cheese Shop, se ha creado una herramienta especializada y su nombre es **pip** (**p**ip **i**nstala **p**aquetes mientras  
+que pip significa .., ok, no importa). Como es posible que pip no se implemente como parte de la instalación estándar de Python, es  
+posible que debas instalarlo manualmente. Pip es una herramienta de consola.  
+  
+3. Para verificar la versión de pip, se deben emitir los siguientes comandos:  
+  
+```
+pip --version
+```
+  
+o  
+```
+pip3 --version
+```  
+  
+Comprueba tu mismo cuál de estos funciona en el entorno de tu sistema operativo.  
+  
+4. La lista de actividades principales de **pip** tiene el siguiente aspecto:  
+  
+- ```pip help *operación_o_comando*``` -> muestra una breve descripción de *pip*.  
+- ```pip list``` -> muestra una lista d elos paquetes instalados actualmente.  
+- ```pip show *nombre del paquete*``` -> Muestra información que incluyen las dependencias del paquete.  
+- ```pip search *cadena*``` -> busca en los directorios de PyPI para encontrar paquetes cuyos nombres contengan *cadena*.  
+- ```pip *nombre*``` -> instala el paquete nombre en todo el sistema (espera problemas cuando no tengas privilegios de  
+administrador).  
+- ```pip *--user nombre*``` -> instala *nombre* solo para ti; ningún otro usuario de la platadorma podrá utilizarlo.  
+- ```pip install *-U nombre*``` -> actualiza un paquete previamente instalado.  
+- ```pip uninstall *nombre*``` -> desinstala uin paquete previamente instalado.  
