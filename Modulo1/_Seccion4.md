@@ -296,4 +296,227 @@ porque el sistema operativo está convencido de que un usuario que desee *pip* p
 
 ## **Cómo usar *pip*: continuación**  
   
-La 
+La lista pip no es muy informativa y puede suceder que no satisfaga tu curiosidad. Afortunadamente, hay un comando que puede  
+brindarte más información sobre cualquiera de los paquetes instalados (ten en cuenta la palabra **installed**). La sintaxis del comando  
+es la siguiente:  
+```
+pip show nombre_del_paquete
+```  
+  
+Lo usaremos de una manera un poco engañosa: queremos convencer a *pip* de que confiese algo sobre sí mismo. Así es como lo  
+hacemos:  
+```
+pip show pip
+```  
+  
+Parece un poco extraño no? A pesar de esto, funciona muy bien y la autopresentación de *pip* parece consistente y actual:  
+  
+![pipshow](../img/pipshow.jpg.jpg)  
+  
+Puedes preguntar de dónde provienen estos datos? Es *pip* realmente tan perceptivo? En lo absoluto: la información que aparece en  
+la pantalla se toma del interior del paquete que se muestra. En otras palabras, el creador del paquete está obligado a equiparlo con  
+todos los datos necesarios (o para expresarlo de manera más precisa: metadatos).  
+  
+Observa las dos líneas en la parte inferior de la salida. Muestran:  
+  
+- Qué paquetes son necesarios para utilizar con éxito el paquete (```Requires:```).  
+- Qué paquetes necesitan que el paquete se utilice con éxito (```Required-by:```).  
+  
+Como puedes ver, ambas propiedades están vacías. No dudes en intentar utilizar el comando ```show``` en relación con cualquier otro  
+paquete instalado.  
+  
+El poder de *pip* proviene del hecho de que en realidad es una puerta de entrada al universo del software Python. Gracias a eso,  
+puedes navegar e instalar cualquiera de los cientos de paquetes listos para usar reunidos en los repositorios de PyPI. No olvides que  
+*pip* no puede almacenar todo el contenido de PyPI localmente (es innecesario y no sería económico).  
+  
+De hecho, *pip* usa internet para consultar PyPI y descargar los datos requeridos. Esto significa que debes tener una conexión de red  
+en funcionamiento siempre que vayas a solicitar a *pip* cualquier cosa que pueda implicar interacciones directas con la infraestructura  
+de PyPI.  
+  
+Uno de estos casos ocurre cuando deseas buscar en PyPI para encontrar el paquete deseado. Este tipo de búsqueda se inicia con el  
+siguiente comando:  
+```
+pip search anystring
+```  
+  
+La cadena ```anystring``` que se proporciono será buscada en:  
+  
+- Los nombres de todos los paquetes.  
+- Las cadenas de resumen de todos los paquetes.  
+
+Ten en cuenta que algunas búsquedas pueden generar una avalancha real de datos, así que trata de ser lo más específico posible. Por  
+ejemplo, una consulta de aparencia inocente como esta:  
+```
+pip search pip
+```  
+  
+Produce más de 100 líneas de resultados. (pruébalo tu mismo, no te fíes de nuestra palabra). Por cierto, la búsqueda no distingue entre mayúsculas y minúsculas.  
+  
+Si no eres fanático de la lectura en consola, puedes usar la forma lternativa de navegar por el contenido de PyPI que ofrece un motor  
+de búsqueda, disponible en ![https://pypi.org/search/](https://pypi.org/search/)  
+  
+  
+## **Cómo usar *pip*: continuación**  
+  
+Suponiendo que tu búsqueda es exitosa (o estás decidido a instalar un paquete específico de un nombre ya conocido), puedes usar  
+*pip* para instalar el paquete en tu computadora.  
+  
+Es posible que ahora se pongan en práctica dos escenarios posibles:  
+  
+- Deseas instalar un nuevo paquete solo para ti; no estará disponible para ningún otro usuario (cuenta) existente en tu  
+computadora; este procedimiento es el único disponible si no puedes elevar tus permisos y actuar como administrador del  
+sistema.  
+- Has decidido instalar un nuevo paquete para todo el sistema; tienes privilegios de administrador y no tienes miedo de utilizarlos.  
+  
+Para distinguir entre estas dos acciones, *pip* emplea una opción dedicada llamada ```--user``` (observa el guión doble). La presencia de  
+esta opción indica a *pip* que actúe localmente en nombre de tu usuario sin privilegios de administrador.  
+  
+Si no agregas esto, *pip* asume que eres un administrador del sistema y no hará nada para corregirlo si no lo eres.  
+  
+En nuestro caso, vamos a instalar un paquete llamado pygame: es una biblioteca extendida y compleja que permite a los  
+programadores desarrollar juegos de computadora usando Python.  
+  
+El proyecto ha estado en desarrollo desde el año 2000, por lo que es un código maduro y confiable. Si quieres saber más sobre el proyecto y sobre la comunidad que lo lidera, visita ![https://www.pygame.org](https://www.pygame.org)  
+  
+Si eres administrador del sistema, puedes instalar pygame usando el siguiente comando:  
+```
+pip install pygame
+```  
+  
+Si no eres un administrador, o no quieres engordar tu sistema operativo instalando pygame en todo el sistema, puedes instalarlo solo  
+para ti:  
+```
+pip install --user pygame
+```  
+  
+Depende de ti cuál de los procedimientos anteriores deseas que se lleve a cabo.  
+  
+![pipinstallpygame](../img/pipinstallpygame.jpg)  
+  
+*Pip* tiene la costumbre de mostrar animaciones textuales sofisticadas que indican el progreso de la instalación, así que observe la  
+pantalla con antención, no te pierdas el espectáculo! Si el proceso tiene éxito, verás algo como la imagen anterior.  
+  
+Te alentamos a usar: 
+```
+pip show pygame
+```  
+  
+y  
+```
+pip list
+```  
+  
+para obtener más información sobre lo que realmente sucedió.  
+  
+  
+## **Cómo usar pip: un programa de prueba simple**  
+  
+Ahora que *pygame* es finalmente accesible, podemos intentar usarlo en un programa de prueba muy simple.  
+  
+- La línea 1: importa *pygame* y nos permite usarlo.
+- La línea 3: el programa se ejecutará mientras la variable ```run``` sea ```True```.
+- Las líneas 4 y 5: determinan el tamaño de la ventana.  
+- La línea 6: inicializa el entorno *pygame*.  
+- La línea 7: prepara la ventana de la aplicación y establece su tamaño.  
+- La línea 8: crea un objeto que represente la fuente predeterminada de 48 puntos.  
+- La línea 9: crea un objeto que represente un texto dado, el texto será suavizado (```True```), y blanco  
+```255,255,255```. 
+- La línea 10: inserta el texto en el búfer de pantalla (actualmente invisible). 
+- La línea 11: invierte los búferes de la pantalla para que el texto sea visible.  
+- La línea 12: el bucle principal de *pygame* comienza aquí.  
+- La línea 13: obtiene una lista de todos los eventos pendientes de *pygame*.  
+- Las líneas de la 14 a la 16: revisan si el usuario ha cerrado la ventana o ha hecho click en algún lugar dentro de ella o ha pulsado alguna tecla.  
+- La línea 17: si es así, se deja de ejecutar el código.  
+  
+```
+1        import pygame
+2
+3        run = True
+4        width = 400
+5        height = 100
+6        pygame.init()
+7        screen = pygame.display.set_mode((width, height))
+8        font = pygame.font.SysFont(None, 48)
+9        text = font.render("Bienvenido a pygame", True, (255, 255, 255))
+10       screen.blit(text, ((width - text.get_width()) // 2, (height - text.get_height()) // 2))
+11       pygame.display.flip()
+12       while run:
+13           for event in pygame.event.get():
+14               if event.type == pygame.QUIT\
+15               or event.type == pygame.MOUSEBUTTONUP\
+16               or event.type == pygame.KEYUP:
+17                   run = False
+```  
+  
+  
+## **Cómo usar *pip*: continuación**  
+  
+Esto es lo que esperamos de nuestro código:  
+  
+![welcometopygame](../img/welcometopygame.jpg)  
+  
+El comando ```pip install``` tiene dos habilidades adicionales importantes:  
+  
+- Es capaz de **actualizar** un paquete instalado localmente; por ejemplo, si deseas asegurarte de que estás utilizando la última versión  
+de un paquete en particular, puedes ejecutar el siguiente comando:  
+```
+pip install -U nombre_del_paquete
+```  
+  
+Donde ```-U``` significa actualizar. Nota: esta forma del comando hace uso de la opción ```--user``` por el mismo propósito que se  
+presentó anteriormente.  
+  
+- Es capaz de **instalar una versión seleccionada por el usuario** de un paquete (*pip* instala por defecto la versión más **nueva**  
+disponible); para lograr este objetivo debes utilizar la siguiente sintaxis:  
+```
+pip install nombre_del_paquete==versión_del_paquete
+```  
+  
+(toma en cuenta el doble signo de igual), por ejemplo:  
+```
+pip install pygame==1.9.2
+```  
+
+  
+## **Cómo usar *pip*: continuación**  
+  
+Si alguno de los paquetes instalados actualmente **ya no es necesario** y deseas deshacerte de el, *pip* también será útil. Su comando  
+```uninstall``` ejecutará todos los pasos necesarios.  
+  
+La sintaxis requerida es clara y simple:  
+```
+pip uninstall nombre_del_paquete
+```  
+  
+Así que si ya no quieres *pygame* puedes ejecutar el siguiente comando:  
+```
+pip uninstall pygame
+```  
+  
+*Pip* querrá saber si estas seguro de la elección que estás tomando; debes estar preparado para dar la respuesta correcta.  
+  
+El proceso se ve así:
+  
+![pipuninstall](../img/pipuninstall.jpg)  
+  
+  
+## **Utiliza *pip*!**  
+  
+Las capacidades de *pip* no terminan aquí, pero el conjunto de comandos que te presentamos es suficiente para comenzar a  
+administrar con éxito los paquetes que no forman parte de la instalación regular de Python.  
+  
+Esperamos haberte animado a realizar tus propios experimentos con *pip* y el universo de paquetes de Python. PyPI te invita a  
+sumergirte en sus amplios recursos.  
+  
+Algunos dicen que una de las virtudes más importantes de la programación es la **pereza**. No nos malintrpretes, no queremos que  
+pases todo el día durmiendo una siesta en el sofá y soñando con código de Python.  
+  
+Un programador perezoso es un programador que busca soluciones existentes y analiza el código disponible antes de comenzar a  
+desarrollar su propio software desde cero.  
+  
+Esta es la razón por la que existen PyPI y *pip*. Utilízalos!  
+  
+  
+## **Puntos Claves**  
+  
+1. 
