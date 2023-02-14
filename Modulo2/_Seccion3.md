@@ -402,4 +402,238 @@ Como ya sabes, realiza tus propios experimentos.
   
 ## **El método *lstrip()***  
   
-El método
+El método sin parámetros ```lstrip()``` **devuelve una cadena recién creada formada a partir de la original**  
+**eliminando todos los espacios en blanco iniciales**.  
+  
+Analiza el ejemplo en el editor.
+```
+# Demostración del método the lstrip():
+print("[" + " tau ".lstrip() + "]")
+```  
+  
+La salida del ejemplo es:
+```
+[tau ]
+```  
+  
+El método con **un parámetro** ```lstrip()``` hace lo mismo que su versión sin parámetros, pero **elimina todos**  
+**los caracteres incluidos en el argumento** (una cadena), no solo espacios en blanco:  
+```
+print("www.cisco.com".lstrip("w."))
+```  
+  
+Aquí no se necesitan corchetes, ya que el resultado es el siguiente:
+```
+cisco.com
+```  
+  
+Puedes adivinar la salida del siguiente fragmento a continuación? Piensa cuidadosamente. Ejecuta el código y verifica tus  
+predicciones.  
+```
+print("pythoninstitute.org".lstrip(".org"))
+```  
+  
+Soprendido? Nuevamente, experimenta con tus propios ejemplos.  
+  
+
+## **El método *replace()***  
+  
+El método ```replace()``` **con dos parámetros devuelve una copia de la cadena original en la que todas las**  
+**apariciones del primer argumento han sido reemplazadas por el segundo argumento**.  
+  
+Analiza el código en el editor y ejecútalo.  
+```
+# Demostración del método replace():
+print("www.netacad.com".replace("netacad.com", "pythoninstitute.org"))
+print("This is it!".replace("is", "are"))
+print("Apple juice".replace("juice", ""))
+```
+  
+La salida del ejemplo es:  
+  
+```
+www.pythoninstitute.org
+Thare are it!
+Apple
+```  
+  
+Si el segundo argumento es una cadena vacía, **reemplazar significa realmente eliminar** el primer argumento  
+de la cadena. Qué tipo de magia ocurre si el primer argumento es una cadena vacía?  
+  
+La variante del método ```replace()``` **con tres parámetros** emplea un tercer argumento (un número) para  
+**limitar el número de reemplazos**.  
+  
+Observa el código modificado a continuación:  
+```
+print("This is it!".replace("is", "are", 1))
+print("This is it!".replace("is", "are", 2))
+```  
+  
+Puedes adivinar su salida? Ejecuta el código y verifica tus conjeturas.  
+  
+  
+## **El método *rfind()***  
+  
+Los métodos de uno, dos y tres parámetros denominados ```rfind()``` hacen casi lo mismo que sus contrapartes  
+(las que carecen de prefijo *r*), pero **comienzan sus busquedas desde el final de la cadena**, no el principio (de  
+ahi el prefijo *r*, de *reversa*). 
+```
+# Demostración del método rfind():
+print("tau tau tau".rfind("ta"))
+print("tau tau tau".rfind("ta", 9))
+print("tau tau tau".rfind("ta", 3, 9))
+```  
+  
+Echa un vistazo al código en el editor e intenta predecir su salida. Ejecuta el código para verificar si tenías razón.  
+  
+  
+## **El método *rstrip()***  
+  
+Dos variantes del método ```rstrip()``` hacen casi lo mismo que el método ```lstrip```, pero **afecta el lado**
+**opuesto de la cadena**.  
+  
+Observa el ejemplo en el editor. Puedes adivinar su salida?
+```
+# Demostración del método rstrip():
+print("[" + " upsilon ".rstrip() + "]")
+print("cisco.com".rstrip(".com"))
+```  
+  
+Ejecuta el código para verificar tus conjeturas.  
+  
+Como de costumbre, te recomendamos experimentar con tus propios ejemplos.  
+  
+
+## **El método *split()***  
+  
+El método ```split()``` **divide la cadena y crea una lista de todas las subcadenas detectadas**.  
+  
+El método **asume que las subcadenas están delimitadas por espacios en blanco** - los espacios no participan  
+en la operación y no se copian en la lista resultante.  
+
+Si la cadena está vacía, la lista resultante también está vacía.  
+  
+Observa el código en el editor. El ejemplo produce el siguiente resultado:  
+```
+['phi', 'chi', 'psi']
+```  
+
+Nota: la operación inversa se puede realizar por el método ```join()```.  
+  
+
+## **El método *startswith()***  
+  
+El método ```startswith()``` es un espejo del método ```endswith()``` - **comprueba si una cadena dada**  
+**comienza con la subcadena especificada**.  
+```
+# Demostración del método startswith():
+print("omega".startswith("meg"))
+print("omega".startswith("om"))
+
+print()
+
+# Demostración del método strip():
+print("[" + "   aleph   ".strip() + "]")
+```  
+  
+Observa el ejemplo en el editor. Este es el resultado:  
+```
+False
+True
+```  
+  
+
+## **El método *strip()***  
+  
+El método ```strip()``` combina los efectos causados por ```rstrip()``` y ```lstrip()``` - **crea una nueva cadena**  
+**que carece de todos los epacios en blanco iniciales y finales**.  
+  
+Observa el segundo ejemplo en el editor. Este es el resultado que devuelve:  
+```
+[aleph]
+```  
+  
+Ahora realiza tus propios experimentos con los dos métodos.  
+  
+  
+## **El método *swapcase()***  
+  
+El método ```swapcase()``` **crea una nueva cadena intercambiando todas las letras por mayúsculas o**  
+**minúsculas dentro de la cadena original**: los caracteres en mayúscula se convierten en minúsculas y  
+viceversa.  
+  
+Todos los demás caracteres permanecen intactos.  
+```
+# Demostración del método swapcase():
+print("Yo sé que no sé nada.".swapcase())
+```
+  
+Observa el primer ejemplo en el editor. Puedes adivinar la salida? No se verá nada bien, pero debes  
+observarla:  
+```
+yO SÉ QUE NO SÉ NADA.
+```  
+  
+  
+## **El método *title()***  
+  
+El método ```title()``` realiza una función algo similar, **cambia la primera letra de cada palabra a**  
+**mayúsculas, convirtiendo todas las demás a minúsculas**.  
+```
+# Demostración del método title():
+print("Yo sé que no sé nada. Part 1.".title())
+```    
+
+Observa el segundo ejemplo en el editor. Puedes adivinar su salida? Este es el resultado:
+```
+Yo Sé Que No Sé Nada. Parte 1.
+```  
+  
+  
+## **El método *upper()***  
+  
+Por último, pero no menos importante, el método ```upper()``` **hace una copia de la cadena de origen**,  
+**reemplaza todas las letras minúsculas con sus equivalentes en mayúsculas**, y devuelve la cadena como  
+resultado.  
+
+```
+# Demostración del método upper():
+print("Yo sé que no sé nada. Part 2.".upper())
+```
+  
+Observa el tercer ejemplo en el editor. Produce:  
+```
+YO SÉ QUE NO SÉ NADA. PARTE 2.
+
+```  
+  
+
+## **Puntos clave**  
+  
+1. Algunos de los métodos que ofrecen las cadenas son:
+  
+- ```capitalize()```: Cambia todas las letras de la cadena a mayúsculas.
+- ```center()```: Centra la cadena dentro de una longitud conocida.
+- ```count()```: Cuenta las ocurrencias de un carácter dado.  
+- ```join()```: Une todos los elementos de una tupla/lista en una cadena.
+- ```lower()```: Convierte todas las letras de la cadena en minúsculas.  
+- ```lstrip()```: Elimina los caracteres en blanco al principio de la cadena.
+- ```replace()```: Reemplaza una subcadena dada con otra.
+- ```rfind()```: Encuentra una subcadena comenzando por el final de la cadena.  
+- ```rstrip()```: Elimina los caracteres en blanco al final de la cadena.  
+- ```split()```: Divide la cadena en una subcadena usando un delimitador dado.
+- ```strip()```: Elimina los espacios en blanco iniciales y finales.  
+- ```swapcase()```: Intercambia las mayúsculas y minúsculas de las letras.  
+- ```title()```: Hace que la primera letra de cada palabra sea mayúscula.  
+- ```upper()```: Convierte todas las letras de la cadena en letras mayúsculas.  
+  
+  
+2. El contenido de las cadenas se puede determinar mediante los siguientes métodos (todos devuelven valores booleanos):  
+  
+- ```endswith()```: La cadena termina con una subcadena determinada?
+- ```isalnum()```: La cadena consta solo de letras y dígitos?  
+- ```isalpha()```: La cadena consta solo de letras?
+- ```islower()```: La cadena consta solo de letras minúsculas?  
+- ```isspace()```: La cadena consta solo de espacios en blanco?  
+- ```isupper()```: La cadena consta solo de letras mayúsculas?  
+- ```startswith()```: La cadena empieza con una subcadena determinada?  
