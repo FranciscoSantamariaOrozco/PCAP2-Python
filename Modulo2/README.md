@@ -1,5 +1,6 @@
 # **Fundamentos de Python 2: Módulo 2**  
   
+![Modulo2](img/Modulo2presentacion.jpg) 
 ## Cadenas, métodos de listas y excepciones.  
   
 En este módulo, aprenderás sobre:  
@@ -12,4 +13,7 @@ En este módulo, aprenderás sobre:
 - Controlando el flujo de errores mediante ```try``` y ```except```.  
 - La jerarquía de las excepciones.
 
-![Modulo2](img/Modulo2presentacion.jpg)
+ 
+ 
+#  
+1. [Seccion 1 - Carácteres y estándares de codificación](_Seccion1.md)
