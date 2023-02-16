@@ -222,4 +222,7 @@ Si eres residente de la UE, puedes usar tu propio número de cuenta para hacer p
 
 ## **Puntos Claves**  
 
-1. Las cadenas
+1. Las cadenas son herramientas clave en el procesamiento de datos modernos, ya que la mayoría de los datos útiles son en realidad  
+cadenas. Por ejemplo, el uso de un motor de búsqueda web (que parece bastante trivial en estos días) utiliza un procesamiento de cadenas extremadamente complejo, que involucra cantidades inimaginables de datos.
+
+2. El comparar 
