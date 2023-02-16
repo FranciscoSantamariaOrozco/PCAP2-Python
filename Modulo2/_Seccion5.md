@@ -183,7 +183,7 @@ Observa el código en el editor.
 23|        else:
 24|            print("El IBAN ingresado no es válido.")
 ```  
-  
+
 Analicémoslo:  
 
 Observa el código en el editor. Analicémoslo:
@@ -212,7 +212,7 @@ Observa el código en el editor. Analicémoslo:
 
 Agreguemos algunos datos de prueba (todos estos números son válidos; puedes  
 invalidarlos cambiando cualquier carácter).  
-  
+
 - Inglés: ```GB72 HBZU 7006 7212 1253 00```
 - Francés: ```FR76 30003 03620 00020216907 50```
 - Alemán: ```DE02100100100152517108```  
@@ -226,7 +226,7 @@ Si eres residente de la UE, puedes usar tu propio número de cuenta para hacer p
 datos útiles son en realidad cadenas. Por ejemplo, el uso de un motor de búsqueda web (que parece  
 bastante trivial en estos días) utiliza un procesamiento de cadenas extremadamene complejo, que  
 involucra cantidades inimaginables de datos.  
-  
+
 2. El comparar cadenas de forma estricta (como lo hace Python) puede ser muy insatisfactorio cuando se  
 trata de búsquedas avanzadas (por ejemplo, durante consultas extensas a bases de datos). En respuesta  
 a esta demanda, se han creado e implementado una serie de algoritmos de comparación de cadenas  
@@ -238,7 +238,7 @@ cadenas. Si este tema te interesa, pudes encontrar más información aquí:
 Otra solución del mismo tipo, pero basada en un supuesto diferente, es la **Distancia Levenshtein**  
 descrita aquí:  
 [https://en.wikipedia.org//wiki/Levenshtein_distance](https://en.wikipedia.org//wiki/Levenshtein_distance)  
-  
+
 
 3. Otra forma de comparar cadenas es encontrar su similitud *acústica*, lo que significa un proceso que  
 lleva a determinar si dos cadenas suenan similares (como "echo" y "hecho"). Esa similitud debe  
@@ -246,7 +246,7 @@ establacerse para cada idioma (o incluso dialecto) por separado.
 Un algoritmo utilizado para realizar una comparación de este tipo para el idioma inglés se llama **Soundex**  
 y se inventó, no lo creerás, en 1918. Puedes encontrar más información a respecto aquí:  
 [https://en.wikipedia.org/wiki/Soundex](https://en.wikipedia.org/wiki/Soundex)  
-  
+
 
 4. Debido a la precisión limitada de los datos enteros y flotantes nativos, a veces es razonable almacenar  
 y procesar valores numéricos enormes como cadenas. Esta es la técnica que usa Python cuando se le  
