@@ -1,4 +1,4 @@
-# Fundamentos de Python 2  
+# **Fundamentos de Python 2: Módulo 1**  
 
 <p align="center">
 <img src="img/modulo1.jpg">
