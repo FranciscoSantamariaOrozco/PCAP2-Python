@@ -424,7 +424,7 @@ import mod4
 ```  
 <br></br>
 
-1. Si un módulo se importa de la manera anterior y dsea acceder a cualquiera de sus entidades, debes anteponer el nombre de la  
+2. Si un módulo se importa de la manera anterior y dsea acceder a cualquiera de sus entidades, debes anteponer el nombre de la  
 entidad empeleando la **notación con punto**. Por ejemplo:  
 ```
 import my_module  
@@ -461,7 +461,7 @@ result = my_function(my_data)
 nombres es aún más peligrosa aquí).  
 <br></br>  
 
-1. Puede cambiar el nombre de la entidad importada "sobre la marcha" utilizando la frase ```as``` del ```import```. Por ejemplo:  
+5. Puede cambiar el nombre de la entidad importada "sobre la marcha" utilizando la frase ```as``` del ```import```. Por ejemplo:  
 ```
 from module import my_function as fun, my_data as dat  
 
@@ -475,4 +475,5 @@ result = fun(dat)
 [Soluciones](/Modulo1/Seccion1/Sec1-ejsol.md)  
 
 #  
+
 [Volver a: Módulo 1 - Módulos, paquetes y PIP](../README.md)

@@ -20,14 +20,17 @@ paquetes listos para usar de PyPI.
 
 #   
 
-1. [Seccion 1 - Módulos, Empleo e Importación](./Seccion1/_Seccion1.md)   
+1. [Seccion 1 - Módulos, Empleo e Importación](./Seccion1/_Seccion1.md)  
+    - [Test](Seccion1/Sec1-ej.md)
 
 2. [Seccion 2 - Módulos Útiles; math, Random, platform](./Seccion2/_Seccion2.md)
+    - [Test](Seccion2/Sec2-ej.md)
 
 3. [Seccion 3 - Módulos y Paquetes](./Seccion3/_Seccion3.md)
+    - [Test](Seccion3/Sec3-ej.md)
 
 4. [Seccion 4 - Instalador de Paquetes de Python (PIP)](./Seccion4/_Seccion4.md)  
-
+    - [Test](Seccion4/Sec4-ej.md)
 
 #   
 - [Test de ensayo](EjerciciosTestModulo1/README.MD)  

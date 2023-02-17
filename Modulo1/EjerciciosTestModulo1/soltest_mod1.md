@@ -1,4 +1,4 @@
-# **Test Modulo 1**  
+# **Soluciones Test Modulo 1**  
 
 1. Un namespace es:
 ![test1](img/../img/test1.jpg)  

@@ -1,4 +1,4 @@
-# **Examen Modulo 1**  
+# **Soluciones Examen Modulo 1**  
 
 1. El comando ```pip list``` presenta una lista de:  
 ![examen1](img/examen1.jpg)  

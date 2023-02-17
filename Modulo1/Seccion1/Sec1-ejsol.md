@@ -1,4 +1,4 @@
-# **EJERCICIOS SECCION 1**  
+# **SOLUCIONES EJERCICIOS SECCION 1**  
 <br></br>  
 
 ## **Ejercicio 1**  
@@ -31,3 +31,13 @@ Qué forma de invocación de la funcion ```make_money``` es válida si tu códig
 ```
 make_money()
 ```
+#  
+<br></br>
+
+- [Ejercicios](Sec1-ej.md)
+<br></br>
+#  
+
+[Volver a: Seccion 1 - Módulos, Empleo e Importación](_Seccion1.md)  
+
+[Volver a: Módulo 1 - Módulos, paquetes y PIP](../README.md)

@@ -35,4 +35,14 @@ puede ayudarte con el problema?
 Qué forma de invocación de la funcion ```make_money``` es válida si tu código comienza con la siguiente línea?
 ```
 from mint import *
-```
+```  
+#  
+<br></br>
+
+- [Soluciones](Sec1-ejsol.md)
+<br></br>
+#  
+
+[Volver a: Seccion 1 - Módulos, Empleo e Importación](_Seccion1.md)  
+
+[Volver a: Módulo 1 - Módulos, paquetes y PIP](../README.md)
