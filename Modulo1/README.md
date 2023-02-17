@@ -3,6 +3,7 @@
 <p align="center">
 <img src="img/modulo1.jpg">
 </p>  
+<br></br>  
 
 ## Módulo 1
 **Módulos, Paquetes y Pip**
@@ -15,7 +16,7 @@ En este módulo, aprenderás como:
 - PIP (Instalador de Paquetes de Python) y cómo usarlo para instalar y desinstalar  
 paquetes listos para usar de PyPI.  
 
-
+<br></br>
 
 #   
 
@@ -25,4 +26,20 @@ paquetes listos para usar de PyPI.
 
 3. [Seccion 3 - Módulos y Paquetes](./Seccion3/_Seccion3.md)
 
-4. [Seccion 4 - Instalador de Paquetes de Python (PIP)](./Seccion4/_Seccion4.md)
+4. [Seccion 4 - Instalador de Paquetes de Python (PIP)](./Seccion4/_Seccion4.md)  
+
+
+#   
+- [Test de ensayo](EjerciciosTestModulo1/README.MD)  
+- [Test de ensayo (soluciones)](EjerciciosTestModulo1/soltest_mod1.MD)
+  
+<br>  
+
+
+- [Examen Módulo 1](ExamenModulo1/README.MD)
+- [Examen Módulo 1 (soluciones)](ExamenModulo1/)
+
+#  
+
+<br></br>  
+- [PCAP2 Certified Associate in Python Programming: inicio](../README.md)

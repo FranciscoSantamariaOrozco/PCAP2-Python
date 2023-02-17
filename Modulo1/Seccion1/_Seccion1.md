@@ -467,3 +467,12 @@ from module import my_function as fun, my_data as dat
 
 result = fun(dat)
 ```  
+#  
+
+<br></br>
+[Ejercicios](/Modulo1/Seccion1/Sec1-ej.md)
+<br></br>
+[Soluciones](/Modulo1/Seccion1/Sec1-ejsol.md)  
+
+#  
+[Volver a: Módulo 1 - Módulos, paquetes y PIP](../README.md)
