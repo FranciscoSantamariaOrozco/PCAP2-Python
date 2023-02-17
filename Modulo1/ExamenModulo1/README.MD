@@ -6,7 +6,7 @@
 2. Sabiendo que una función llamada ```fun``` reside dentro de un módulo llamado ```mod```, y se ha importado usando la siguiente linea:  
 ```
 import mod
-```  
+```
 Selecciona la fiorma en que se puede invocar desde tu código.  
 ![examen2](img/examen2.jpg)  
   
@@ -37,13 +37,14 @@ for i in range(2):
 ```
 ![examen8](img/examen8.jpg)  
   
-9. Cuáles de las siguientes sentencias son **verdaderas** acerca del comando ```pip install```? (Selecciona **dos** respuestas)  
+9. Cuáles de las siguientes sentencias son **verdaderas** acerca del comando ```pip install```? (Selecciona **dos** respuestas) 
+ 
 ![examen9](img/examen9.jpg)  
   
-10. Una función que devuelve una lista de todas las entidades disponibles en un módulo lleva por nombre:  
+1.  Una función que devuelve una lista de todas las entidades disponibles en un módulo lleva por nombre:  
 ![examen10](img/examen10.jpg)  
   
-11. Cuál es el valor esperado asignado a la variable ```result``` después de que se ejecute el siguiente código?  
+1.  Cuál es el valor esperado asignado a la variable ```result``` después de que se ejecute el siguiente código?  
 ```
 import math  
   
