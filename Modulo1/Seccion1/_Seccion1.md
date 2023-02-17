@@ -407,7 +407,6 @@ módulos y algunas de sus entidades útiles.
 <br></br>  
 
 ## **Puntos Claves**
-
 1. Si deseas importar un módulo como un todo, puedes hacerlo usando la sentencia ```import nombre_del_módulo```. Puedes  
 importar más de un módulo a la vez utilizando una lista separada por comas. Por ejemplo:  
 ```
