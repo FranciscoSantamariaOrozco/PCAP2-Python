@@ -35,6 +35,6 @@ print(len(platform.python_version_tuple()))
 <br></br>
 #  
 
-[Volver a: Seccion 2 - ](_Seccion2.md)  
+[Volver a: Seccion 2 - Módulos Útiles; math, Random, platform](_Seccion2.md)  
 
 [Volver a: Módulo 1 - Módulos, paquetes y PIP](../README.md)

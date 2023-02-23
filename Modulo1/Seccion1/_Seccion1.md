@@ -363,8 +363,7 @@ El "module" identifica el nombre del módulo original mientras que el "alias" es
 lugar del original.  
 
 Nota: ```as``` es una palabra clave reservada.  
-
-
+<br></br>
 ## Importando un módulo: continuación  
 
 Si necesitas cambiar la palabra ```math```, puedes introducir tu propio nombre, como en el ejemplo:  

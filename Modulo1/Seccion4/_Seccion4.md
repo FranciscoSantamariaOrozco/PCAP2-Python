@@ -260,7 +260,7 @@ Cómo nos ocupamos de eso? Todos los usuarios están condenados a visitar el inf
 
 Afortunadamente no, *pip* puede hacer todo esto por ti. Puede descubrir, identificar y resolver todas las dependencias. Además, puede  
 hacerlo de la manera más inteligente, evitando descargas y reinstalaciones innecesarias.  
-
+<br></br>
 
 ## **Cómo usar *pip***  
 Ahora estamos listos para preguntarle a *pip* qué puede hacer por nosotros. Hagámoslo, emite el siguiente comando:  
