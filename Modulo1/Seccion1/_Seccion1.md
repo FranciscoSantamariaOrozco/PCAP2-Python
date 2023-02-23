@@ -1,5 +1,4 @@
 ## **Qué es un módulo?**
-
 El código de computadora tiene una tendencia a crecer. Podemos decir que el código que no crece probablemente sea completamente  
 inutilizable o esté abandonado. Un código real, deseado y ampliamente utilizado se desarrolla continuamente, ya que tanto las  
 demandas de los usuarios como sus expectativas se desarrollan de manera diferente.  
