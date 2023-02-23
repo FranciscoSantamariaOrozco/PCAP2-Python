@@ -92,6 +92,6 @@ print(int(result))
 ![Examen18](img/examen18.jpg)  
 
 <br></br>  
-- [Volver al Examen](README.md)
+- [Volver al Examen](ExamenM1.md)
 #
 [Volver a: Módulo 1 - Módulos, paquetes y PIP](../README.md)
