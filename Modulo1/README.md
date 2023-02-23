@@ -38,13 +38,13 @@ paquetes listos para usar de PyPI.
 
 #   
 
-- [Test de ensayo](EjerciciosTestModulo1/README.MD)  
+- [Test de ensayo](EjerciciosTestModulo1/TestM1.md)  
 - [Test de ensayo (soluciones)](EjerciciosTestModulo1/soltest_mod1.MD)
-  
+
 <br>  
 
 
-- [Examen Módulo 1](ExamenModulo1/README.MD)
+- [Examen Módulo 1](ExamenModulo1/ExamenM1.md)
 - [Examen Módulo 1 (soluciones)](ExamenModulo1/)
 
 #  

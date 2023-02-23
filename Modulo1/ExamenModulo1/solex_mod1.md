@@ -38,7 +38,7 @@ causa la importación de:
 8. Cuál es el resultado esperado del siguiente código?  
 ```
 from random import randint  
-  
+
 for i in range(2):  
     print(randint(1, 2), end='')
 ```
