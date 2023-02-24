@@ -113,13 +113,216 @@ La figura ilustra la jerarquía que hemos creado.
 
 Ten en cuenta la dirección de las flechas: siempre apuntan a la superclase. La clase de nivel superior es una excepción: no tiene su  
 propia superclase.
-<br></br>
+
+<br></br>  
+
+
+## **Jerarquías de clase: continuacion**  
+Otro ejemplo es la jerarquía del eino taxonómico de los animales.  
+
+Podemos decir que todos los *Animales* (nuestra clase de nivel superior) se puede dividir en cinco subclases:  
+- Mamíferos
+- Reptiles
+- Aves
+- Peces
+- Anfibios
+
+Tomaremos el primero para un análisis más detallado.  
+
+Hemos identificado las siguientes subclases:  
+
+- Mamíferos salvajes
+- Mamíferos domesticados.  
+
+<p align="center">
+<img src="./img/ejemplosclasesanimales.jpg">
+</p>  
+
+Intenta extender la jerarquía de la forma que quieras y encuentra el lugar adecuado para los humanos.  
 
 <br></br>
+
+## **Qué es un objeto?**  
+Una clase (entre otras definiciones) es un **conjunto de objetos**. Un objeto es **un ser perteneciente a una clase**.  
+
+Un objeto es **una encarnación de los requisitos, rasgos, y cualidades asignados a una clase específica**. Esto puede sonar simple,  
+pero ten en cuenta las siguientes circunstancias importantes. Las clases forman una jerarquía.  
+
+Esto puede significar que un objeto que pertenece a una clase específica pertenece a todas las superclases al mismo tiempo. También  
+puede significar que cualquier objeto perteneciente a una superclase puede no pertenecer a ninguna de sus subclases.  
+
+Por ejemplo: cualquier automóvil personal es un objeto que pertenece a la clase *Vehículos Terrestres*. También significa que el mismo  
+automóvil pertenece a todas las superclases de su clase local; por lo tanto, también es miembro de la clase *Vehículos*.  
+
+Tu perro (o tu gato) es un objeto incluido en la clase *Mamíferos Domesticados*, lo que significa explícitamente que también está  
+incluido en la clase *Animales*.  
+
+Cada **subclase es más especializada** (o más específica) que su superclase. Por el contrario, cada **superclase es más general** (más  
+abstracta) que cualquiera de sus subclases.  
+
+Ten en cuenta que jhemos supuesto quer una clase solo puede tener una superclase; esto no siempre es cierto, pero discutiremos este  
+tema más adelante.  
+
+<br></br>  
+
+## **Herencia**  
+Definamos uno de los conceptos fundamentales de la programación de objetos, llamado **herencia**. Cualquier objeto vinculado a un  
+nivel específico de una jerarquía de clases **hereda todos los rasgos (así como los requisitos y cualidades) definidos dentro de**  
+**cualquiera de las superclases**.  
+
+La clase de inicio del objeto puede definir nuevos rasgos (así como requisitos y cualidades) que serán heredados por cualquiera de sus  
+superclases.  
+
+<p align="center">
+<img src="./img/herencia.jpg">
+</p>  
+
+No deberías tener ningún problema para hacer coincidir esta regla con ejemplos específicos, ya sea que se aplique a animales o  
+vehículos.  
+
+<br></br>  
+
+
+## **Qué contiene un objeto?**  
+La programación orientada a objetos supone que **cada objeto existente pueda estar equipado con tres grupos de atributos**:  
+- Un objeto tiene un **nombre** que lo identifica de forma exclusiva dentro de su namespace (aunque también puede haber algunos  
+objetos anónimos).  
+- Un objeto tiene un **conjunto de propiedades individuales** que lo hacen original, único o sobresaliente (aunque es posible que  
+algunos objetos no tengan propiedades).  
+- Un objeto tiene un **conjunto de habilidades para realizar actividades específicas**, capaz de cambiar el objeto en sí, o algunos  
+de los otros objetos.  
+
+Existe una pista (aunque esto no siempre funciona) que te puede ayudar a identificar cualquiera de las tres esferas anteriores. Cada  
+vez que se describe un objeto y se usa:  
+- Un substantivo: probablemente se está definiendo el nombre de un objeto.  
+- Un adjetivo: probablemente se está definiendo una propiedad del objeto.  
+- Un verbo: probablemente se está definiendo una actividad del objeto.  
+
+Dos ejemplos deberían servir como un buen ejemplo: 
+<br></br>
+
+- ***Un Cadillac rosa pasó rápidamente.***  
+
+Nombre del objeto = Cadillac  
+Clase = Vehículos con ruedas  
+Propiedad = Color (rosa)  
+Actividad = Pasar (rápidamente)  
+<br></br>  
+
+- ***Max es un gato grande que duerme todo el día.***  
+
+Nombre del objeto = Max  
+Clase = Gato  
+Propiedad = Tamaño (Grande)  
+Actividad = Dormir (todo el día)  
+<br></br>
+
+<p align="center">
+<img src="./img/atributosobjeto.jpg">
+</p>  
+
+<br></br>  
+
+
+##  **Tu primera clase**  
+La programación orientada a objetos es **el arte de definir y expandir clases**. Una clase es un modelo de una parte muy específica de  
+la realidad, que refleja las propiedades y actividades que se encuentran en el mundo real.  
+
+Las clases definidas al principio son demasiado generales e imprecisas para cubrir el mayor número posible de casos reales.  
+
+No hay obstáculo para definir nuevas subclases más precisas. Heredarán todo de su superclase, por lo que el trabajo que se utilizó  
+para su creación no se desperdicia.  
+
+La nueva clase puede agregar nuevas propiedades y nuevas actividades y, por lo tanto, puede ser más útil en aplicaciones específicas.  
+Obviamente, se puede usar como una superclase para cualquier número de subclases recién creadas.  
+
+El proceso no necesita tener un final. Puedes crear tantas clases como necesites.  
+
+La clase que se define no tiene nada que ver con el objeto: **la existencia de una clase no significa que ninguno de los objetos**  
+**compatibles se creará automáticamente**. La clase en sí misma no puede crear un objeto: debes crearlo tu mismo y Python te  
+permite hacerlo.  
+
+Es hora de definir la clase más simple y crear un objeto. Analiza el siguiente ejemplo:  
+```
+class TheSimplestClass
+    pass
+```  
+Hemos definido una clase. La clase es bastante pobre: no contiene propiedades ni actividades. Esta **vacía**, pero eso no importa por  
+ahora. Cuanto más simple sea la clase, mejor para nuestros propósitos.  
+
+**La definición comienza con la palabra clave reservada** ```class```. La palabra clave reservada es seguida por un **identificador que le**  
+**dará nombre a la clase** (nota: no lo confundas con el nombre del objeto: estas son dos cosas diferentes).  
+
+A continuación, se agregan **dos puntos**(```:```), como clases, como funciones, forman su propio bloque anidado. El contenido dentro del  
+bloque define todas las propiedades y actividades de la clase.  
+
+La palabra clave reservada ```pass``` llena la clase con nada. No contiene ningún método ni propiedades.  
+
+<br></br>  
+
+
+## **Tu primer objeto**  
+La clase recién definida se convierte en una herramienta que puede crear nuevos objetos. La herramienta debe usarse  
+explícitamente, bajo demanda.  
+
+Imagina que deseas crear un objeto (exactamente uno) de la clase ```TheSimplestClass```  
+
+Para hacer esto, debes asignar una variable para almacenar el objeto recién creado de esa clase y crear un objeto al mismo tiempo.  
+
+Se hace de la siguiente manera:  
+```
+my_first_object = TheSimplestClass()
+```  
+Nota:  
+- El nombre de la clase intenta fingir que es una función, puedes ver esto? lo discutiremos pronto.  
+- El objeto recién creado está equipado con todo lo que trae la clase. Como esta clase está completamente vacía, el objeto también  
+está vacío.  
+
+El acto de crear un objeto de la clase seleccionada también se llama **instanciación** (ya que el objeto se convierte en una **instancia de**  
+**la clase**).  
+
+Dejemos las clases en paz por un breve momento, ya que ahora diremos algunas palabras sobre las *pilas*. Sabemos que el concepto de  
+clases y objetos puede no estar completamente claro todavía. No te preocupes, te explicaremos todo muy pronto.  
+
+<br></br>  
+
+
+## **Puntos Clave** 
+1. Una **clase** es una idea (más o menos abstracta) que se puede utilizar para crear varias encarnaciones; una encarnación de este tipo  
+se denomina **objeto**.  
+<br></br>
+
+2. Cuando una clase se deriba de otra clase, su relación se denomina **herencia**. La clase que deriva de la otra clase se denomina  
+**subclase**. El segundo lado de esta relación se denomina **superclase**. Una forma de presentar dicha relación es en un **diagrama de**  
+**herencia**, donde:  
+- Las superclases siempre se presentan **encima** de sus subclases.  
+- Las relacciones entre clases se muestran como flechas dirigidas **desde la subclase hacia su superclase**.  
+<br></br>
+
+3. Los objetos están equipados con:  
+- Un **nombre** que los identifica y nos permite distinguirlos.  
+- Un conjunto de **propiedades** (el conjunto puede estar vacío).  
+- Un cojunto de **métodos** (también puede estar vacío).  
+<br></br>
+
+4. Para definir una clase de Python, se necesita usar la palabra clave reservada ```class```. Por ejemplo:  
+```
+class This_Is_A_Class:  
+    pass
+```  
+<br></br>
+
+5. PAra crear un objeto de la clase previamente definida, se necesita usar la clase como si fuera una función. Por ejemplo:  
+```
+this_is_an_object = This_Is_A_Class()
+```
+
+<br></br>
+#  
 [Ejercicios](/Modulo1/Seccion1/Sec1-ej.md)
 <br></br>
 [Soluciones](/Modulo1/Seccion1/Sec1-ejsol.md)  
 
-#  
+#
 
 [Volver a: Módulo 3 - Programación Orientada a Objetos y Procesamiento de Archivos en Python](../README.md)

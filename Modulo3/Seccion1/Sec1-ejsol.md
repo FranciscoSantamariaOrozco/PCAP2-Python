@@ -3,34 +3,28 @@
 
 ## **Ejercicio 1**  
 
-Quieres invocar la función ```make_money()``` contenida en el módulo llamado ```mint```. Cuál es la forma adecuada de invocar a la función?  
-```
-mint.make_money()
-```
+Si asumimos que pitones, víboras y cobras son subclases de la misma superclase, cómo la llamarías?  
+
+Serpiente, reptil, vertebrado, animal: todas estas respuestas son aceptables.  
 
 <br></br>  
 
 ## **Ejercicio 2**  
-Quieres invocar la función ```make_money()``` contenida en el módulo llamado ```mint```. Cuál es la forma adecuada de invocar a la función?  
-```
-make_money()
-```
+
+Intenta nombrar algunas subclases de la clase Pitón.  
+
+Pitón india, Pitón de roca africana, Pitón bola, Pitón birmana: la lista es larga.
+
 <br></br>  
 
 ## **Ejercicio 3**  
-Has escrito una función llamada ```make_money``` por tu cuenta. Necesitas importar una función con el mismo nombre del módulo  
-```mint``` y no deseas cambiar el nombre de ninguno de tus nombres previamente definidos. Qué variante de la sentencia ```import```  
-puede ayudarte con el problema? 
-```
-from mint import make_money as make_more_money
-```
+
+Puedes usar la palabra "class" Para darle nombre a alguna de tus clases?  
+
+No, no puedes, ```class``` es una palabra clave reservada!
+
 <br></br>  
 
-## **Ejercicio 4**  
-Qué forma de invocación de la funcion ```make_money``` es válida si tu código comienza con la siguiente línea?
-```
-make_money()
-```
 #  
 <br></br>
 
@@ -38,6 +32,6 @@ make_money()
 <br></br>
 #  
 
-[Volver a: Seccion 1 - Módulos, Empleo e Importación](_Seccion1.md)  
+[Volver a: Seccion 1 - Los fundamentos de la POO](_Seccion1.md)  
 
-[Volver a: Módulo 1 - Módulos, paquetes y PIP](../README.md)
+[Volver a: Módulo 3 - Programación Orientada a Objetos y Procesamiento de Archivos en Python](../README.md)
