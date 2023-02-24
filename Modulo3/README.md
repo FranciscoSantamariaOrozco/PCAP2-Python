@@ -26,7 +26,7 @@ En este módulo, aprenderás sobre:
     - [Ejercicios](Seccion1/Sec1-ej.md)
 <br></br>
 
-1. [Seccion 2 - ](./Seccion2/_Seccion2.md)
+1. [Seccion 2 - Un corto viaje desde el enfoque procedimental hacia el orientado a objetos](./Seccion2/_Seccion2.md)
     - [Ejercicios](Seccion2/Sec2-ej.md)
 <br></br>
 
