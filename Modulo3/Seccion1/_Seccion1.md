@@ -319,9 +319,9 @@ this_is_an_object = This_Is_A_Class()
 
 <br></br>
 #  
-[Ejercicios](/Modulo1/Seccion1/Sec1-ej.md)
+[Ejercicios](/Modulo3/Seccion1/Sec1-ej.md)
 <br></br>
-[Soluciones](/Modulo1/Seccion1/Sec1-ejsol.md)  
+[Soluciones](/Modulo3/Seccion1/Sec1-ejsol.md)  
 
 #
 

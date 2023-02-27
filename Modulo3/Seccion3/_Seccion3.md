@@ -639,9 +639,9 @@ componentes se denominan **privados**.
 
 <br></br>
 #  
-[Ejercicios](/Modulo3/Seccion2/Sec2-ej.md)
+[Ejercicios](/Modulo3/Seccion3/Sec3-ej.md)
 <br></br>
-[Soluciones](/Modulo3/Seccion2/Sec2-ejsol.md)  
+[Soluciones](/Modulo3/Seccion3/Sec3-ejsol.md)  
 
 #
 
