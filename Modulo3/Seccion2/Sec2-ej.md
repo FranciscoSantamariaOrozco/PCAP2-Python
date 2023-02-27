@@ -1,31 +1,42 @@
-# **EJERCICIOS SECCION 1**  
+# **EJERCICIOS SECCION 2**  
 <br></br>  
 
 ## **Ejercicio 1**  
 
-Si asumimos que pitones, víboras y cobras son subclases de la misma superclase, cómo la llamarías?
+Suponiendo que hay una clase llamada ```Snakes```, escribe la primera línea de la declaración de clase ```Python```, expresando el hecho  
+de que la nueva clase es en realidad una subclase de Snake.
 
 <br></br>  
 
 ## **Ejercicio 2**  
 
-Intenta nombrar algunas subclases de la clase Pitón.
+Algo falta en la siguiente declaración, qué es?
+```
+class Snakes
+    def __init__():
+        self.sound = 'Sssssss'
+```
 
 <br></br>  
 
 ## **Ejercicio 3**  
 
-Puedes usar la palabra "class" Para darle nombre a alguna de tus clases?
+Modifica el código para garantizar que la propiedad ```venomous``` sea privada.
+```
+class Snakes
+    def __init__(self):
+        self.venomous = True
+```
 
 <br></br>  
 
 #  
 <br></br>
 
-- [Soluciones](Sec1-ejsol.md)
+- [Soluciones](Sec2-ejsol.md)
 <br></br>
 #  
 
-[Volver a: Seccion 1 - Los fundamentos de la POO](_Seccion1.md)  
+[Volver a: Seccion 2 - Un corto viaje desde el enfoque procedimental hacia el orientado a objetos.](_Seccion2.md)  
 
 [Volver a: Módulo 3 - Programación Orientada a Objetos y Procesamiento de Archivos en Python](../README.md)

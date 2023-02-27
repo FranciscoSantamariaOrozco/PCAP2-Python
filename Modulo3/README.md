@@ -28,6 +28,9 @@ En este módulo, aprenderás sobre:
 
 1. [Seccion 2 - Un corto viaje desde el enfoque procedimental hacia el orientado a objetos](./Seccion2/_Seccion2.md)
     - [Ejercicios](Seccion2/Sec2-ej.md)
+    - [Laboratorio 1](Seccion2/Sec2-Lab1.md)
+    - [Laboratorio 2](Seccion2/Sec2-Lab2.md)
+    - [Laboratorio 3](Seccion2/Sec2-Lab3.md)
 <br></br>
 
 1. [Seccion 3 - ](./Seccion3/_Seccion3.md)
