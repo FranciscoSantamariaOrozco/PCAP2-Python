@@ -33,11 +33,19 @@ En este módulo, aprenderás sobre:
     - [Laboratorio 3](Seccion2/Sec2-Lab3.md)
 <br></br>
 
-1. [Seccion 3 - ](./Seccion3/_Seccion3.md)
+1. [Seccion 3 - PPO: Propiedades](./Seccion3/_Seccion3.md)
     - [Ejercicios](Seccion3/Sec3-ej.md)
 <br></br>
 
-1. [Seccion 4 - ](./Seccion4/_Seccion4.md)  
+1. [Seccion 4 - PPO: Métodos](./Seccion4/_Seccion4.md)  
+    - [Ejercicios](Seccion4/Sec4-ej.md)
+<br></br>
+
+1. [Seccion 5 - Fundamentos de POO: Herencia](./Seccion4/_Seccion4.md)  
+    - [Ejercicios](Seccion4/Sec4-ej.md)
+<br></br>
+
+1. [Seccion 6 - Excepciones una vez más](./Seccion4/_Seccion4.md)  
     - [Ejercicios](Seccion4/Sec4-ej.md)
 <br></br>
 
