@@ -1,4 +1,4 @@
-# **SOLUCIONES EJERCICIOS SECCION 3**  
+# **SOLUCIONES EJERCICIOS SECCION 4**  
 <br></br>  
 
 ## **Ejercicio 1**  
@@ -48,10 +48,10 @@ hasattr(version_2, 'constrictor')
 #  
 <br></br>
 
-- [Ejercicios](Sec3-ej.md)
+- [Ejercicios](Sec4-ej.md)
 <br></br>
 #  
 
-[Volver a: Seccion 3 - PPO: Propiedades](_Seccion3.md)  
+[Volver a: Seccion 4 - PPO: Métodos](_Seccion4.md)  
 
 [Volver a: Módulo 3 - Programación Orientada a Objetos y Procesamiento de Archivos en Python](../README.md)

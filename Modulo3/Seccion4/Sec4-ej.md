@@ -1,4 +1,4 @@
-# **SOLUCIONES EJERCICIOS SECCION 3**  
+# **EJERCICIOS SECCION 4**  
 <br></br>  
 
 ## **Ejercicio 1**  
@@ -12,10 +12,7 @@ class Python:
     def __init__(self):
         self.length_ft = 3
         self.__venomous = False
-```  
-
-```population``` y ```victims``` son variables de **clase**, mientras que ```length``` y ```__venomous``` son variables de **instancia** (esta última  
-también es **privada**)
+```
 
 <br></br>  
 
@@ -25,11 +22,6 @@ Vas a negar la propiedad ```__venomous``` del objeto ```version_2```, ignorando 
 hacer esto?  
 ```
 version_2 = Python()
-```  
-
-```
-version_2._Python__venomous = not version_2._Python__venomous
-
 ```
 
 <br></br>  
@@ -37,21 +29,17 @@ version_2._Python__venomous = not version_2._Python__venomous
 ## **Ejercicio 3**  
 
 Escribe una expresión que compruebe si el objeto ```version_2``` contiene una propiedad de instancia denominada ```constrictor```  
-(sí, constrictor!).  
-
-```
-hasattr(version_2, 'constrictor')
-```
+(sí, constrictor!).
 
 <br></br>  
 
 #  
 <br></br>
 
-- [Ejercicios](Sec3-ej.md)
+- [Soluciones](Sec4-ejsol.md)
 <br></br>
 #  
 
-[Volver a: Seccion 3 - PPO: Propiedades](_Seccion3.md)  
+[Volver a: Seccion 4 - PPO: Métodos](_Seccion4.md)  
 
 [Volver a: Módulo 3 - Programación Orientada a Objetos y Procesamiento de Archivos en Python](../README.md)

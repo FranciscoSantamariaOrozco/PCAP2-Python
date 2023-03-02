@@ -40,6 +40,6 @@ Escribe una expresión que compruebe si el objeto ```version_2``` contiene una p
 <br></br>
 #  
 
-[Volver a: Seccion 3 - ](_Seccion3.md)  
+[Volver a: Seccion 3 - PPO: Propiedades](_Seccion3.md)  
 
 [Volver a: Módulo 3 - Programación Orientada a Objetos y Procesamiento de Archivos en Python](../README.md)
