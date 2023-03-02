@@ -408,7 +408,7 @@ accesible. Estas variables no se muestran como contenido de ```__dict__```.
 clase por separado.  
 
 4. Una función llamada ```hasattr()``` se pouede utilizar para determinar si algún objeto o clase contiene cierta propiedad especificada.  
-<br>Por ejemplo:  
+<br>Por ejemplo: 
 ```
 class Sample:
     gamma = 0 # Class variable.

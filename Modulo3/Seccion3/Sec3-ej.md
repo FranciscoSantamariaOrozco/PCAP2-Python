@@ -3,30 +3,33 @@
 
 ## **Ejercicio 1**  
 
-Suponiendo que hay una clase llamada ```Snakes```, escribe la primera línea de la declaración de clase ```Python```, expresando el hecho  
-de que la nueva clase es en realidad una subclase de Snake.
+Cuáles de las propiedades de la clase ```Python``` son variables de instancia y cuáles son variables de clase? Cuáles de ellos son  
+privados?  
+```
+class Python:
+    population = 1
+    victims = 0
+    def __init__(self):
+        self.length_ft = 3
+        self.__venomous = False
+```
 
 <br></br>  
 
 ## **Ejercicio 2**  
 
-Algo falta en la siguiente declaración, qué es?
+Vas a negar la propiedad ```__venomous``` del objeto ```version_2```, ignorando el hecho de que la propiedad es privada. Cómo vas a  
+hacer esto?  
 ```
-class Snakes
-    def __init__():
-        self.sound = 'Sssssss'
+version_2 = Python()
 ```
 
 <br></br>  
 
 ## **Ejercicio 3**  
 
-Modifica el código para garantizar que la propiedad ```venomous``` sea privada.
-```
-class Snakes
-    def __init__(self):
-        self.venomous = True
-```
+Escribe una expresión que compruebe si el objeto ```version_2``` contiene una propiedad de instancia denominada ```constrictor```  
+(sí, constrictor!).
 
 <br></br>  
 

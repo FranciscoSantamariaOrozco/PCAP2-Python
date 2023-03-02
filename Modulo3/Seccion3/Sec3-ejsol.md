@@ -3,40 +3,44 @@
 
 ## **Ejercicio 1**  
 
-Suponiendo que hay una clase llamada ```Snakes```, escribe la primera línea de la declaración de clase ```Python```, expresando el hecho  
-de que la nueva clase es en realidad una subclase de Snake.
+Cuáles de las propiedades de la clase ```Python``` son variables de instancia y cuáles son variables de clase? Cuáles de ellos son  
+privados?  
+```
+class Python:
+    population = 1
+    victims = 0
+    def __init__(self):
+        self.length_ft = 3
+        self.__venomous = False
+```  
 
-```
-class Python(Snakes):
-```
+```population``` y ```victims``` son variables de **clase**, mientras que ```length``` y ```__venomous``` son variables de **instancia** (esta última  
+también es **privada**)
 
 <br></br>  
 
 ## **Ejercicio 2**  
 
-Algo falta en la siguiente declaración, qué es?
+Vas a negar la propiedad ```__venomous``` del objeto ```version_2```, ignorando el hecho de que la propiedad es privada. Cómo vas a  
+hacer esto?  
 ```
-class Snakes
-    def __init__():
-        self.sound = 'Sssssss'
+version_2 = Python()
+```  
+
+```
+version_2._Python__venomous = not version_2._Python__venomous
+
 ```
 
-El constructor ```__init__``` carece del parámetro obligatorio (deberíamos llamarlo ```self``` para cumplir con los estándares).
 <br></br>  
 
 ## **Ejercicio 3**  
 
-Modifica el código para garantizar que la propiedad ```venomous``` sea privada.
+Escribe una expresión que compruebe si el objeto ```version_2``` contiene una propiedad de instancia denominada ```constrictor```  
+(sí, constrictor!).  
+
 ```
-class Snakes
-    def __init__(self):
-        self.venomous = True
-```  
-El código debería verse como sigue:  
-```
-class Snakes
-    def __init__(self):
-        self.__venomous = True
+hasattr(version_2, 'constrictor')
 ```
 
 <br></br>  
