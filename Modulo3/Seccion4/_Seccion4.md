@@ -422,7 +422,60 @@ todos los atributos enteros con nombres que comienzan con *i*, y los incrementa 
 Imposible? de ninguna manera!  
 
 Así es como funciona:  
-- 
+- La línea 1: Define una clase muy simple...
+- Las líneas 3 a la 10: ... la llenan con algunos atributos.
+- La línea 14: Esta es miestra función!
+- La línea 15: Escanea el atributo ```__dict__```, buscando todos los nombres de atributos.
+- La línea 16: Si un nombre comienza con *i...*
+- La línea 17: ... utiliza la función ```getattr()``` para obtener su valor actual; nota: ```getattr()``` toma dos  
+argumentos: un objeto y su nombre de propiedad (como una cadena) y devuelve el valor del atributo  
+actual.  
+- La línea 18: Comprueba si el valor es de tipo entero, emplea la función ```isinstance()``` para este  
+propósito (discutiremos esto más adelante).  
+- La línea 19: Si la comprobación sale bien, incrementa el valor de la propiedad haciendo uso de la función  
+```setattr()```; la función toma tres argumentos: un objeto, el nombre de la propiedad (como una cadena)  
+y el nuevo valor de la propiedad.  
+
+El código da como salida:  
+```
+{'a': 1, 'integer': 4, 'b': 2, 'i': 3, 'z': 5, 'ireal': 3.5}
+{'a': 1, 'integer': 5, 'b': 2, 'i': 4, 'z': 5, 'ireal': 3.5}
+```  
+
+Eso es todo!  
+
+<br></br>  
+
+
+## **Puntos Clave**  
+1. Un método es una función dentro de una clase. El primer (o único) parámetro de cada método se suele llamar ```self```, que está  
+diseñado para identificar al objeto para el que se invoca el método con el fin de acceder a las propiedades del objeto o invocar sus  
+métodos.  
+
+2. Si una clase contiene un **constructor** (un método llamado ```__init__```), este no puede devolver ningún valor y no se puede invocar  
+directamente.  
+
+3. Todas las clases (pero no los objetos) contienen una propiedad llamada ```__name__```, que almacena el nombre de la clase. Además,  
+una propiedad llamada ```__module__``` almacena el nombre del módulo en el que se ha declarado la clase, mientras que la propiedad  
+llamada ```__bases__``` es una tupla que contiene las superclases de una clase.  
+
+Por ejemplo:  
+```
+class Sample:
+    def __init__(self):
+        self.name = Sample.__name__
+    def myself(self):
+        print("Mi nombre es " + self.name + " y vivo en " + Sample.__module__)
+
+
+obj = Sample()
+obj.myself()
+```  
+
+El código da como salida:  
+```
+Mi nombre es Sample y vivo en \__main__
+```
 
 <br></br>
 #  

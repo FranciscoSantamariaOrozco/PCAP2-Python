@@ -39,6 +39,10 @@ En este módulo, aprenderás sobre:
 
 1. [Seccion 4 - PPO: Métodos](./Seccion4/_Seccion4.md)  
     - [Ejercicios](Seccion4/Sec4-ej.md)
+    - [Laboratorio 1](Seccion4/Sec4-Lab1.md)
+    - [Laboratorio 2](Seccion4/Sec4-Lab2.md)
+    - [Laboratorio 3](Seccion4/Sec4-Lab3.md)
+    - [Laboratorio 4](Seccion4/Sec4-Lab4.md)
 <br></br>
 
 1. [Seccion 5 - Fundamentos de POO: Herencia](./Seccion4/_Seccion4.md)  

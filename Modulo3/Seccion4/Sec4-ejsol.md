@@ -3,44 +3,59 @@
 
 ## **Ejercicio 1**  
 
-Cuáles de las propiedades de la clase ```Python``` son variables de instancia y cuáles son variables de clase? Cuáles de ellos son  
-privados?  
+La declaración de la clase ```Snake``` se muestra a continuación. Enriquece la clase con un método llamado ```increment()```, el cual  
+incrementa en ```1``` la propiedad ```victims```.  
 ```
-class Python:
-    population = 1
-    victims = 0
+class Snake:
     def __init__(self):
-        self.length_ft = 3
-        self.__venomous = False
+        self.victims = 0
 ```  
 
-```population``` y ```victims``` son variables de **clase**, mientras que ```length``` y ```__venomous``` son variables de **instancia** (esta última  
-también es **privada**)
+Debería verse así:  
+```
+class Snake:
+    def __init__(self):
+        self.victims = 0
+
+    def increment(self):
+        self.victims += 1
+```
 
 <br></br>  
 
 ## **Ejercicio 2**  
 
-Vas a negar la propiedad ```__venomous``` del objeto ```version_2```, ignorando el hecho de que la propiedad es privada. Cómo vas a  
-hacer esto?  
-```
-version_2 = Python()
-```  
+Redefine el constructor de la clase ```Snake``` para que tenga un parámetro que inicialice el campo ```victims``` con un valor pasado al  
+objeto durante la construcción.  
 
 ```
-version_2._Python__venomous = not version_2._Python__venomous
-
+class Snake:
+    def __init__(self, victims):
+        self.victims = victims	
 ```
 
 <br></br>  
 
 ## **Ejercicio 3**  
 
-Escribe una expresión que compruebe si el objeto ```version_2``` contiene una propiedad de instancia denominada ```constrictor```  
-(sí, constrictor!).  
-
+Puedes predecir el resultado del siguiente código?  
 ```
-hasattr(version_2, 'constrictor')
+class Snake:
+    pass
+
+
+class Python(Snake):
+    pass
+
+
+print(Python.__name__, 'es una', Snake.__name__)
+print(Python.__bases__[0].__name__, 'puede ser una', Python.__name__)
+```  
+
+La salida esperada es:  
+```
+Python es una Snake
+Snake puede ser una Python
 ```
 
 <br></br>  
