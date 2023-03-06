@@ -90,7 +90,7 @@ print(timer)
 
 #  
 
-[Volver a: Seccion 2 - Un corto viaje desde el enfoque procedimental hacia el orientado a objetos.](_Seccion2.md)   
+[Volver a: Seccion 4 - PPO: Métodos](_Seccion4.md)   
 
 # 
 

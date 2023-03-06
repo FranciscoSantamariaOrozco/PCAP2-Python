@@ -1,8 +1,8 @@
-# **Ejercicio de Laboratorio: Pila Contadora**
+# **Ejercicio de Laboratorio: Triángulo**
 
 ## **Tiempo Estimado**  
 
-20-45 minutos  
+30-60 minutos  
 
 
 ## **Nivel de dificultad**  
@@ -12,70 +12,71 @@ Fácil/medio
 
 ## **Objetivos**  
 
-- Mejorar las habilidades del estudiante para definir clases.
-- Emplear clases existentes para crear nuevas clases equipadas con nuevas funcionaliades.
+- Mejorar las habilidades del estudiante para definir clases desde cero.
+- Emplear composición.
 
 
 ## **Escenario**  
+Ahora vamos a colocar la clase ```Point``` (ver [Sección 4 Laboratorio 3](Sec4-Lab3.md)) dentro de otra clase. Además, vamos a poner tres  
+puntos en una clase, lo que nos permitirá definir un triángulo. Cómo podemos hacerlo?  
 
-Recientemente te mostramos cómo extender las posibilidades de Stack definiendo una nueva clase (es decir, una  
-subclase) que retiene todos los rasgos heredados y agrega algunos nuevos.  
+La nueva clase se llamará ```Triangle``` y esto es lo que queremos:  
+- El constructor acepta tres argumentos - todos ellos son objetos de la clase ```Point```.  
+- Los puntos se almacenan dentro del objeto como una lista privada.  
+- La clase proporciona un método sin parámetros llamado ```perimeter()```, que calcula el perímetro del  
+triángulo descrito por los tres puntos; el perímetro es la suma de todas las longitudes de los lados (lo  
+mencionamos para que conste, aunque estamos seguros de que tú mismo lo conoces perfectamente).  
 
-Tu tarea es extender el comportamiento de la clase ```Stack``` de tal manera que la clase pueda contar todos los  
-elementos que son agregados (push) y quitados (pop). Emplea la clase ```Stack``` que proporcionamos en el editor.  
-
-Sigue las sugerencias:  
-- Introduce una propiedad diseñada para contar las operaciones pop y nombrarla de una manera que  
-garantice que esté oculta.  
-- Inicializala a cero dentro del constructor.  
-- Proporciona un método que devuelva el valor asignado actualmente al contador (nómbralo  
-```get_counter()```).  
-
-Completa el código en el editor. Ejecútalo para comprobar si tu código da como salida 100.  
-
+Completa la plantilla que te proporcionamos en el editor, ejecuta tu código y verifica si tu salida se ve igual que  
+la nuestra.  
 ```
-class Stack:
-    def __init__(self):
-        self.__stk = []
-
-    def push(self, val):
-        self.__stk.append(val)
-
-    def pop(self):
-        val = self.__stk[-1]
-        del self.__stk[-1]
-        return val
+import math
 
 
-class CountingStack(Stack):
-    def __init__(self):
+class Point:
     #
-    # Llena el constructor con acciones apropiadas.
+    # El código copiado del laboratorio anterior.
     #
 
-    def get_counter(self):
-    #
-    # Presenta el valor actual del contador al mundo.
-    #
 
-    def pop(self):
-    #
-    # Haz un pop y actualiza el contador.
-    #
-	
+class Triangle:
+    def __init__(self, vertice1, vertice2, vertice3):
+        #
+        # Escribir el código aquí.
+        #
 
-stk = CountingStack()
-for i in range(100):
-    stk.push(i)
-    stk.pop()
-print(stk.get_counter())
+    def perimeter(self):
+        #
+        # Escribir el código aquí.
+        #
+
+
+triangle = Triangle(Point(0, 0), Point(1, 0), Point(0, 1))
+print(triangle.perimeter())
 ```
+
+A continuación puedes copiar el código de la clase ```Point```, el cual se utilizó en el laboratorio anterior:  
+```
+class Point:
+    def __init__(self, x=0.0, y=0.0):
+        self.__x = x
+        self.__y = y
+```  
+
+<br></br>  
+
+
+## **Salida esperada**  
+```
+3.414213562373095
+```  
+
 
 <br></br>
 
 #  
 
-[Volver a: Seccion 2 - Un corto viaje desde el enfoque procedimental hacia el orientado a objetos.](_Seccion2.md)   
+[Volver a: Seccion 4 - PPO: Métodos](_Seccion4.md)   
 
 # 
 

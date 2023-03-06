@@ -1,8 +1,8 @@
-# **Ejercicio de Laboratorio: Pila Contadora**
+# **Ejercicio de Laboratorio: Días de la semana**
 
 ## **Tiempo Estimado**  
 
-20-45 minutos  
+30-60 minutos  
 
 
 ## **Nivel de dificultad**  
@@ -12,70 +12,92 @@ Fácil/medio
 
 ## **Objetivos**  
 
-- Mejorar las habilidades del estudiante para definir clases.
-- Emplear clases existentes para crear nuevas clases equipadas con nuevas funcionaliades.
+- Mejorar las habilidades del estudiante para definir clases desde cero.
+- Definir y usar variables de instancia.
+- Definir y usar métodos.
 
 
 ## **Escenario**  
+Tu tarea es implementar una clase llamada *Weeker*. Sí, tus ojos no te engañan, este nombre proviene del hecho  
+de que los objetos de esta clase podrán almacenar y manipular los días de la semana.  
 
-Recientemente te mostramos cómo extender las posibilidades de Stack definiendo una nueva clase (es decir, una  
-subclase) que retiene todos los rasgos heredados y agrega algunos nuevos.  
+El constructor de la clase acepta un argumento: una cadena.  La cadena representa el nombre del día de la  
+semana y los únicos valores aceptables deben provenir del siguiente conjunto:  
 
-Tu tarea es extender el comportamiento de la clase ```Stack``` de tal manera que la clase pueda contar todos los  
-elementos que son agregados (push) y quitados (pop). Emplea la clase ```Stack``` que proporcionamos en el editor.  
+*Lun Mar Mie Jue Vie Sab Dom*  
 
-Sigue las sugerencias:  
-- Introduce una propiedad diseñada para contar las operaciones pop y nombrarla de una manera que  
-garantice que esté oculta.  
-- Inicializala a cero dentro del constructor.  
-- Proporciona un método que devuelva el valor asignado actualmente al contador (nómbralo  
-```get_counter()```).  
+Invocar al constructor con un argumento desde fuera de este conjunto debería generar la excepción  
+*WeekDayError* (defínela tu mismo; no te preocupes, pronto hablaremos sobre la naturaleza objetiva de las  
+excepciones). La clase debe proporcionar las siguientes facilidades:  
+- Los objetos de la clase deben ser "imprimibles", es decir, deben poder convertirse implícitamente en  
+cadenas de la misma forma que los argumentos del constructor.  
+- La clase debe estar equipada con métodos de un parámetro llamados ```add_days(n)``` y  
+```substract_days(n)```, siendo **n** un número entero que actualiza el día de la semana almacenado dentro  
+del objeto mediante el número de días indicado, hacia adelante o hacia atrás.  
+- Todas las propiedades del objeto deben ser privadas.  
 
-Completa el código en el editor. Ejecútalo para comprobar si tu código da como salida 100.  
-
+Completa la plantilla que te proporcionamos en el editor, ejecuta su código y verifica si tu salida se ve igual que  
+la nuesta.  
 ```
-class Stack:
-    def __init__(self):
-        self.__stk = []
-
-    def push(self, val):
-        self.__stk.append(val)
-
-    def pop(self):
-        val = self.__stk[-1]
-        del self.__stk[-1]
-        return val
-
-
-class CountingStack(Stack):
-    def __init__(self):
-    #
-    # Llena el constructor con acciones apropiadas.
-    #
-
-    def get_counter(self):
-    #
-    # Presenta el valor actual del contador al mundo.
-    #
-
-    def pop(self):
-    #
-    # Haz un pop y actualiza el contador.
-    #
+class WeekDayError(Exception):
+    pass
 	
 
-stk = CountingStack()
-for i in range(100):
-    stk.push(i)
-    stk.pop()
-print(stk.get_counter())
+class Weeker:
+    #
+    # Escribir código aquí.
+    #
+
+    def __init__(self, day):
+        #
+        # Escribir código aquí.
+        #
+
+    def __str__(self):
+        #
+        # Escribir código aquí.
+        #
+
+    def add_days(self, n):
+        #
+        # Escribir código aquí.
+        #
+
+    def subtract_days(self, n):
+        #
+        # Escribir código aquí.
+        #
+
+
+try:
+    weekday = Weeker('Lun')
+    print(weekday)
+    weekday.add_days(15)
+    print(weekday)
+    weekday.subtract_days(23)
+    print(weekday)
+    weekday = Weeker('Lun')
+except WeekDayError:
+    print("Lo siento, no puedo atender tu solicitud.")
+```  
+
+<br></br>  
+
+
+## **Salida Esperada**
 ```
+Lun
+Mar
+Dom
+Lo siento, no puedo atender tu solicitud.
+```
+
 
 <br></br>
 
 #  
 
-[Volver a: Seccion 2 - Un corto viaje desde el enfoque procedimental hacia el orientado a objetos.](_Seccion2.md)   
+[Volver a: Seccion 4 - PPO: Métodos](_Seccion4.md)   
 
 # 
 
