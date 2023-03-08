@@ -1,38 +1,17 @@
 # **EJERCICIOS SECCION 6**  
-<br></br>  
-
-## **Escenario**  
-El siguiente fragmento de código se ha ejecutado con éxito:  
-```
-class Dog:
-    kennel = 0
-    def __init__(self, breed):
-        self.breed = breed
-        Dog.kennel += 1
-    def __str__(self):
-        return self.breed + " dice: ¡Guau!"
-
-
-class SheepDog(Dog):
-    def __str__(self):
-        return super().__str__() + " ¡No huyas, corderito!"
-
-
-class GuardDog(Dog):
-    def __str__(self):
-        return super().__str__() + " ¡Quédese donde está, intruso!"
-
-
-rocky = SheepDog("Collie")
-luna = GuardDog("Dobermann")
-```  
-Ahora responde las preguntas de los ejercicios 1-4.  
+<br></br>   
 
 ## **Ejercicio 1**  
 Cuál es el resultado esperado del siguiente código?
 ```
-print(rocky)
-print(luna)
+import math
+
+try:
+    print(math.sqrt(9))
+except ValueError:
+    print("inf")
+else:
+    print("ok")
 ```
 
 <br></br>  
@@ -40,8 +19,16 @@ print(luna)
 ## **Ejercicio 2**  
 Cuál es el resultado esperado del siguiente código?
 ```
-print(issubclass(SheepDog, Dog), issubclass(SheepDog, GuardDog))
-print(isinstance(rocky, GuardDog), isinstance(luna, GuardDog))
+import math
+
+try:
+    print(math.sqrt(-9))
+except ValueError:
+    print("inf")
+else:
+    print("ok")
+finally:
+    print("fin")
 ```
 
 <br></br> 
@@ -49,17 +36,21 @@ print(isinstance(rocky, GuardDog), isinstance(luna, GuardDog))
 ## **Ejercicio 3**  
 Cuál es el resultado esperado del siguiente código?
 ```
-print(luna is luna, rocky is luna)
-print(rocky.kennel)
+import math
+
+class NewValueError(ValueError):
+    def __init__(self, name, color, state):
+        self.data = (name, color, state)
+
+try:
+    raise NewValueError("Advertencia enemiga", "Alerta roja", "Alta disponibilidad")
+except NewValueError as nve:
+    for arg in nve.args:
+        print(arg, end='! ')
 ```
 
 <br></br>  
 
-## **Ejercicio 4**  
-Define una subclase de ```SheepDog``` llamada ```LowlandDog```, y equipala con un método ```__str__()``` que anule un método heredado del  
-mismo nombre. El nuevo método ```__str__()``` debe retornar la cadena "¡Guau! ¡No me gustan las montañas!".
-
-<br></br>  
 #  
 <br></br>
 
