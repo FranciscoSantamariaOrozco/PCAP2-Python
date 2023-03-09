@@ -33,6 +33,7 @@ except:
 - [Soluciones](Sec6-ejsol.md)
 <br></br>  
 
+
 #  
 [Volver a: Seccion 6 - Errores: el pan diario del programador](_seccion6.md)  
 
