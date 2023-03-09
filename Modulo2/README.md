@@ -51,7 +51,7 @@ En este módulo, aprenderás sobre:
 
 8. [Seccion 8 - Excepciones útiles](./Seccion8/_Seccion8.md)  
     - [Ejercicios](./Seccion8/Sec8-ej.md)
-    - [Laboratorio](./Seccion8/Sec8-lab1.md)
+    - [Laboratorio](./Seccion8/Sec8-Lab1.md)
 
 <br></br>
 

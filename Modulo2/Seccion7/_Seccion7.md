@@ -8,7 +8,9 @@ concretas (solo se representan a sí mismas). Podemos decir que **cuanto más ce
 
 Observa la figura:  
 
-![exceptionstree](img/exceptionstree.jpg)  
+<p align="center">
+<img src="img/exceptionstree.jpg">
+</p>  
 
 Muestra una pequeña sección del árbol completo de excepciones. Comencemos examinando el árbol desde la hoja  
 *ZeroDivisionError*.  
@@ -21,7 +23,9 @@ Nota:
 
 Podemos describirlo de la siguiente manera (observa la dirección de las flechas; siempre apuntan a la entidad más general):  
 
-![exceptionsjerarchy](img/exceptionsjerarchy.jpg)  
+<p align="center">
+<img src="img/exceptionsjerarchy.jpg">
+</p>  
 
 Te mostraremos el funcionamiento de esta generalización. Comencemos con un código realmente simple.  
 

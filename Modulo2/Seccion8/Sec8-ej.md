@@ -1,4 +1,5 @@
 # **EJERCICIOS SECCION 8**  
+
 <br></br>  
 
 ## **Ejercicio 1**  
@@ -27,6 +28,6 @@ huge_value = 1E250 ** 2
 <br></br>
 #  
 
-[Volver a: Seccion 8 - ](_Seccion8.md)  
+[Volver a: Seccion 8 - Excepciones útiles](_Seccion8.md)  
 
 [Volver a: Módulo 2 - Excepciones, Cadenas y Métodos de Listas](../README.md)

@@ -32,6 +32,6 @@ OverflowError
 <br></br>
 #  
 
-[Volver a: Seccion 8 - ](_Seccion8.md)  
+[Volver a: Seccion 8 - Excepciones útiles](_Seccion8.md)  
 
 [Volver a: Módulo 2 - Excepciones, Cadenas y Métodos de Listas](../README.md)
