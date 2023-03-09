@@ -264,13 +264,6 @@ fuerza a operar con un número entero que consta de una gran cantidad de dígito
 
 <br></br>  
 
-
-#  
-[Ejercicios](Sec5-ej.md)
-<br></br>
-
-[Soluciones](Sec5-ejsol.md)  
-
 #
 
 [Volver a: Módulo 2 - Cadenas, métodos de listas y excepciones](../README.md)
