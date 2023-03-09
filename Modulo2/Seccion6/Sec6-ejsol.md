@@ -13,4 +13,16 @@ Hemos terminado
 Cuál es el resultado esperado del siguiente código?
 ```
 cero
-```
+```  
+
+#  
+<br></br>
+
+- [Ejercicios](Sec6-ej.md)
+<br></br>  
+
+#  
+
+[Volver a: Seccion 6 - Errores: el pan diario del programador](_Seccion6.md)  
+
+[Volver a: Módulo 2 - Cadenas, métodos de listas y excepciones](../README.md)

@@ -26,3 +26,15 @@ except IndexingError:
 except:
     print("algo")
 ```
+
+#  
+<br></br>
+
+- [Soluciones](Sec6-ejsol.md)
+<br></br>  
+
+#  
+
+[Volver a: Seccion 6 - Errores: el pan diario del programador](_Seccion6.md)  
+
+[Volver a: Módulo 2 - Cadenas, métodos de listas y excepciones](../README.md)

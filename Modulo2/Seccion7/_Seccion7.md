@@ -1,5 +1,4 @@
 ## **Excepciones**  
-
 Python 3 define **63 excepciones integradas**, y todas ellas forman una **jerarquía en forma de árbol**, aunque el árbol es un poco  
 extraño ya que su raíz se encuentra en la parte superior.  
 
@@ -26,9 +25,10 @@ Podemos describirlo de la siguiente manera (observa la dirección de las flechas
 
 Te mostraremos el funcionamiento de esta generalización. Comencemos con un código realmente simple.  
 
+<br></br>
+
 
 ## **Excepciones: continuación**  
-
 Observa el código en el editor. Es un ejemplo simple para comenzar. Ejecútalo.  
 ```
 try:
@@ -71,9 +71,10 @@ Vamos a resumir:
 - La coincidencia correspondiente no tiene que especificar exactamente la misma excepción, es suficiente  
 que la excepción sea **más general** (más abstracta) que la generada.  
 
+<br></br>
+
 
 ## **Excepciones: continuación**  
-
 Observa el código en el editor. Qué pasará aquí?  
 ```
 try:
@@ -126,9 +127,10 @@ Recuerda:
 - Además, hará que el código sea desordenado e inconsistente.  
 - Python no generará ningún mensaje de error con respecto a este problema.  
 
+<br></br>
+
 
 ## **Excepciones: continuación**  
-
 Si deseas **manejar dos o más excepciones** de la misma manera, puedes usar la siguiente sintaxis:  
 ```
 try:
@@ -187,9 +189,10 @@ Si no existe tal cláusula, la excepción no se controla y Python resuelve el pr
 
 Ahora vamos a suspender esta discusión, ya que queremos presentarte una nueva instrucción de Python.  
 
+<br></br>
+
 
 ## **Excepciones: continuación**  
-
 La instrucción ```raise``` genera la excepción especificada denominada ```exc``` como si fuese generada de manera  
 natural:
 ```raise exc```  
@@ -221,9 +224,10 @@ La salida del programa permanece sin cambios.
 De esta manera, puedes **probar tu rutina de manejo de excepciones** sin forzar al código a hacer cosas  
 incorrectas.  
 
+<br></br>
+
 
 ## **Excepciones: continuación**  
-
 La instrucción ```raise``` también se puede utilizar de la siguiente manera (toma en cuenta la ausencia del nombre  
 de la excepción):  
 ```
@@ -268,9 +272,10 @@ En efecto, la salida del código es:
 FIN.
 ```  
 
+<br></br>
+
 
 ## **Excepciones: continuación**  
-
 Ahora es un buen momento para mostrarte otra instrucción de Python, llamada ```assert``` (afirmar). Esta es una  
 palabra clave reservada.  
 ```
@@ -318,6 +323,8 @@ Traceback (most recent call last):
 AssertionError
 ```  
 
+<br></br>
+
 
 ## **Puntos Clave**  
 
@@ -340,6 +347,7 @@ except:
 # De vuelta a la normalidad.
 :
 ```  
+<br></br>
 
 2. Todas las excepciones de Python predefinidas forman una jerarquía, es decir, algunas de ellas son más generales (la llamada  
 ```BaseException``` es la más general)  mientras que otras son más o menos concretas (por ejemplo, ```IndexError``` es más concreta  
@@ -363,10 +371,25 @@ except LookupError:
 except IndexError:
     # Nunca llegarás aquí. 
 ```  
+<br></br>
 
 3. La sentencia de Python ```raise ExceptionName``` puede generar una excepción bajo demanda. La misma sentencia pero sin  
 *ExceptionName*, se puede usar **solamente** dentro del bloque ```try```, y genera la misma excepción que se está manejando  
 actualmente.  
+<br></br>
 
 4. La sentencia de Python ```assert expression``` evalúa la *expresión* y genera la excepción ```AssertError``` cuando la *expresión* es  
-igual a cero, una cadena vacía o ```None```. Puedes usarla para proteger algunas partes críticas de tu código de datos devastadores.
+igual a cero, una cadena vacía o ```None```. Puedes usarla para proteger algunas partes críticas de tu código de datos devastadores.  
+
+<br></br>  
+
+
+#  
+[Ejercicios](Sec7-ej.md)
+<br></br>
+
+[Soluciones](Sec7-ejsol.md)  
+
+#
+
+[Volver a: Módulo 2 - Cadenas, métodos de listas y excepciones](../README.md)

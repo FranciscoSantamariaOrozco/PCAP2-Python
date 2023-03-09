@@ -160,4 +160,17 @@ el alfabeto latino y algunos de sus derivados) y **UNICODE** (capaz de codificar
 2. Un número correspondiente a un carácter en particular se llama **punto de código**.  
 
 3. UNICODE utiliza diferentes formas de codificación cuando se trata de almacenar los caracteres usando archivos o memoria de  
-computadora: dos de ellas son **UCS-4** y **UTF-8** (esta última es la más común ya que desperdicia menos espacio de memoria). 
+computadora: dos de ellas son **UCS-4** y **UTF-8** (esta última es la más común ya que desperdicia menos espacio de memoria).  
+
+<br></br>  
+
+
+#  
+[Ejercicios](Sec1-ej.md)
+<br></br>
+
+[Soluciones](Sec1-ejsol.md)  
+
+#
+
+[Volver a: Módulo 2 - Cadenas, métodos de listas y excepciones](../README.md)

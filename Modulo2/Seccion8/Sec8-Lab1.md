@@ -53,4 +53,12 @@ Ingresa un número entre -10 a 10: asd
 Error: entrada incorrecta
 Ingresa un número entre -10 a 10: 1
 El número es: 1
-```
+```  
+
+<br></br>  
+
+#  
+
+[Volver a: Seccion 8 - Excepciones útiles](_Seccion8.md)  
+
+[Volver a: Módulo 2 - Cadenas, métodos de listas y excepciones](../README.md)

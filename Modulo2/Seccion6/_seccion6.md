@@ -1,5 +1,4 @@
 ## **Errores, fallas y otras plagas**  
-
 **Cualquier cosa que pueda salir mal, saldrá mal.**  
 
 Esta es la ley de Murphy, y funciona en todo y siempre. Si la ejecución del código puede  
@@ -52,9 +51,10 @@ ValueError: math domain error
 Puedes protegerte de tales sorpresas? Por supuesto. Además, tienes que hacerlo para ser considerado un  
 buen programador.  
 
+<br></br>
+
 
 ## **Excepciones**  
-
 Cada vez que tu código intenta hacer algo erróneo, irresponsable o inaplicable, Python hace dos cosas:  
 
 - **Detiene tu programa**.
@@ -82,9 +82,10 @@ ValueError: math domain error
 
 La palabra "ValueError" es el **nombre de la excepción**. Vamos a familiarizarnos con algunas otras excepciones.  
 
+<br></br>
+
 
 ## **Excepciones: continuación**  
-
 Observa el código en el editor. Ejecuta el (obviamente incorrecto) programa.
 ```
 Evalue = 1
@@ -101,9 +102,10 @@ ZeroDivisionError: division by zero
 
 Este error es llamado ***ZeroDivisionError***.  
 
+<br></br>
+
 
 ## **Excepciones: continuación**  
-
 Observa el código en el editor. Qué pasará cuando lo ejecutes? revísalo.
 ```
 my_list = []
@@ -120,9 +122,10 @@ IndexError: list index out of range
 
 Este es el *IndexError* (error de índice).  
 
+<br></br>
+
 
 ## **Excepciones: continuación**  
-
 Cómo se **manejan** las excepciones? La palabra ```try``` es clave para la solución.  
 
 Además, también es una palabra clave reservada.  
@@ -152,9 +155,10 @@ la programación. Todas estas revisiones pueden hacer **al código demasiado gra
 
 Python prefiere un enfoque completamente diferente.  
 
+<br></br>
+
 
 ## **Excepciones: continuación**  
-
 Observa el código en el editor. Este es el enfoque favorito de Python.  
 ```
 first_number = int(input("Ingresa el primer numero: "))
@@ -202,9 +206,10 @@ completa.
 y entra en la primera instrucción ubicada después de la palabra clave reservada ```except:```, esto significa  
 que algunas de las instrucciones del bloque pueden ser silenciosamente omitidas.  
 
+<br></br>
+
 
 ## **Excepciones: continuación**  
-
 Observa el código en el editor. Te ayudará a comprender este mecanismo.
 ```
 try:
@@ -226,9 +231,10 @@ Oh cielos, algo salió mal...
 
 Nota: la instrucción ```print("2")```, se perdió en el proceso.  
 
+<br></br>
+
 
 ## **Excepciones: continuación**  
-
 Este enfoque tiene una desventaja importante: si existe la posibilidad de que más de una excepción se salte a  
 un apartado ```except:```, puedes tener **problemas para descubrir lo que realmente sucedió**.  
 
@@ -276,9 +282,10 @@ el bloque ```except exc2:```.
 
 Pasemos a la siguiente parte del curso y veámoslo en acción.  
 
+<br></br>
+
 
 ## **Excepciones: continuación**  
-
 Observa el código en el editor. Nuestra solución esta ahí.  
 ```
 try:
@@ -322,9 +329,10 @@ Oh cielos, algo salió mal...
 FIN.
 ```  
 
+<br></br>
+
 
 ## **Excepciones: continuación**  
-
 No olvides que:  
 
 - Los bloques ```except``` son analizados en el mismo orden en que aparecen en el código.
@@ -363,9 +371,10 @@ FIN.
 
 Inténtalo tu mismo. Ejecuta el programa.  
 
+<br></br>
+
 
 ## **Excepciones: continuación**  
-
 Echemos a perder el código una vez más. 
 
 Observa el programa en el editor. Esta vez, hemos eliminado el bloque sin nombre.  
@@ -394,9 +403,10 @@ ZeroDivisionError: division by zero
 Has aprendido mucho sobre el manejo de excepciones en Python. En la siguiente sección, nos centraremos en  
 las excepciones integradas de Python y sus jerarquías.  
 
+<br></br>
+
 
 ## **Puntos Clave**  
-
 1. Una excepción es un evento durante la ejecución del programa causado por una situación anormal. La excepción debe manejarse  
 para evitar la terminación del programa. La parte del código que se sospecha que es la fuente de la excepción debe colocarse dentro  
 del bloque ```try```.  
@@ -418,6 +428,7 @@ except:
 # De vuelta a la normalidad.
 :
 ```  
+<br></br>
 
 2. Si necesitas manejar más de una excepción proveniente del mismo bloque ```try```, puedes agregar más de un bloque ```except```,  
 pero debes etiquetarlos con diferentes nombres, así:  
@@ -440,6 +451,7 @@ except Except_2:
 
 En el mejor caso, se ejecuta uno de los bloques ```except```; ninguno de los bloques se ejecuta cuando la excepción generada no  
 coincide con ninguna de las excepciones especificadas.  
+<br></br>
 
 3. No se puede agregar más de un bloque de ```excepción sin nombre``` después de los bloques con nombre.  
 ```
@@ -459,4 +471,18 @@ except:
 :
 # De vuelta a la normalidad.
 :
-```
+```  
+
+
+<br></br>  
+
+
+#  
+[Ejercicios](Sec6-ej.md)
+<br></br>
+
+[Soluciones](Sec6-ejsol.md)  
+
+#
+
+[Volver a: Módulo 2 - Cadenas, métodos de listas y excepciones](../README.md)

@@ -52,4 +52,12 @@ Utiliza la plantilla en el editor. Prueba tu código con cuidado.
 []
 ['abc']
 []
-```
+```  
+
+<br></br>  
+
+#  
+
+[Volver a: Seccion 3 - Métodos de cadenas](_Seccion3.md)  
+
+[Volver a: Módulo 2 - Cadenas, métodos de listas y excepciones](../README.md)
