@@ -45,12 +45,12 @@ En este módulo, aprenderás sobre:
     - [Laboratorio 4](Seccion4/Sec4-Lab4.md)
 <br></br>
 
-5. [Seccion 5 - Fundamentos de POO: Herencia](./Seccion4/_Seccion4.md)  
-    - [Ejercicios](Seccion4/Sec4-ej.md)
+5. [Seccion 5 - Fundamentos de POO: Herencia](./Seccion5/_Seccion5.md)  
+    - [Ejercicios](Seccion5/Sec5-ej.md)
 <br></br>
 
-6. [Seccion 6 - Excepciones una vez más](./Seccion4/_Seccion4.md)  
-    - [Ejercicios](Seccion4/Sec4-ej.md)
+6. [Seccion 6 - Excepciones una vez más](./Seccion6/_Seccion6.md)  
+    - [Ejercicios](Seccion6/Sec6-ej.md)
 <br></br>
 
 #   

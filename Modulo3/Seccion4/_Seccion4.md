@@ -479,9 +479,9 @@ Mi nombre es Sample y vivo en \__main__
 
 <br></br>
 #  
-[Ejercicios](/Modulo3/Seccion3/Sec3-ej.md)
+[Ejercicios](/Modulo3/Seccion4/Sec4-ej.md)
 <br></br>
-[Soluciones](/Modulo3/Seccion3/Sec3-ejsol.md)  
+[Soluciones](/Modulo3/Seccion4/Sec4-ejsol.md)  
 
 #
 
