@@ -1,11 +1,17 @@
 # **SOLUCIONES EJERCICIOS SECCION 7**  
 
+<br></br>
+
+
 ## **Ejercicio 1**  
 
 Cuál es el resultado esperado del siguiente código?
 ```
 cero
 ```  
+
+<br></br>
+
 
 ## **Ejercicio 2**  
 
@@ -14,12 +20,16 @@ Cuál es el resultado esperado del siguiente código?
 arit
 ```
 
+<br></br>
+
+
 ## **Ejercicio 3**  
 
 Cuál es el resultado esperado del siguiente código?
 ```
 algo
 ```
+
 
 #  
 <br></br>

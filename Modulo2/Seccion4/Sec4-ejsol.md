@@ -1,14 +1,23 @@
 # **SOLUCIONES EJERCICIOS SECCION 4**  
 
+<br></br>
+
+
 ## **Ejercicio 1**  
 
 1, 3 y 4.
+
+<br></br>
+
 
 ## **Ejercicio 2**  
 
 ```
 de
 ```
+
+<br></br>
+
 
 ## **Ejercicio 3**  
 

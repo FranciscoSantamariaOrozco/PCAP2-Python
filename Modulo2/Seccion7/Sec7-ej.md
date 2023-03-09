@@ -1,5 +1,8 @@
 # **EJERCICIOS SECCION 7**  
 
+<br></br>
+
+
 ## **Ejercicio 1**  
 
 Cuál es el resultado esperado del siguiente código?
@@ -14,6 +17,9 @@ except:
     print("algo")
 ```  
 
+<br></br>
+
+
 ## **Ejercicio 2**  
 
 Cuál es el resultado esperado del siguiente código?
@@ -27,6 +33,9 @@ except ZeroDivisionError:
 except:
     print("algo")
 ```
+
+<br></br>
+
 
 ## **Ejercicio 3**  
 
@@ -44,6 +53,8 @@ except ZeroDivisionError:
 except:
     print("algo")
 ```
+
+
 
 #  
 <br></br>

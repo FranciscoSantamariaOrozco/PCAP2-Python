@@ -1,5 +1,8 @@
 # **EJERCICIOS SECCION 6**  
 
+<br></br>
+
+
 ## **Ejercicio 1**  
 
 Cuál es el resultado esperado del siguiente código?
@@ -12,6 +15,9 @@ except:
     print("Hemos fallado")
 print("Hemos terminado")
 ```  
+
+<br></br>
+
 
 ## **Ejercicio 2**  
 

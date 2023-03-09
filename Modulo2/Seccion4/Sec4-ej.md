@@ -1,5 +1,7 @@
 # **EJERCICIOS SECCION 4**  
 
+<br></br>
+
 ## **Ejercicio 1**  
 
 Cuál de las siguientes líneas describe una condición **verdadera**?
@@ -11,6 +13,9 @@ Cuál de las siguientes líneas describe una condición **verdadera**?
  |
 4|    '11' < '8'
 
+<br></br>
+
+
 ## **Ejercicio 2**  
 
 Cuál es el resultado esperado del siguiente código?
@@ -20,6 +25,9 @@ s2 = s1.split()
 s3 = sorted(s2)
 print(s3[1])
 ```
+
+<br></br>
+
 
 ## **Ejercicio 3**  
 

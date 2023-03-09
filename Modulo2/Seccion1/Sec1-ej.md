@@ -1,8 +1,13 @@
 # **EJERCICIOS SECCION 1**  
 
+<br></br>
+
+
 ## **Ejercicio 1**  
 
 Qué es BOM?  
+
+<br></br>
 
 ## **Ejercicio 2**  
 

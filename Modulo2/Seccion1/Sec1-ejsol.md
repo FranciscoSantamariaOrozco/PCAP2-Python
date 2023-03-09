@@ -1,9 +1,15 @@
 # **SOLUCIONES EJERCICIOS SECCION 1**  
 
+<br></br>
+
+
 ## **Ejercicio 1**  
 
 **BOM** (Byte Order Mark), Una Marca de Orden de Bytes es una combinación especial de bits que anuncia la codificación utilizada por el  
 contenido de un archivo (por ejemplo, UCS-4 o UTF-B).
+
+<br></br>
+
 
 ## **Ejercicio 2**  
 

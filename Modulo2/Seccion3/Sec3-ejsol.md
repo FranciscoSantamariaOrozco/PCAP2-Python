@@ -1,9 +1,14 @@
 # **SOLUCIONES EJERCICIOS SECCION 3**  
 
+<br></br>
+
+
 ## **Ejercicio 1**  
 ```
 ABC123xyz
 ```  
+
+<br></br>
 
 
 ## **Ejercicio 2**  
@@ -11,10 +16,16 @@ ABC123xyz
 de
 ```
 
+<br></br>
+
+
 ## **Ejercicio 3**  
 ```
 ¿Dónde*están*las*nevadas?
 ```
+
+<br></br>
+
 
 ## **Ejercicio 4**  
 ```

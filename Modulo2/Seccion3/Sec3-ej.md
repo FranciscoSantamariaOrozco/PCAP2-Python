@@ -1,5 +1,8 @@
 # **EJERCICIOS SECCION 3**  
 
+<br></br>
+
+
 ## **Ejercicio 1**  
 
 Cuál es el resultado esperado del siguiente código?
@@ -13,6 +16,9 @@ for ch in "abc123XYX":
         print(ch, end='')
 ```  
 
+<br></br>
+
+
 
 ## **Ejercicio 2**  
 
@@ -23,6 +29,9 @@ s2 = s1.split()
 print(s2[-2])
 ```
 
+<br></br>
+
+
 ## **Ejercicio 3**  
 
 Cuál es el resultado esperado del siguiente código?
@@ -31,6 +40,9 @@ the_list = ['¿Dónde', 'están', 'las', 'nevadas?']
 s = '*'.join(the_list)
 print(s)
 ```
+
+<br></br>
+
 
 ## **Ejercicio 4**  
 

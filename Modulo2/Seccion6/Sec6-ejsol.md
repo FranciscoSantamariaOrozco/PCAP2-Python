@@ -1,4 +1,7 @@
-# **EJERCICIOS SECCION 6**  
+# **SOLUCIONES EJERCICIOS SECCION 6**  
+
+<br></br>
+
 
 ## **Ejercicio 1**  
 
@@ -7,6 +10,9 @@ Tratemos de hacer esto
 Hemos fallado
 Hemos terminado
 ```  
+
+<br></br>
+
 
 ## **Ejercicio 2**  
 

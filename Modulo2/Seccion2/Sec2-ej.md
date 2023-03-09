@@ -1,5 +1,8 @@
 # **EJERCICIOS SECCION 2**  
 
+<br></br>
+
+
 ## **Ejercicio 1**  
 
 Cuál es la longitud de la siguiente cadena asumiendo que no hay espacios en blanco entre las comillas?  
@@ -7,6 +10,9 @@ Cuál es la longitud de la siguiente cadena asumiendo que no hay espacios en bla
 """
 """
 ```
+
+<br></br>
+
 
 ## **Ejercicio 2**  
 
@@ -16,6 +22,9 @@ s = 'yesteryears'
 the_list = list(s)
 print(the_list[3:6])
 ```
+
+<br></br>
+
 
 ## **Ejercicio 3**  
 
