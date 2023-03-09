@@ -26,18 +26,18 @@ En este módulo, aprenderás sobre:
     - [Ejercicios](Seccion1/Sec1-ej.md)
 <br></br>
 
-1. [Seccion 2 - Un corto viaje desde el enfoque procedimental hacia el orientado a objetos](./Seccion2/_Seccion2.md)
+2. [Seccion 2 - Un corto viaje desde el enfoque procedimental hacia el orientado a objetos](./Seccion2/_Seccion2.md)
     - [Ejercicios](Seccion2/Sec2-ej.md)
     - [Laboratorio 1](Seccion2/Sec2-Lab1.md)
     - [Laboratorio 2](Seccion2/Sec2-Lab2.md)
     - [Laboratorio 3](Seccion2/Sec2-Lab3.md)
 <br></br>
 
-1. [Seccion 3 - PPO: Propiedades](./Seccion3/_Seccion3.md)
+3. [Seccion 3 - PPO: Propiedades](./Seccion3/_Seccion3.md)
     - [Ejercicios](Seccion3/Sec3-ej.md)
 <br></br>
 
-1. [Seccion 4 - PPO: Métodos](./Seccion4/_Seccion4.md)  
+4. [Seccion 4 - PPO: Métodos](./Seccion4/_Seccion4.md)  
     - [Ejercicios](Seccion4/Sec4-ej.md)
     - [Laboratorio 1](Seccion4/Sec4-Lab1.md)
     - [Laboratorio 2](Seccion4/Sec4-Lab2.md)
@@ -45,11 +45,11 @@ En este módulo, aprenderás sobre:
     - [Laboratorio 4](Seccion4/Sec4-Lab4.md)
 <br></br>
 
-1. [Seccion 5 - Fundamentos de POO: Herencia](./Seccion4/_Seccion4.md)  
+5. [Seccion 5 - Fundamentos de POO: Herencia](./Seccion4/_Seccion4.md)  
     - [Ejercicios](Seccion4/Sec4-ej.md)
 <br></br>
 
-1. [Seccion 6 - Excepciones una vez más](./Seccion4/_Seccion4.md)  
+6. [Seccion 6 - Excepciones una vez más](./Seccion4/_Seccion4.md)  
     - [Ejercicios](Seccion4/Sec4-ej.md)
 <br></br>
 

@@ -30,7 +30,7 @@ En este módulo, aprenderás sobre:
 
 3. [Seccion 3 - Métodos de cadenas](./Seccion3/_Seccion3.md)
     - [Ejercicios](./Seccion3/Sec3-ej.md)
-    - [Laboratorio](./seccion3/Sec3-Lab1.md)
+    - [Laboratorio](./Seccion3/Sec3-Lab1.md)
 <br></br>
 
 4. [Seccion 4 - Cadenas en accion](./Seccion4/_Seccion4.md)
