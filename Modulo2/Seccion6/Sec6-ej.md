@@ -34,7 +34,6 @@ except:
 <br></br>  
 
 #  
-
 [Volver a: Seccion 6 - Errores: el pan diario del programador](_seccion6.md)  
 
 [Volver a: Módulo 2 - Cadenas, métodos de listas y excepciones](../README.md)
