@@ -1,4 +1,4 @@
-# **SOLUCIONES EJERCICIOS SECCION 1**  
+# **EJERCICIOS SECCION 4**  
 <br></br>  
 
 ## **Ejercicio 1**  
@@ -23,11 +23,6 @@ class Vowels:
 vowels = Vowels()
 for v in vowels:
     print(v, end=' ')
-```  
-
-El resultado esperado es:  
-```
-a e i o u y
 ```
 
 <br></br>  
@@ -40,10 +35,6 @@ Escribe una función **lambda**, estableciendo a 1 su argumento entero, y aplíc
 any_list = [1, 2, 3, 4]
 even_list = # Completar las líneas aquí.
 print(even_list)
-```
-
-```python
-list(map(lambda n: n | 1, any_list))
 ```
 
 <br></br>  
@@ -60,11 +51,6 @@ def replace_spaces(replacement='*'):
 
 stars = replace_spaces()
 print(stars("And Now for Something Completely Different"))
-```  
-
-El resultado esperado es:  
-```python
-And*Now*for*Something*Completely*Different
 ```
 
 <br></br>  
@@ -72,7 +58,7 @@ And*Now*for*Something*Completely*Different
 #  
 <br></br>
 
-- [Ejercicios](Sec1-ej.md)
+- [Soluciones](Sec1-ejsol.md)
 <br></br>
 #  
 

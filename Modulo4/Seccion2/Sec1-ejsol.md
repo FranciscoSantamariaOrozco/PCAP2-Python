@@ -1,4 +1,4 @@
-# **SOLUCIONES EJERCICIOS SECCION 1**  
+# **SOLUCIONES EJERCICIOS SECCION 4**  
 <br></br>  
 
 ## **Ejercicio 1**  

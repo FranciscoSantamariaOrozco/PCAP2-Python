@@ -10,9 +10,9 @@
 
 [Módulo 2 - Excepciones, Cadenas y Métodos de Listas](./Modulo2/README.md)  
 
-[Módulo 3 - Programación Orientada a Objetos y Procesamiento de Archivos en Python](./modulo3/README.md)  
+[Módulo 3 - Programación Orientada a Objetos y Procesamiento de Archivos en Python](./Modulo3/README.md)  
 
-[Módulo 4 - Misceláneo](./modulo4/README.md)  
+[Módulo 4 - Misceláneo](./Modulo4/README.md)  
 
 ###
 

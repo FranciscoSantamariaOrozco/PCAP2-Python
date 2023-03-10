@@ -1,15 +1,3 @@
-
-<br></br>
-
-#  
-[Ejercicios](/Modulo4/Seccion1/Sec1-ej.md)
-<br></br>
-
-[Soluciones](/Modulo3/Seccion1/Sec1-ejsol.md)  
-
-#
-
-[Volver a: Módulo 4 - Miscelaneo](../README.md)
 # **Generadores y cierres**  
 
 <br></br>  
@@ -606,4 +594,423 @@ Donde está el beneficio?
 
 
 ## **Cómo usar lambdas y para qué?**  
-La parte
+La parte más ionteresante de usar lambdas aparece cuando puedes usarlas en su forma pura: **como partes**  
+**anónimas de código destinadas a evaluar un resultado**.  
+
+Imagina que necesitamos una función (la nombraremos ```print_function```) que imprime los valores de una  
+(otra)función dada para un conjunto de argumentos seleccionados.  
+
+Queremos que ```print_function``` sea universal, debería aceptar un conjunto de argumentos incluidos en una  
+lista y una función a ser evaluada, ambos como argumentos; no queremos codificar nada.  
+
+Mira el ejemplo en el editor. Así es como hemos implementado la idea.  
+```python
+def print_function(args, fun):
+    for x in args:
+        print('f(', x,')=', fun(x), sep='')
+
+
+def poly(x):
+    return 2 * x**2 - 4 * x + 2
+
+
+print_function([x for x in range(-2, 3)], poly)
+```
+<br></br>
+
+Analicémoslo, La función ```print_function()``` toma dos parámetros:  
+- El primero, una lista de argumentos para los que queremos imprimir los resultados.  
+- El segundo, una función que debe invocarse tantas veces como el número de valores que se recopilan  
+dentro del primer parámetro.  
+
+Nota: También hemos definido una función llamada ```poly()```, esta es la función cuyos valores vamos a  
+imprimir. El cálculo que realiza la función no es muy sofisticado: es el polinomio (de ahí su nombre) de la forma:  
+
+### f(x) = 2x<sup>2</sup> - 4x + 2  
+
+El nombre de la función se pasa a ```print_function()``` junto con un conjunto de cinco argumentos  
+diferentes: el conjunto está copnstruido con una cláusula de compresión de la lista.  
+
+El código imprime las siguientes líneas:  
+```
+f(-2)=18
+f(-1)=8
+f(0)=2
+f(1)=0
+f(2)=2
+```  
+Podemos evitar definir la función ```poly()```, ya que no la vamos a usar más de una vez? Sí, podemos: este es el  
+beneficio que puede aportar una función lambda.  
+<br></br>
+
+Mira el ejemplo de abajo. Puedes ver la diferencia?  
+```python
+def print_function(args, fun):
+    for x in args:
+        print('f(', x,')=', fun(x), sep='')
+
+print_function([x for x in range(-2, 3)], lambda x: 2 * x**2 - 4 * x + 2)
+```  
+
+La función ```print_function()``` se ha mantenido exactamente igual, pero no hay una función ```poly()```. Ya  
+no la necesitamos, ya que el polinomio ahora está directamente dentro de la invocación de la función  
+```print_function()``` en forma de una lambda definida de la siguiente manera:  
+```python
+lambda x: 2 * x**2 - 4 * x + 2
+```  
+
+El código se ha vuelto mas corto, más claro y más legible.  
+
+Permítenos mostrarte otro lugar donde las lambdas pueden ser útiles. Comenzaremos con una descripción de  
+```map()```, una función integrada de Python. Su nombre no es demasiado descriptivo, su idea es simple y la  
+función en sí es muy utilizable.  
+
+<br></br>  
+
+
+## **Lambdas y la función *map()***  
+En el más simple de todos los casos posibles, la función ```map()```:  
+```python
+map(function, list)  
+```  
+
+Toma dos argumentos:  
+- Una función.  
+- Una lista.  
+
+La descripción anterior está extremadamente simplificada, ya que:  
+- El segundo argumento ```map()``` puede ser cualquier entidad que se pueda iterar (por ejemplo, una tupla o  
+un generador).  
+- ```map()``` puede aceptar más de dos argumentos.  
+
+La función ```map()``` **aplica la función pasada por su primer argumento a todos los elementos de su**  
+**segundo argumento y devuelve un iterador que entrega todos los resultados de funciones**  
+**subsecuentes**.  
+
+Puedes usar el iterador resultante en un bucle o convertirlo en una lista usando la función ```list()```.  
+
+Puedes ver un papel para una lambda aquí?  
+
+Observa el código en el editor: hemos usado dos lambdas en él.  
+```python
+list_1 = [x for x in range(5)]
+list_2 = list(map(lambda x: 2 ** x, list_1))
+print(list_2)
+
+for x in map(lambda x: x * x, list_2):
+    print(x, end=' ')
+print()
+
+```
+
+Esta es la explicación:  
+- Se construye ```list_1``` con valores del ```0``` al ```4```.  
+
+- Después, se utiliza ```map()``` junto con la primer ```lambda``` para crear una nueva lista en la que todos los  
+elementos han sido evaluados como ```2``` elevado a la potencia tomada del elemento correspondiente de  
+```list_1```.  
+
+- ```list_2``` se suprime.  
+
+- En el siguiente paso, se usa nuevamente la función ```map()``` para hacer uso del generador que devuelve, e  
+imprimir directamente todos los valores que entrega; como puedes ver, hemos usado la segunda  
+```lambda``` aquí - solo eleva al cuadrado cada elemento de ```list_2```.  
+
+Intenta imaginar el mismo código sin lambdas. Sería mejor? Es improbable.  
+
+<br></br>  
+
+
+## **Lambdas y la función *filter()***  
+Otra función de Python que se puede embellecer significativamente mediante la aplicación de una lambda es  
+```filter()```.  
+
+Espera el mismo tipo de argumentos que ```map()```, pero hace algo diferente: **filtra su segundo argumento**  
+**mientras es guiado por direcciones que fluyen desde la función especificada en el primer argumento** (la  
+función se invoca para cada elemento de la lista, al igual que en ```map()```).  
+
+Los elementos que devuelven ```True``` de la función **pasan el filtro**, los otros son rechazados.  
+
+Enl ejemplo en el editor muestra la función ```filter()``` en acción.  
+```python
+from random import seed, randint
+
+seed()
+data = [randint(-10,10) for x in range(5)]
+filtered = list(filter(lambda x: x > 0 and x % 2 == 0, data))
+
+print(data)
+print(filtered)
+```
+
+Nota: hemos hecho uso del módulo ```random``` para inicializar el generador de números aleatorios (que no debe  
+confundirse con los generadores de los que acabamos de hablar) con la función ```seed()```, para producir cinco  
+valores enteros aleatorios de ```-10``` a ```10``` usando la función ```randint()```.  
+
+Luego se filtra la lista y solo se aceptan los números que son pares y mayores que cero.  
+
+Por supuesto, no es probable que recibas los mismos resultados, pero así es como se veían nuestros resultados:  
+```
+[6, 3, 3, 2, -7]
+[6, 2]
+```  
+
+<br></br>  
+
+
+## **Una breve explicación de cierres**  
+Comencemos con una definición: **cierres es una técnica que permite almacenar valores a pesar de que el**  
+**contexto en el que se crearon ya no existe**. Complicado? Un poco.  
+
+Analicemos un ejemplo simple:  
+```python
+def outer(par):
+    loc = par
+
+
+var = 1
+outer(var)
+
+print(var)
+print(loc)
+```  
+
+El ejemplo es obviamente erróne.  
+
+Las dos últimas líneas provocarán una excepción *NameError* - ni ```par``` ni ```loc``` son accesibles fuera de la  
+función. Ambas variables existen cuando y solo cuando la función ```exterior()``` está siendo ejecutada.  
+<br></br>
+
+Observa el ejemplo en el editor. Hemos modificado el código significativamente.  
+```python
+def outer(par):
+    loc = par
+
+    def inner():
+        return loc
+    return inner
+
+
+var = 1
+fun = outer(var)
+print(fun())
+```
+
+Hay un elemento completamente nuevo - Una función (llamada ```inner()```)  dentro de otra función (llamada  
+```outer```).  
+
+Cómo funciona? como cualquier otra función excepto por el hecho de que ```inner()``` solo se puede invocar  
+desde dentro de ```outer()```. Podemos decir que ```inner()``` es una herramienta privada de ```outer()```, ninguna  
+otra parte del código la puede acceder.  
+
+Observa cuidadosamente:  
+
+- La función ```inner()``` devuelve el valor de la variable accesible dentro de su alcance, ya que  
+```interior()``` puede utilizar cualquiera de las entidades a disposición de ```outer()```.  
+
+- La función ```outer()``` devuelve la función ```inner()``` por si misma; mejor dicho, devuelve una copia de la  
+función ```inner()``` al momento de la invocación de la función ```outer()```; la función congelada contiene  
+su entorno completo, incluido el estado de todas las variables locales, lo que también significa que el valor  
+de ```loc``` se retiene con éxito, aunque ```outer()``` ya ha dejado de existir.  
+
+En efecto, el código es totalmente válido y genera:  
+```
+1
+```  
+
+La función devuelta durante la invocación de ```outer()``` es un **cierre**.  
+
+<br></br>  
+
+
+## **Una breve explicación de cierres: continuación**  
+**Un cierre se debe invocar exactamente de la misma manera en que se ha declarado**.  
+
+En el ejemplo anterior (vea el código a continuación):  
+```python
+def outer(par):
+    loc = par
+
+    def inner():
+        return loc
+    return inner
+
+
+var = 1
+fun = outer(var)
+print(fun())
+```  
+
+La función ```inner()``` no tenía parámetros, por lo que tuvimos que invocarla sin argumentos.  
+<br></br>
+
+Ahora mira el código en el editor.  
+```python
+def make_closure(par):
+    loc = par
+
+    def power(p):
+        return p ** loc
+    return power
+
+
+fsqr = make_closure(2)
+fcub = make_closure(3)
+
+for i in range(5):
+    print(i, fsqr(i), fcub(i))
+```
+Es totalmente posible **declarar un cierre equipado con un número arbitrario de parámetros**, por ejemplo,  
+al igual que la función ```power()```.  
+
+Esto significa que el cierre no solo utiliza el ambiente congelado, sino que también puede **modificar su**  
+**comportamiento utilizando valores tomados del exterior**.  
+
+Este ejemplo muestra una circunstancia más interesante: puedes **crear tantos cierres como quieras usando**  
+**el mismo código**. Esto se hace con una función llamada ```make_closure()```.  
+
+Nota:  
+
+- El primer cierre obtenido de ```make_closure()``` define una herramienta que eleva al cuadrado su  
+argumento.  
+
+- El segundo está diseñado para elevar el argumento al cubo.  
+
+Es por eso que el código produce el siguiente resultado:  
+```
+0 0 0
+1 1 1
+2 4 8
+3 9 27
+4 16 64
+```  
+
+Realiza tus propias pruebas.  
+
+<br></br>  
+
+
+## **Puntos Clave**  
+1. Un **iterator** es un objeto de una clase que proporciona al menos **dos** métodos (sin contar el constructor):  
+    - ```__iter__()``` se invoca una vez cuando se crea el iterador y devuelve el **propio** objeto del iterador.  
+    - ```__next__()``` se invoca para proporcionar **el valor de la siguiente iteración** y genera la excepción ```StopIteration``` cuando  
+la iteración **llega a su fin**.  
+
+<br></br>
+
+2. La sentencia ```yield``` solo puede ser utilizada dentro de funciones. La sentencia ```yield``` suspende la ejecución de la función y hace  
+que la función regrese el argumento de yield como resultado. Esta función no puede invocarse de forma regular, su único propósito  
+es ser utilizada como un ```generador``` (es decir, en un contexto que requiera una serie de valores, como un bucle ```for```).  
+
+<br></br>  
+
+3. Una **expresión condicional** es una expresión construida usando el operador ```if-else```. Por ejemplo:  
+```python
+print(True if 0 >= 0 else False)
+```  
+
+Da como salida: ```True```.  
+
+<br></br>
+
+4. Una **lista por compresión** se convierte en un **generador** cuando se emplea dentro de **paréntesis** (usado entre corchetes,  
+produce una lista regular). Por ejemplo:  
+```python
+for x in (el * 2 for el in range(5)):
+    print(x)
+```  
+
+Da como salida: ```02468```  
+
+<br></br>  
+
+5. Una **función lambda** es una herramienta para crear **funciones anónimas**. Por ejemplo:  
+```python
+def foo(x, f):
+    return f(x)
+
+print(foo(9, lambda x: x ** 0.5))
+```  
+
+Da como salida: ```3.0```  
+
+<br></br>
+
+6. La función ```map(fun, list)``` crea una **copia** de aquellos elementos de ```list```, lo cual hace que la función ```fun``` retorne  
+```True```. El resultado de la función es un **generador** proporcionando el nuevo contenido de la lista elemento por elemento. Por  
+ejemplo:  
+```python
+short_list = ['mython', 'python', 'fell', 'on', 'the', 'floor']
+new_list = list(map(lambda s: s.title(), short_list))
+print(new_list)
+```  
+
+Da como salida: ```['Mython', 'Python', 'Fell', 'On', 'The', 'Floor']```.  
+
+<br></br>  
+
+7. La función ```filer(fun, list)``` crea una **copia** de aquellos elementos de ```list```, lo cual hace que la función ```fun``` retorne  
+```True```. El resultado de la función es un **generador** proporcionando el nuevo contenido de la lista elemento por elemento. Por  
+ejemplo:  
+```python
+short_list = [1, "Python", -1, "Monty"]
+new_list = list(filter(lambda s: isinstance(s, str), short_list))
+print(new_list)
+```  
+
+Da como salida: ```['Python', 'Monty']```  
+
+<br></br>  
+
+8. Un cierre es una técnica que permite **almacenar valores** a pesar de que el **contexto** en el que han sido creados **no existe más**.  
+Por ejemplo:  
+```python
+def tag(tg):
+    tg2 = tg
+    tg2 = tg[0] + '/' + tg[1:]
+
+    def inner(str):
+        return tg + str + tg2
+    return inner
+
+
+b_tag = tag('<b>')
+print(b_tag('Monty Python'))
+```  
+
+Da como salida ```<b>Monty Python</b>```   
+
+<br></br>  
+
+Nota: [PEP 8](https://peps.python.org/pep-0008/#programming-recommendations), la Guía de Estilo para Código Python, recomienda que **las funciones lambdas no deben asignarse a variables, sino que**  
+**deben definirse como funciones**.  
+
+Esto significa que es mejor utilizar una sentencia ```def```, y evita usar una sentencia de asignación que vincule una expresión lambda a  
+un identificador. Analiza el código a continuación:  
+```python
+# Recomendado:
+def f(x): return 3*x
+
+
+# No recomendado:
+f = lambda x: 3*x
+```  
+La vinculación de lambdas a identificadores generalmente duplica la funcionalidad de la declaración ```def```. El uso de sentencias ```def```,  
+por otro lado, genera más líneas de código.  
+
+Es importante comprender que a la realidad a menudo le gusta dibujar sus propios escenarios, que no necesariamente siguen las  
+convenciones o recomendaciones formales. Si decides seguirlos o no, dependerá de muchas cosas: tus preferencias, otras  
+convenciones adoptadas, las pautas internas de la empresa, la compatibilidad con el código existente, etc. Ten en cuenta esto.  
+
+
+<br></br>
+
+#  
+[Ejercicios](/Modulo4/Seccion1/Sec1-ej.md)
+<br></br>
+
+[Soluciones](/Modulo4/Seccion1/Sec1-ejsol.md)  
+
+#
+
+[Volver a: Módulo 4 - Miscelaneo](../README.md)
