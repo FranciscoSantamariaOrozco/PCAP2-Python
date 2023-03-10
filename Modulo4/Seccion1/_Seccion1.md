@@ -440,3 +440,170 @@ Ejecuta el código para verificar si tenemos razón.
 Hay una sintaxis muy interesante que queremos mostrarte ahora. Su usabilidad no se limita a listas por  
 compresión.  
 
+Es una **expresión condicional: una forma de seleccionar uno de dos valores diferentes en función del**  
+**resultado de una expresión booleana**.  
+
+Observa:  
+
+### Expresión_uno if condición else expresión_dos  
+
+Puede parecer un poco sorprendente a primera vista, pero hay que tener en cuenta que no es **una instrucción**  
+**condicional** Además, no es una instrucción en lo absoluto. Es un operador.  
+
+El valor que proporciona es *expresión_uno* cuando la condición es ```True``` (verdadero), y *expresión_dos*  
+cuando sea falso.  
+
+Un buen ejemplo te dirá más. Mira el código en el editor:  
+```python
+Es una the_list = []
+
+for x in range(10):
+    the_list.append(1 if x % 2 == 0 else 0)
+
+print(the_list)
+```  
+El código llena una lista con ```unos``` y ```ceros```, si el índice de un elemento particular es impar, el elemento se  
+establece a ```0```, y a ```1``` de lo contrario.  
+
+Simple? quizás no a primera vista. Elegante? indiscutiblemente.  
+
+Se puede usar el mismo truco dentro de una compresión de lista? Sí, por supuesto.  
+
+<br></br>  
+
+
+## **Más acerca de listas por compresión: continuación**  
+Observa el ejemplo en el editor:  
+```python
+the_list = [1 if x % 2 == 0 else 0 for x in range(10)]
+
+print(the_list)
+```  
+Compacto y elegante: estas dos palabras vienen a la mente al mirar el código.  
+
+Entonces, qué tienen en común, generadores y listas por compresión? Hay alguna conexión entre ellos? Si.  
+Una conexión algo suelta, pero inequívoca.  
+
+Solo un cambio puede **convertir cualquier compresión en un generador**.  
+
+<br></br>  
+
+
+### **Listas por compresión frente a generadores**  
+Ahora observa el código a continuación y ve si puedes encontrar el detalle que convierte una compresión de  
+lista en un generador:  
+```python
+the_list = [1 if x % 2 == 0 else 0 for x in range(10)]
+the_generator = (1 if x % 2 == 0 else 0 for x in range(10))
+
+for v in the_list:
+    print(v, end=" ")
+print()
+
+for v in the_generator:
+    print(v, end=" ")
+print()
+```  
+Son los **paréntesis**. Los corchetes hacen una compresión, los paréntesis hacen un generador.  
+
+El código, cuando se ejecuta, produce dos líneas idénticas:  
+```
+1 0 1 0 1 0 1 0 1 0
+1 0 1 0 1 0 1 0 1 0
+```  
+<br></br>
+
+Cómo  puedes saber que la segunda asignación crea un generador, no una lista?  
+
+Hay algunas pruebas que podemos mostrarte. Aplica la función ```len()``` a ambas entidades.  
+
+```len(the_list)``` dará como resultado ```10```. Claro y predecible. ```len(the_generator)``` generará una  
+excepción, y verás el siguiente mensaje:  
+```
+TypeError: object of type 'generator' has no len()
+```  
+<br></br>
+
+Por supuesto, guardar la lista o el generador no es necesario; puedes crearlos exactamente en el lugar donde  
+los necesites, justo como aquí:  
+```python
+for v in [1 if x % 2 == 0 else 0 for x in range(10)]:
+    print(v, end=" ")
+print()
+
+for v in (1 if x % 2 == 0 else 0 for x in range(10)):
+    print(v, end=" ")
+print()
+```  
+
+Nota: la misma apariencia de la salida no significa que ambos bucles funcionen de la misma manera. En el  
+primer bucle, la lista se crea (y se itera) como un todo; en realidad, existe cuando se ejecuta el bucle.  
+
+En el segundo bucle, no hay ninguna lista, solo hay valores subsecuentes producidos por el generador, uno por  
+uno.  
+
+Realiza tus propios experimentos.  
+
+<br></br>  
+
+
+## **La función *lambda***  
+La función ```lambda``` es un concepto tomado de las matemáticas, más especificamente, de una parte llamada *el Cálculo Lambda*, pero  
+estos dos fenómenos no son iguales.  
+
+Los matemáticos usan *el Cálculo Lambda* en sistemas formales conectados con: la lógica, la recursividad o la demostrabilidad de  
+teoremas. Los programadores usan la función ```lambda``` para simplificar el código, hacerlo más claro y fácil de entender.  
+
+Una función ```lambda``` es una función sin nombre (también puedes llamarla **una función anónima). Por supuesto, tal afirmación  
+plantea inmediatamente la pregunta: cómo se usa algo que no se puede identificar?  
+
+Afortunadamente, no es un problema, ya que se puede mandar llamar dicha función si realmente se necesita, pero, en muchos casos  
+la función ```lambda``` puede existir y funcionar mientras permanece completamente de incógnito.  
+
+La declaración de la función ```lambda``` no se parece a una delcaración de función normal; compruébalo tu mismo:  
+```
+lambda parámetros: expresión
+```  
+Tal cláusula **devuelve el valor de la expresión al tomar en cuenta el valor del argumento** ```lambda``` actual.  
+
+Como de costumbre, un ejemplo será útil. Nuestro ejemplo usa tres funciones ```lambda```, pero con nombres. Analízalo  
+cuidadosamente:  
+```python
+two = lambda: 2
+sqr = lambda x: x * x
+pwr = lambda x, y: x ** y
+
+for a in range(-2, 3):
+    print(sqr(a), end=" ")
+    print(pwr(a, two()))
+```  
+
+Vamos a analizarlo:  
+- La primer ```lambda``` es una función anónima **sin parámetros** que siempre devuelve un ```2```. Como se ha **asignado a una variable**  
+**lamada** ```2```, podemos decir que la función ya no es anónima, y se puede usar su nombre para invocarla.  
+
+- La segunda es una **función anónima de un parámetro** que devuelve el valor de su argumento al cuadrado. Se ha nombrado también como tal.  
+
+- La tercer ```lambda``` **toma dos parámetros** y devuelve el valor del primero elevado al segundo. El nombre de la variable que lleva  
+la ```lambda``` habla por si mismo. No se utiliza ```pow``` para evitar confusiones con la función incorporada del mismo nombre y el mismo propósito.  
+<br></br>
+
+El programa produce el siguiente resultado:  
+```
+4 4
+1 1
+0 0
+1 1
+4 4
+```  
+
+Este ejemplo es lo suficientemente claro como para mostrar como se declaran las funciones ```lambda``` y cómo se comportan, pero no  
+dice nada acerca de por que son necesarias y para qué se usan, ya que se pueden reemplazar con funciones de Python de rutina.  
+
+Donde está el beneficio?  
+
+<br></br>  
+
+
+## **Cómo usar lambdas y para qué?**  
+La parte
