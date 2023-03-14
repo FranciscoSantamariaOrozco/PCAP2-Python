@@ -1,82 +1,57 @@
-# **Ejercicio de Laboratorio: Pila Contadora**
+# **Ejercicio de Laboratorio: Histograma de frecuencia de caracteres ordenador**
 
 ## **Tiempo Estimado**  
 
-20-45 minutos  
+10-15 minutos  
 
 
 ## **Nivel de dificultad**  
 
-Fácil/medio  
+Medio  
+
+
+## **Prerrequisitos**  
+
+4.3.1.15
 
 
 ## **Objetivos**  
 
-- Mejorar las habilidades del estudiante para definir clases.
-- Emplear clases existentes para crear nuevas clases equipadas con nuevas funcionaliades.
+- Mejorar las habilidades del estudiante al operar con archivos en modo  
+lectura/escritura.
+- Emplear lambdas para cambiar el ordenamiento.
 
 
 ## **Escenario**  
+El código anterior necesita ser mejorado. Está bien, pero tiene que ser mejor.  
 
-Recientemente te mostramos cómo extender las posibilidades de Stack definiendo una nueva clase (es decir, una  
-subclase) que retiene todos los rasgos heredados y agrega algunos nuevos.  
+Tu tarea es hacer algunas enmiendas, que generen los siguientes resultados:  
+- El histograma de salida se ordenará en función de la frecuencia de los caracteres  
+(el contador más grande debe presentarse primero).  
+- El histograma deve enviarse a un archivo con el mismo nombre que el de entrada,  
+pero con la extension '.hist' (debe concatenarse con el nombre original).  
 
-Tu tarea es extender el comportamiento de la clase ```Stack``` de tal manera que la clase pueda contar todos los  
-elementos que son agregados (push) y quitados (pop). Emplea la clase ```Stack``` que proporcionamos en el editor.  
-
-Sigue las sugerencias:  
-- Introduce una propiedad diseñada para contar las operaciones pop y nombrarla de una manera que  
-garantice que esté oculta.  
-- Inicializala a cero dentro del constructor.  
-- Proporciona un método que devuelva el valor asignado actualmente al contador (nómbralo  
-```get_counter()```).  
-
-Completa el código en el editor. Ejecútalo para comprobar si tu código da como salida 100.  
-
+Suponiendo que el archivo de prueba contiene solo una línea con:  
 ```
-class Stack:
-    def __init__(self):
-        self.__stk = []
+cBabAa
+```  
 
-    def push(self, val):
-        self.__stk.append(val)
-
-    def pop(self):
-        val = self.__stk[-1]
-        del self.__stk[-1]
-        return val
-
-
-class CountingStack(Stack):
-    def __init__(self):
-    #
-    # Llena el constructor con acciones apropiadas.
-    #
-
-    def get_counter(self):
-    #
-    # Presenta el valor actual del contador al mundo.
-    #
-
-    def pop(self):
-    #
-    # Haz un pop y actualiza el contador.
-    #
-	
-
-stk = CountingStack()
-for i in range(100):
-    stk.push(i)
-    stk.pop()
-print(stk.get_counter())
+El resultado esperado debería verse de la siguiente manera:  
 ```
+a -> 3
+b -> 2
+c -> 1
+```  
+<br></br>  
+
+**Tip**: Emplea una ```lambda``` para cambiar el ordenamiento.
 
 <br></br>
 
 #  
 
-[Volver a: Seccion 2 - Un corto viaje desde el enfoque procedimental hacia el orientado a objetos.](_Seccion2.md)   
+[Volver a: Seccion 3 - Trabajando con archivos reales](_Seccion3.md)   
 
 # 
 
-[Volver a: Módulo 3 - Programación Orientada a Objetos y Procesamiento de Archivos en Python](../README.md)
+[Volver a: Módulo 4 - Misceláneo](../README.md)

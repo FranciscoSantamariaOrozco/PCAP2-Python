@@ -1,82 +1,60 @@
-# **Ejercicio de Laboratorio: Pila Contadora**
+# **Ejercicio de Laboratorio: Histograma de frecuencia de caracteres**
 
 ## **Tiempo Estimado**  
 
-20-45 minutos  
+60 minutos  
 
 
 ## **Nivel de dificultad**  
 
-Fácil/medio  
+Medio  
 
 
 ## **Objetivos**  
 
-- Mejorar las habilidades del estudiante para definir clases.
-- Emplear clases existentes para crear nuevas clases equipadas con nuevas funcionaliades.
+- Mejorar las habilidades del estudiante al operar con la lectura de archivos.
+- Utilizar colecciones de datos para contar datos numerosos.
 
 
 ## **Escenario**  
+Un archivo de texto contiene algo de texto (nada inusual) pero necesitamos saber con  
+qué frecuencia aparece cada letra en el texto. Tal análisis puede ser útil en croptografía,  
+por lo que queremos poder hacerlo en referencia al alfabeto latino.  
 
-Recientemente te mostramos cómo extender las posibilidades de Stack definiendo una nueva clase (es decir, una  
-subclase) que retiene todos los rasgos heredados y agrega algunos nuevos.  
+Tu tarea es escribir un programa que:  
+- Pida al usuario el nombre del archivo de entrada.  
+- Lea el archivo (si es posible) y cuente todas las letras latinas (las letras mayúsculas  
+y minúsculas se tratan como iguales).  
+- Imprima un histograma simple en orden alfabético (solo se deben presentar  
+recuentos distintos de cero).  
 
-Tu tarea es extender el comportamiento de la clase ```Stack``` de tal manera que la clase pueda contar todos los  
-elementos que son agregados (push) y quitados (pop). Emplea la clase ```Stack``` que proporcionamos en el editor.  
+Crea un archivo de prueba para tu código y verifica si tu histograma contiene resultados  
+válidos.  
 
-Sigue las sugerencias:  
-- Introduce una propiedad diseñada para contar las operaciones pop y nombrarla de una manera que  
-garantice que esté oculta.  
-- Inicializala a cero dentro del constructor.  
-- Proporciona un método que devuelva el valor asignado actualmente al contador (nómbralo  
-```get_counter()```).  
-
-Completa el código en el editor. Ejecútalo para comprobar si tu código da como salida 100.  
-
+Suponiendo que el archivo de prueba contiene solo una línea con:  
 ```
-class Stack:
-    def __init__(self):
-        self.__stk = []
-
-    def push(self, val):
-        self.__stk.append(val)
-
-    def pop(self):
-        val = self.__stk[-1]
-        del self.__stk[-1]
-        return val
-
-
-class CountingStack(Stack):
-    def __init__(self):
-    #
-    # Llena el constructor con acciones apropiadas.
-    #
-
-    def get_counter(self):
-    #
-    # Presenta el valor actual del contador al mundo.
-    #
-
-    def pop(self):
-    #
-    # Haz un pop y actualiza el contador.
-    #
-	
-
-stk = CountingStack()
-for i in range(100):
-    stk.push(i)
-    stk.pop()
-print(stk.get_counter())
+aBc
 ```
+<br></br>  
+
+El resultado esperado debería verse de la siguiente manera:  
+```
+a -> 1
+b -> 1
+c -> 1
+```  
+<br></br>  
+
+**Tip**:Creemos que un diccionario es un medio perfecto de recopilación de datos para  
+almacenar los recuentos. Las letras pueden ser las claves mientras que los contadores  
+pueden ser los valores.
 
 <br></br>
 
 #  
 
-[Volver a: Seccion 2 - Un corto viaje desde el enfoque procedimental hacia el orientado a objetos.](_Seccion2.md)   
+[Volver a: Seccion 3 - Trabajando con archivos reales](_Seccion3.md)   
 
 # 
 
-[Volver a: Módulo 3 - Programación Orientada a Objetos y Procesamiento de Archivos en Python](../README.md)
+[Volver a: Módulo 4 - Misceláneo](../README.md)
