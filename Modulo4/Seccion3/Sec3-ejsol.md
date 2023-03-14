@@ -3,40 +3,44 @@
 
 ## **Ejercicio 1**  
 
-Cómo se codifica el valor del argumento modo de la función ```open()``` si se va a crear un nuevo archivo de texto?
+Qué se espera del método ```readlines()``` cuando el stream está asociado con un archivo vacío?  
 
-```wt``` o ```w```
+Se espera una lista vacía (una lista de longitud cero).
 
 <br></br>  
 
 ## **Ejercicio 2**  
 
-Cuál es el significado del valor representado por ```errno.EACESS```?
+Qué se pretende hacer con el siguiente código?  
+```python
+for line in open("file", "rt"):
+    for char in line:
+        if char.lower() not in "aeiouy ":
+            print(char, end='')
+```  
 
-**Permiso denegado**: no se permite acceder al contenido del archivo.
+Copia el contenido del archivo *file* hacia la consola, ignorando las vocales.
 
 <br></br>  
 
 ## **Ejercicio 3**  
 
-Cuál es la salida esperada del siguiente código, asumiendo que el archivo llamado *file* no existe?  
+Vas a procesar un mapa de bits almacenado en un archivo llamado ```image.png``` y quieres leer su  
+contenido como un todo en una variable *bytearray* llamada ```image```. Agrega una línea al siguiente  
+código para lograr este objetivo.  
 ```python
-import errno
-
 try:
-    stream = open("file", "rb")
-    print("existe")
+    stream = open("image.png", "rb")
+    # Inserta una línea aquí.
     stream.close()
-except IOError as error:
-    if error.errno == errno.ENOENT:
-        print("ausente")
-    else:
-        print("desconocido")
+except IOError:
+    print("fallido")
+else:
+    print("exitoso")
 ```
 
-El resultado esperado es:  
-```
-ausente
+```python
+image = bytearray(stream.read())
 ```
 
 <br></br>  
@@ -44,11 +48,11 @@ ausente
 #  
 <br></br>
 
-- [Ejercicios](Sec2-ej.md)
+- [Ejercicios](Sec3-ej.md)
 <br></br>
 
 #  
 
-[Volver a: Seccion 2 - Procesando archivos](_Seccion2.md)  
+[Volver a: Seccion 3 - Trabajando con archivos reales](_Seccion3.md)  
 
 [Volver a: Módulo 4 - Misceláneo](../README.md)
