@@ -103,4 +103,100 @@ Al crear un objeto *date* toma en cuenta las siguientes restricciones:
 
 
 ## **Creación de un objeto de fecha a partir de una marca de tiempo**  
-La clase ```date``` nos
+La clase ```date``` nos da la capacidad de crear un objeto del tipo *fecha* a partir de una *marca de tiempo*.  
+
+En Unix, la marca de tiempo expresa el número de segundos desde el 1 de Enero de 1970 a las 00:00:00 (UTC).  
+Esta fecha se llama la **época Unix**, por que es cuando comenzó el conteo del tiempo en los sistemas Unix.  
+
+La marca de tiempo es en realidad la diferencia entre una fecha en particular (incluida la hora) y el 1 de enero de  
+1970, 00:00:00 (UTC), expresada en segundos.
+
+Para crear un objeto de fecha a partir a partir de una marca de tiempo, debemos pasar una marca de tiempo Unix al  
+método ```fromtimestamp```.  
+
+Para este propósito, podemos usar el módulo ```time```, que proporciona funciones relacionadas con el tiempo.  
+Uno de ellos es una función llamada ```time()```, que devuelve el número de segundos desde el 1 de enero de  
+1970 hasta el momento actual en forma de número flotante. Echa un vistazo al ejemplo en el editor.  
+```python
+from datetime import date
+import time
+
+timestamp = time.time()
+print("Marca de tiempo:", timestamp)
+
+d = date.fromtimestamp(timestamp)
+print("Fecha:", d)
+```  
+
+Ejecuta el código para ver el resultado.  
+
+Si ejecutas el código de muestra varias veces, podrás ver cómo se incrementa la marca de tiempo. Vale la pena  
+agregar que el resultado de la función ```time``` depende de la plataforma, porque **en los sistemas Unix y**  
+**Windows, los segundos intercalares no se cuentan**.  
+
+**Nota**: En esta parte del curso también hablaremos sobre el módulo *time*.  
+
+<br></br>  
+
+
+## **Creando un objeto de fecha usando el formato ISO**.  
+El módulo ```datetime``` proporciona varios métodos para crear un objeto ```date```. Uno de ellos es el método  
+```fromisoformat```, que toma una fecha en el formato **AAAA-MM-DD** compatible con el estándar ISO 8601.  
+
+El estándar ISO 8601 define cómo se representan la fecha y la hora. Se usa a menudo, por lo que vale la pena  
+tomarse un momento para familiarizarse con él. Echa un vistazo a la imagen que describe los valores requeridos  
+por el formato:  
+
+<p align="center">
+<img src="img/fechahoraiso.jpg">
+</p>  
+
+Ahora observa el código en el editor y ejecútalo.  
+```python
+from datetime import date
+
+d = date.fromisoformat('2019-11-04')
+print(d)
+```
+En nuestro ejemplo, AAAA es 2019, MM es 11 (noviembre) y DD es 04 (cuarto de noviembre).  
+
+Cuando sustituyas la fecha, asegúrate de agregar 0 antes de un mes o de un día expresado por un número  
+menor que 10.  
+
+**Nota**: El método ```fromisoformat``` ha estado disponible en Python desde la versión 3.7.  
+
+<br></br>  
+
+
+## **El método *replace()***  
+A veces, es posible que debas reemplazar el año, el mes o el día con un valor diferente. No puedes hacer esto  
+con los atributos de año, mes y día por que son de solo lectura. En este caso, puedes utilizar el método llamado  
+```replace```.  
+
+Ejecuta el código en el editor:  
+```python
+from datetime import date
+
+d = date(1991, 2, 5)
+print(d)
+
+d = d.replace(year=1992, month=1, day=16)
+print(d)
+```  
+
+Resultado:  
+```
+1991-02-05
+1992-01-16
+```  
+
+Los parámetros *year*, *month* y *day* son opcionales. Puedes pasar solo un parámetro al método ```replace```, por  
+ejemplo, *año*, o los tres como en el ejemplo.  
+
+El método ```replace``` devuelve un objeto ```date``` modificado, por lo que debes recordar asignarlo a alguna variable.  
+
+<br></br>  
+
+
+## **Que día de la semana es?**  
+Uno
