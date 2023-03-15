@@ -2,6 +2,7 @@
 
 <br></br>  
 
+## **Procesamiento de archivos de texto**  
 
 En esta lección vamos a preparar un archivo de texto simple con contenido breve y simple.  
 ```python
@@ -714,4 +715,3 @@ El código copia el contenido del archivo a la consola, línea por línea. **Not
 #
 
 [Volver a: Módulo 4 - Miscelaneo](../README.md)
-
