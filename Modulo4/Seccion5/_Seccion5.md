@@ -306,4 +306,155 @@ Se puede acceder a cada uno de ellos utilizando los atributos de clase.
 
 
 ## **El módulo *time***  
-Además de la clase ```time```, 
+Además de la clase ```time```, la biblioteca estándar de Python ofrece un módulo llamado ```time```, que proporciona  
+una función relacionada con el tiempo. Ya se tuvo la oportunidad de aprender la función llamada ```time``` cuando  
+se habló de la clase ```date```. Ahora veremos otra función útil disponible en este módulo.  
+
+Debes pasar muchas horas frente a una computadora mientras realizas este curso. A veces, puedes sentir la  
+necesidad de tomar una siesta. Por qué no? Escribamos un programa que simule la siesta corta de un  
+estudiante. Echa un vistazo al código en el editor.  
+```python
+import time
+
+class Student:
+    def take_nap(self, seconds):
+        print("Estoy muy cansado. Tengo que echarme una siesta. Hasta luego.")
+        time.sleep(seconds)
+        print("Dormí bien! Me siento genial!")
+
+student = Student()
+student.take_nap(5)
+```  
+
+Resultado:  
+```
+Estoy muy cansado. Tengo que echarme una siesta. Hasta luego.
+Dormí bien! Me siento genial!
+```  
+
+La parte más importante del código de muestra es el uso de la función ```sleep``` (sí, puedes recordarla de una de  
+las prácticas de laboratorio anteriores en el curso), que suspende la ejecución del programa por el determinado  
+número de segundos.  
+
+En nuestro ejemplo, son 5 segundos. Tienes razón, es una siesta muy corta.  
+
+Extiende el sueño del estudiante cambiando la cantidad de segundos. Toma en cuenta que la función ```sleep```  
+acepta solo un número entero o de punto flotante.  
+
+<br></br>  
+
+
+## **La función *ctime***  
+El módulo ```time``` proporciona una función llamada ```ctime```, que **convierte el tiempo en segundos desde el 1**  
+**de enero de 1970 (época Unix) en una cadena**.  
+
+Recuerdas el resultado de la función ```time```? Eso es lo que necesitas pasar a ```ctime```. Echa un vistazo al  
+ejemplo en el editor.  
+```python
+import time
+
+timestamp = 1572879180
+print(time.ctime(timestamp))
+```  
+
+La función ```ctime``` devuelve una cadena para la marca de tiempo pasada. En nuestro ejemplo, la marca de  
+tiempo expresa el 4 de noviembre de 2019 a las 14:53:00.  
+
+También es posible llamar a la función ```ctime``` sin especificar el tiempo en segundos. En este caso, se devolverá  
+la hora actual:  
+```python
+import time
+print(time.ctime())
+```  
+
+<br></br>  
+
+
+## **Las funciones *gmtime()* y *localtime()***
+Algunas de las funciones disponibles en el módulo ```time``` requieren conocimiento de la clase *struc_time*, pero  
+antes de conocerlas, veamos cómo se ve la clase:  
+```python
+time.struct_time:
+    tm_year   # Especifica el año.
+    tm_mon    # Especifica el mes (valor de 1 a 12)
+    tm_mday   # Especifica el día del mes (valor de 1 a 31)
+    tm_hour   # Especifica la hora (valor de 0 a 23)
+    tm_min    # Especifica el minuto (valor de 0 a 59)
+    tm_sec    # Especifica el segundo (valor de 0 a 61)
+    tm_wday   # Especifica el día de la semana (valor de 0 a 6)
+    tm_yday   # Especifica el día del año (valor de 1 a 366)
+    tm_isdst  # Especifica si se aplica el horario de verano (1: sí, 0: no, -1: no se sabe)
+    tm_zone   # Especifica el nombre de la zona horaria (valor en forma abreviada)
+    tm_gmtoff # Especifica el desplazamiento al este del UTC (valor en segundos)
+```  
+
+La clase *struct_time* también permite el acceso a valores usando índices. El índice ```0``` devuelve el valor en  
+*tm_year*, mientras que ```8``` devuelve el valor en *tm_isdst*.  
+
+Las excepciones son *tm_zone* y *tm_gmoff*, a las que no se puede acceder mediante índices. Veamos cómo usar  
+la clase *struct_time* en la práctica. Ejecuta el código en el editor:  
+```python
+import time
+
+timestamp = 1572879180
+print(time.gmtime(timestamp))
+print(time.localtime(timestamp))
+```  
+
+Resultado:  
+```
+time.struct_time(tm_year=2019, tm_mon=11, tm_mday=4, tm_hour=14, tm_min=53, tm_sec=0, tm_wday=0, tm_yday=308, tm_isdst=0)
+time.struct_time(tm_year=2019, tm_mon=11, tm_mday=4, tm_hour=14, tm_min=53, tm_sec=0, tm_wday=0, tm_yday=308, tm_isdst=0)
+```  
+
+El ejemplo muestra dos funciones que convierten el tiempo transcurrido desde la época Unix al objeto  
+*struct_time*. La diferencia entre ellos es que la función ```gmtime``` devuelve el objeto *struct_time* en UTC,  
+mientras que la función ```localtime``` devuelve la hora local. Para la función ```gmtime```, el atributo *tm_isdst* es  
+siempre 0.  
+
+<br></br>  
+
+
+## **Las funciones *asctime()* y *mktime()***
+El módulo ```time``` tiene funciones que esperan un objeto *struct_time* o una tupla que almacena valores de  
+acuerdo con los índices presentados cuando se habla de la clase *struct_time*. Ejecuta el ejemplo en el editor.  
+```python
+import time
+
+timestamp = 1572879180
+st = time.gmtime(timestamp)
+
+print(time.asctime(st))
+print(time.mktime((2019, 11, 4, 53, 0, 0, 308, 0)))
+```  
+
+Resultado:  
+```
+Mon Nov  4 14:53:00 2019
+1572879180.0
+```  
+
+La primera de las funciones, llamada ```asctime```, convierte un objeto *struct_time* o una tupla en una cadena.  
+Toma en cuenta que la conocida función ```gmtime``` se usa para obtener el objeto *struct_time*. Si no se  
+proporciona un argumento a la función ```asctime```, se utilizará el tiempo devuelto por la función ```localtime```.  
+
+La segunda función llamada ```mktime``` convierte un objeto *struct_time* o una tupla que expresa la hora local al  
+número de segundos desde la época de Unix. En nuestro ejemplo, le pasamos una tupla, que consta de los  
+siguientes valores.  
+
+
+*2019 => tm_year*  
+*11 => tm_mon*  
+*4 => tm_mday*  
+*14 => tm_hour*  
+*53 => tm_min*  
+*0 => tm_sec*  
+*0 => tm_wday*  
+*308 => tm_yday*  
+*0 => tm_isdst*  
+
+<br></br>  
+
+
+## **Creación de objetos *datetime***  
+En el módulo ```datetime```
