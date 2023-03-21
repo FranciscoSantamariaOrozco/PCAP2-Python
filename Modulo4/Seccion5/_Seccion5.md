@@ -199,4 +199,111 @@ El método ```replace``` devuelve un objeto ```date``` modificado, por lo que de
 
 
 ## **Que día de la semana es?**  
-Uno
+Uno de los métodos más útiles que facilita el trabajo con fechas es el método llamado ```weekday```. Devuelve el  
+día de la semana como un número entero, donde 0 es el Lunes y 6 es el Domingo. Ejecuta el código en el editor.  
+```python
+from datetime import date
+
+d = date(2019, 11, 4)
+print(d.weekday())
+```  
+
+Resultado:  
+```
+0
+```  
+
+La clase ```date``` tiene un método similar llamado ```isoweekday```, que también devuelve el día de la semana  
+como un número entero, pero 1 es Lunes y 7 es Domingo:  
+```python
+from datetime import date
+
+d = date (2019, 11, 4)  
+```  
+
+Resultado:  
+```
+1
+```  
+
+Como puedes ver, para la misma fecha obtenemos un número entero diferente, pero expresando el mismo día  
+de la semana. El entero devuelto por el método ```isodayweek``` sigue la especificación ISO 85601.  
+
+<br></br>  
+
+
+## **Creando objetos *time***  
+Ya sabes cómo presentar una fecha utilizando el objeto ```date```. El módulo ```datetime``` también tiene una clase  
+que te permite presentar la hora. Puedes adivinar su nombre? Sí, se llama ```time```:  
+
+```
+time(hour, minute, second, microsecond, tzinfo, fold )
+```  
+
+El constructor de la clase ```time``` acepta los siguientes parámetros opcionales:  
+<table>
+    <tr>
+        <td height='50pt'><b>Parámetro</b></td>
+        <td height='50pt', width='600pt'><b>Restricciones</b></td>
+    </tr>
+    <tr>
+        <td><code>hour</code></td>
+        <td height='50pt', width='600pt'>El parámetro <i>hour</i> debe ser mayor o igual que 0 y menor o igual que 23. </td>
+    </tr>
+    <tr>
+        <td><code>minute</code></td>
+        <td height='50pt', width='600pt'>El parámetro <i>minute</i> debe ser mayor o igual a 0 y menor o igual a 59.</td>
+    </tr>
+    <tr>
+        <td><code>second</code></td>
+        <td height='50pt', width='600pt'>El parámetro <i>second</i> debe ser mayor o igual a 0 y menor o igual que 59</td>
+    </tr>
+    <tr>
+        <td><code>microsecond</code></td>
+        <td height='50pt', width='600pt'>El parámetro <i>día</i> debe ser mayor o igual a 0 y menor que 1000000.</td>
+    </tr>
+    <tr>
+        <td><code>tzinfo</code></td>
+        <td height='50pt', width='600pt'>El parámetro <i>tzinfo</i> debe ser un objeto de la subclase <code>tzinfo</code> o <code>None</code> (por defecto)</td>
+    </tr>
+    <tr>
+        <td><code>fold</code></td>
+        <td height='50pt', width='600pt'>El parámetro <i>fold</i> debe ser 0 o 1 (predeterminadamente 0)</td>
+    </tr>
+</table>  
+
+El parámetro *tzinfo* está asociado con las zonas horarias, mientras que *fold* está asociado con el tiempo de  
+pared. No los usaremos durante este curso, pero te recomendamos que te familiarices con ellos.  
+
+Veamos cómo crear un objeto de tiempo en la práctica. Ejecuta el código en el editor:  
+```python
+from datetime import time
+
+t = time(14, 53, 20, 1)
+
+print("Tiempo:", t)
+print("Hora:", t.hour)
+print("Minuto:", t.minute)
+print("Segundo:", t.second)
+print("Microsegundo:", t.microsecond)
+```  
+
+Resultado:  
+```
+Tiempo: 14:53:20.000001
+Hora: 14
+Minuto: 53
+Segundo: 20
+Microsegundo: 1
+```  
+
+En el ejemplo, pasamos cuatro parámetros al constructor de la clase: *hour*, *minute*, *second* y *microsecond*.  
+Se puede acceder a cada uno de ellos utilizando los atributos de clase.  
+
+**Nota**: Pronto te diremos cómo puedes cambiar el formato de hora predeterminado.  
+
+<br></br>  
+
+
+## **El módulo *time***  
+Además de la clase ```time```, 
