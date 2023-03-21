@@ -457,4 +457,242 @@ siguientes valores.
 
 
 ## **Creación de objetos *datetime***  
-En el módulo ```datetime```
+En el módulo ```datetime```, la fecha y la hora se pueden representar como objetos separados o como un solo  
+objeto. La clase que combina fecha y hora se llama ```datetime```.  
+
+```
+datetime (year, month, day, hour, minute, second, microsecond, tzinfo, fold)
+```  
+
+Su constructor acepta los siguientes parámetros:  
+<table>
+    <tr>
+        <td height='50pt'><b>Parámetro</b></td>
+        <td height='50pt', width='600pt'><b>Restricciones</b></td>
+    </tr>
+        <tr>
+        <td><code>year</code></td>
+        <td height='50pt', width='600pt'>El parámetro <i>year</i> debe ser mayor o igual a 1 (constante MINYEAR) y menor o igual a 9999 (constante MAXYEAR).</td>
+    </tr>
+    <tr>
+        <td><code>month</code></td>
+        <td height='50pt', width='600pt'>El parámetro <i>month</i> debe ser mayor o igual a 1 y menor o igual a 12.</td>
+    </tr>
+    <tr>
+        <td><code>day</code></td>
+        <td height='50pt', width='600pt'>El parámetro <i>day</i> debe ser mayor o igual a 1 y menor o igual al último día del mes y año indicados.</td>
+    </tr>
+    <tr>
+        <td><code>hour</code></td>
+        <td height='50pt', width='600pt'>El parámetro <i>hour</i> debe ser mayor o igual que 0 y menor o igual que 23. </td>
+    </tr>
+    <tr>
+        <td><code>minute</code></td>
+        <td height='50pt', width='600pt'>El parámetro <i>minute</i> debe ser mayor o igual a 0 y menor o igual a 59.</td>
+    </tr>
+    <tr>
+        <td><code>second</code></td>
+        <td height='50pt', width='600pt'>El parámetro <i>second</i> debe ser mayor o igual a 0 y menor o igual que 59</td>
+    </tr>
+    <tr>
+        <td><code>microsecond</code></td>
+        <td height='50pt', width='600pt'>El parámetro <i>día</i> debe ser mayor o igual a 0 y menor que 1000000.</td>
+    </tr>
+    <tr>
+        <td><code>tzinfo</code></td>
+        <td height='50pt', width='600pt'>El parámetro <i>tzinfo</i> debe ser un objeto de la subclase <code>tzinfo</code> o <code>None</code> (por defecto)</td>
+    </tr>
+    <tr>
+        <td><code>fold</code></td>
+        <td height='50pt', width='600pt'>El parámetro <i>fold</i> debe ser 0 o 1 (predeterminadamente 0)</td>
+    </tr>
+</table>  
+
+Ahora echemos un vistazo al código en el editor para ver cómo creamos un objeto del tipo datetime.  
+```python
+from datetime import datetime
+
+dt = datetime(2019, 11, 4, 14, 53)
+
+print("fecha y Hora:", dt)
+print("Fecha:", dt.date())
+print("Hora:", dt.time())
+```  
+
+Resultado:  
+```
+Fecha y Hora: 2019-11-04 14:53:00
+Fecha: 2019-11-04
+Hora: 14:53:00
+```  
+
+El ejemplo crea un objeto ```datetime``` que representa el 4 de noviembre de 2019 a las 14:53:00. Todos los  
+parámetros pasados al constructor van a atributos de clase de solo lectura. Son *year*, *month*, *day*, *hour*, *minute*,  
+*second*, *microsecond*, *tzinfo*, y *fold*.  
+
+El ejemplo muestra dos métodos que devuelven dos objetos diferentes. El método llamado ```date``` devuelve el  
+objeto *date* con el año, mes y día datos, mientras que el método llamado ```time``` devuelve el objeto *time* con la  
+hora y minuto dados.  
+
+<br></br>  
+
+
+## **Métodos que devuelven la fecha y hora actuales**  
+La clase ```datetime``` tiene varios métodos que devuelven la fecha y hora actuales. Estos métodos son:  
+- ```today()```: devuelve la fecha y hora local actual con el atributo *tzinfo* establecido a *None*.  
+- ```now()```: devuelve la fecha y hora local actual igual que el método *today*, a menos que le pasemos el  
+argumento opcional *tz*. El argumento de este método debe ser un objeto de la subclase *tzinfo*.  
+- ```utcnow()```: devuelve la fecha y hora UTC actual con el atributo *tzinfo* establecido a *None*.  
+
+Ejecuta el código en el editor para verlos todos en la práctica. Qué puedes decir sobre la salida?  
+```python
+from datetime import datetime
+
+print("hoy:", datetime.today())
+print("ahora:", datetime.now())
+print("utc_ahora:", datetime.utcnow())
+```  
+
+Como puedes ver, el resultado de los tres métodos es el mismo. Las pequeñas diferencias se deben al tiempo  
+transcurrido entre llamadas posteriores.  
+
+**Nota**: Puedes leer más sobre los objetos *tzinfo* en la documentación.  
+
+<br></br>  
+
+
+## **El obtener una marca de tiempo**  
+Existen muchos convertidores disponibles en internet que pueden calcular una marca de tiempo en función de  
+una fecha y hora determinadas, pero cómo podemos hacerlo en el módulo ```datetime```?  
+
+Esto es posible gracias al método ```timestamp``` proporcionado por la clase ```datetime```. Observa el código en el  
+editor.  
+```python
+from datetime import datetime
+
+dt = datetime(2020, 10, 4, 14, 55)
+print("Marca de tiempo:", dt.timestamp())
+```  
+
+Resultado:  
+```
+Timestamp: 1601823300.0
+```  
+
+El método ```timestamp``` devuelve un valor flotante que expresa el número de segundos transcurridos entre la  
+fecha y la hora indicadas por el objeto *datetime* y el 1 de enero de 1970, 00:00:00 (UTC).  
+
+<br></br>  
+
+
+## **Formato de fecha y hora (parte 1)**  
+Todas las clases del módulo ```datetime``` presentadas hasta ahora tienen un método llamado ```strftime```. Este  
+es un método muy importante, porque nos permite devolver la fecha y la hora en el formato que especificamos.  
+
+El método ```strftime``` toma solo un argumento en forma de cadena que especifica un formato que puede  
+constar de directivas.  
+
+Una directiva es una cadena que consta del carácter ```%``` (porcentaje) y una letra minúscula o mayúscula. Por  
+ejemplo, la directiva ```%Y``` significa el año con el siglo como número decimal. Veámoslo en un ejemplo. Ejecuta el  
+código en el editor.  
+```python
+from datetime import date
+
+d = date(2020, 1, 4)
+print(d.strftime('%y/%m/%d'))
+```  
+
+Resultado:  
+```
+2020/01/04
+```  
+
+En el ejemplo, hemos pasado un formato que consta de tres directivas separadas por ```/``` (diagonal) al método  
+```strftime```. Por supuesto, el carácter separador se puede reemplazar por otro carácter, o incluso por una  
+cadena.  
+
+Puedes poner cualquier carácter en el formato, pero solo las directivas reconocibles se reemplazarán con los  
+valores apropiados. En nuestro formato, hemos utilizado las siguientes directivas:  
+
+- ```%y```: devuelve el año con el siglo como número decimal. En nuestro ejemplo, esto es *2020*.
+- ```%m```: devuelve el mes como un número decimal con relleno de ceros. En nuestro ejemplo, es *01*.
+- ```%d```: devuelve el día como un número decimal con relleno de ceros. En nuestro ejemplo, es *04*.  
+
+
+**Nota**: Puedes encontrar todas las directivas disponibles: [aquí](https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes).  
+
+<br></br>  
+
+
+## **Formato de fecha y hora (parte 2)**  
+El formato de hora funciona de la misma forma que el formato de fecha, pero requiere el uso de directivas  
+adecuadas. Echemos un vistazo más de cerca a algunos de ellos en el editor.  
+```python
+from datetime import time
+from datetime import datetime
+
+t = time(14, 53)
+print(t.strftime("%H:%M:%S"))
+
+dt = datetime(2020, 11, 4, 14, 53)
+print(dt.strftime("%y/%B/%d %H:%M:%S"))
+```
+
+Resultado:  
+```
+14:53:00
+20/Novembre/04 14:53:00
+```  
+
+El primero de los formatos utilizados se refiere solo al tiempo. Como puedes adivinar, ```%H``` devuelve la hora  
+como un número decimal con relleno de ceros, ```%M``` devuelve el minuto como un número decimal con relleno de  
+ceros, mientras que ```%S``` devuelve el segundo como un número decimal con relleno de ceros. En nuestro  
+ejemplo, ```%H``` se reemplaza por 14, ```%M``` por 53 y ```%S``` por 00.  
+
+El segundo formato utilizado combina directivas de fecha y hora. Hay dos nuevas directivas, ```%Y``` y ```%B```. La  
+directiva ```%Y``` devuelve el año sin siglo como un número decimal con relleno de ceros (en nuestro ejemplo es 20).  
+La directiva ```%B``` devuelve el mes como el nombre completo.  
+
+En general, tienes mucha libertad para crear formatos, pero debes recordar las directivas correctamente.  
+Como ejercicio, puedes comprobar qué sucede si, por ejemplo, intentas utilizar la directiva ```%Y``` en el formato  
+pasado al método *strftime* del objeto time. Intenta averiguar por qué se obtuvo este resultado. Buena suerte!  
+
+<br></br>  
+
+
+## **La función *strftime()* en el módulo *time***
+Probablemente no te sorprendas al saber que la funcion ```strftime``` está disponible en el módulo ```time```. Se  
+diferencia ligeramente de los métodos ```strtime``` en las clases proporcionadas por el módulo ```datetime```  
+porque, además del argumento de formato, también puede tomar (opcionalmente) un objeto tupla o  
+*struct_time*.  
+
+Si no se pasa una tupla o un objeto *struct_time*`, el formateo se realizará utilizando la hora local actual. Echa un  
+vistazo al ejemplo en el editor:  
+```python
+import time
+
+timestamp = 1572879180
+st = time.gmtime(timestamp)
+
+print(time.strftime("%Y/%m/%d %H:%M:%S", st))
+print(time.strftime("%Y/%m/%d %H:%M:%S"))
+```  
+
+Nuestro resultado es el siguiente:  
+```
+2019/11/04 14:53:00
+2023/03/21 16:21:46
+```  
+
+La creación de un formato tiene el mismo aspecto que para los métodos ```sfrtime``` en el módulo ```datetime```.  
+En nuestro ejemplo, usamos ```%Y```, ```%m```, ```%d```, ```%H```, ```%M``` y ```%S```, directivas que ya conoces.  
+
+En la primera llamada a la función, formateamos el objeto *struct_time*, mientras que en la segunda llamada (sin  
+el argumento opcional), formateamos la hora local. Puede encontrar todas las directivas disponibles en el  
+módulo ```time``` [aquí](https://docs.python.org/3/library/time.html#time.strftime).  
+
+<br></br>  
+
+
+## **El método *strptime()***  
+Saber cómo
