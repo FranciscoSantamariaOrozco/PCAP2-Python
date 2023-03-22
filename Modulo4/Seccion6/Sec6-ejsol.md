@@ -1,18 +1,17 @@
-# **SOLUCIONES EJERCICIOS SECCION 5**  
+# **SOLUCIONES EJERCICIOS SECCION 6**  
 <br></br>  
 
 ## **Ejercicio 1**  
 
 Cuál es el resultado del siguiente fragmento de código?  
 ```python
-from datetime import time
-
-t = time(14, 39)
-print(t.strftime("%H:%M:%S"))
+import calendar
+print(calendar.weekheader(1))
 ```
 
+
 ```
-14:53:00
+M T W T F S S
 ```
 
 <br></br>  
@@ -21,16 +20,16 @@ print(t.strftime("%H:%M:%S"))
 
 Cuál es el resultado del siguiente fragmento de código?  
 ```python
-from datetime import datetime
+import calendar  
 
-dt1 = datetime(2020, 9, 29, 14, 41, 0)
-dt2 = datetime(2020, 9, 28, 14, 41, 0)
+c = calendar.Calendar()
 
-print(dt1 - dt2)
+for weekday in c.iterweekdays():
+    print(weekday, end=" ")
 ```
 
 ```
-1 day, 0:00:00
+0 1 2 3 4 5 6
 ```
 
 <br></br>  
@@ -38,11 +37,11 @@ print(dt1 - dt2)
 #  
 <br></br>
 
-- [Ejercicios](Sec5-ej.md)
+- [Ejercicios](Sec6-ej.md)
 <br></br>
 
 #  
 
-[Volver a: Seccion 5 - El módulo *datetime*](_Seccion5.md)  
+[Volver a: Seccion 6 - El módulo *calendar*](_Seccion6.md)  
 
 [Volver a: Módulo 4 - Misceláneo](../README.md)
