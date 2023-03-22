@@ -1,8 +1,8 @@
-# **Ejercicio de Laboratorio: El módulo os**
+# **Ejercicio de Laboratorio: Los módulos datetime y time**
 
 ## **Tiempo Estimado**  
 
-15-30 minutos  
+15-45 minutos  
 
 
 ## **Nivel de dificultad**  
@@ -12,48 +12,38 @@ Fácil
 
 ## **Objetivos**  
 
-- Mejorar las habilidades del estudiante para interactuar con el sistema operativo.
-- Uso práctico de funciones conocidas proporcionadas por el módulo *os*.
+- Mejorar las habilidades del estudiante en el formato de fecha y hora.
+- Mejorar las habilidades del estudiante en el uso del método ```strftime```
 
 
 ## **Escenario**  
-No hjace falta decir que los sistemas operativos te permiten buscar archivos y directorios. Mientras estudiabas  
-esta parte del curso, se aprendió sobre las funciones del módulo *os*, que tiene todo lo que se necesita para  
-escribir un programa que buscará directorios en una ubicación determinada.  
+Durante este curso, has aprendido sobre el método ```strftime```, que requiere conocimiento de las directivas  
+para crear un formato. Ahora es el momento de poner en práctica estas directivas.  
 
-Para facilitar tu tarea, hemos preparado una estructura de directorio de prueba para ti:  
+Por cierto, tendrás la oportunidad de practicar el trabajo con documentación, porque tendrás que encontrar  
+directivas que aún no conoces.  
 
-<p align="center">
-<img src="img/estructuradirectorios.jpg">
-</p>  
-
-Tu programa debe cumplir con los siguientes requisitos:  
-
-1. Escribe una función o método llamado *find* que tome dos argumentos llamados *path* y *dir*. El argumento  
-*path* debe aceptar una ruta relativa o absoluta a un directorio donde debe comenzar la búsqueda, mientras  
-que el argumento *dir* debe ser el nombre de un directorio en el que deseas encontrar la ruta dada. Tu  
-programa debería mostrar las rutas absolutas si encuentra un directorio con el nombre dado.  
-
-2. La búsqueda en el directorio debe realizarse de forma recursiva. Esto significa que la búsqueda también  
-debe incluir todos los subdirectorios en la ruta dada.  
-
-**Entrada de ejemplo:**  
+**Aquí está tu tarea**:  
+Escribe un programa que cree un objeto ```datetime``` para el 4 de noviembre de 2020, 14:53:00. El objeto  
+creado debe llamar al método ```strftime``` con el formato apropiado para mostrar el siguiente resultado:  
 ```
-path="./tree", dir="python"
+2020/11/04 14:53:00
+20/November/04 14:53:00 PM
+Wed, 2020 Nov 04
+Wednesday, 2020 November 04
+Día de la semana: 3
+Día del año: 309
+Número de semana en el año: 44
 ```  
 
-**Salida de ejemplo:**  
-```
-.../tree/python
-.../tree/cpp/other_courses/python
-.../tree/c/other_courses/python
-```
+**Nota**: Cada línea de resultado debe crearse llamando al método *strftime* con almenos una directiva en el  
+argumento de formato.  
 
 <br></br>
 
 #  
 
-[Volver a: Seccion 3 - Trabajando con archivos reales](_Seccion3.md)   
+[Volver a: Seccion 5 - El módulo *datetime*](_Seccion5.md)  
 
 # 
 

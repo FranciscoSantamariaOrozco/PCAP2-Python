@@ -31,6 +31,6 @@ print(os.listdir())
 
 #  
 
-[Volver a: Seccion 4 - El módulo *os*](_Seccion3.md)  
+[Volver a: Seccion 4 - El módulo *os*](_Seccion4.md)  
 
 [Volver a: Módulo 4 - Misceláneo](../README.md)

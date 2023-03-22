@@ -53,7 +53,7 @@ path="./tree", dir="python"
 
 #  
 
-[Volver a: Seccion 3 - Trabajando con archivos reales](_Seccion3.md)   
+[Volver a: Seccion 4 - El módulo *os*](_Seccion4.md)   
 
 # 
 

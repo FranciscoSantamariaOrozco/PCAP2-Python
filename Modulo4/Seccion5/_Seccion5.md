@@ -1,12 +1,3 @@
-#  
-[Ejercicios](/Modulo4/Seccion5/Sec5-ej.md)
-<br></br>
-
-[Soluciones](/Modulo4/Seccion5/Sec5-ejsol.md)  
-
-#
-
-[Volver a: Módulo 4 - Miscelaneo](../README.md)
 # **El módulo *datetime***  
 
 <br></br>  
@@ -695,4 +686,300 @@ módulo ```time``` [aquí](https://docs.python.org/3/library/time.html#time.strf
 
 
 ## **El método *strptime()***  
-Saber cómo
+Saber cómo crear un formato puede ser útil cuando se usa un método llamado ```strptime``` en la clase  
+```datetime```. A diferencia del método ```strftime```, crea un objeto ```datetime``` a partir de una cadena que  
+representa una fecha y una hora.  
+
+El método ```strptime```requiere que especifiques el formato en el que guardaste la fecha y la hora. Veámoslo  
+en un ejemplo. Echa un vistazo al código en el editor.  
+```python
+from datetime import datetime
+print(datetime.strptime("2019/11/04 14:53:00", "%Y/%m/%d %H:%M:%S"))
+```  
+
+Resultado:  
+```
+2019-11-04 14:53:00
+```  
+
+En el ejemplo, hemos especificado dos argumentos obligatorios. El primero es una fecha y hora como una  
+cadena: ```"2019/11/04 14:53:00"```, mientras que el segundo es un formato que facilita el análisis a un objeto  
+```datetime```. Ten cuidado, por que si el formato que se especifica no coincide con la fecha y la hora en la  
+cadena, generará una excepción *ValueError*.  
+
+**Nota**: En el módulo ```time```, puedes encontrar una función llamada ```strptime```, que analiza una cadena que  
+representa un tiempo en un objeto *struct_time*. Su uso es análogo al método ```strptime``` en la clase  
+```datetime```:  
+
+```python
+import time
+print(time.strptime("2019/11/04 14:53:00", "%Y7%m/%d %H:%M:%S"))
+```  
+
+Su resultado será el siguiente:  
+```
+time.struct_time(tm_year=2019, tm_mon=11, tm_mday=4, tm_hour=14, tm_min=53, tm_sec=0, tm_wday=0, tm_yday=308, tm_isdst=-1)
+```  
+
+<br></br>  
+
+
+## **Operaciones de fecha y hora**  
+Tarde o temprano tendrás que realizar algunos cálculos sobre la fecha y la hora. Afortunadamente, existe una  
+clase llamada ```timedelta```en el módulo ```datetime``` que se creó con tal propósito.  
+
+Para crear un objeto ```timedelta```, simplemente realiza una resta en los objetos ```date``` o ```datetime```, tal como  
+hicimos en el ejemplo en el editor. Ejecútalo.  
+```python
+from datetime import date
+from datetime import datetime
+
+d1 = date(2020, 11, 4)
+d2 = date(2019, 11, 4)
+
+print(d1 - d2)
+
+dt1 = datetime(2020, 11, 4, 0, 0, 0)
+dt2 = datetime(2019, 11, 4, 14, 53, 0)
+
+print(dt1 - dt2)
+```  
+
+Resultado:  
+```
+366 days, 0:00:00
+365 days, 9:07:00
+```  
+
+El ejemplo muestra la resta para los objetos ```date``` y ```datetime```. En el primer caso, recibimos la diferencia en  
+días, que es de 366 días. Toma en cuenta que también se muestra la diferencia en horas, minutos y segundos. En  
+el segundo caso, recibimos un resultado diferente, porque especificamos el tiempo que se incluyó en los  
+cálculos. Como resultado, recibimos 365 días, 9 horas y 7 minutos.  
+
+En un momento aprenderás más sobre la creación de los objetos ```timedelta``` y sobre las operaciones que  
+puedes realizar con ellos.  
+
+<br></br>  
+
+
+## **Creación de objetos *timedelta***  
+Ya has aprendido que un objeto ```timedelta``` puede devolverse como resultado de restar dos objetos ```date``` o  
+```datetime```.  
+
+Por supuesto, también puedes crear un objeto tu mismo. Para ello, vamos a familiarizarnos con los argumentos  
+aceptados por el constructor de la clase, que son: ```days```, ```seconds```, ```microseconds```, ```miliseconds```,  
+```minutes```, ```hours```, y ```weeks```. Cada uno de ellos es opcional y el valor predeterminado es 0.  
+
+Los argumentos deben ser números enteros o de punto flotante, y pueden ser positivos o negativos. Veamos  
+un ejemplo sencillo en el editor:  
+```python
+from datetime import timedelta
+
+delta = timedelta(weeks=2, days=2, hours=3)
+print(delta)
+```  
+
+Resultado:  
+```
+16 days, 3:00:00
+```  
+
+El resultado de 16 días se obtiene convirtiendo el argumento ```weeks``` en días (2 semanas = 14 días) y  
+agregando el argumento ```days``` (2 días). Este es un comportamiento normal, porque el objeto ```timedelta```  
+solo almacena días, segundos y microsegundos internamente. De manera similar, ela rgumento ```hora``` se  
+convierte en minutos. Echa un vistazo al siguiente ejemplo:  
+```python
+from datetime import timedelta
+
+delta = timedelta(weeks=2, days=2, hours=3)
+print("Días:", delta.days)
+print("Segundos:", delta.seconds)
+print("Microsegundos:", delta.microseconds)
+```  
+
+Resultado:  
+```
+Días: 16
+Segundos: 10800
+Microseconds: 0
+```  
+
+El resultado de 10800 se obtiene convirtiendo 3 horas en segundos. De esta forma el objeto ```timedelta```  
+almacena los argumentos pasados durante su creación. Las semanas se convierten en días, las horas y los  
+minutos en segundos y los milisegundos en microsegundos.  
+
+<br></br>  
+
+
+## **Creación de objetos *timedelta*: continuación**  
+Ya sabes cómo el objeto ```timedelta```almacena los argumentos pasados internamente. Veamos cómo se  
+puede utilizar en la práctica.  
+
+Observa algunas opraciones admitidas por las clases del módulo ```datetime```. Ejecuta el código que te  
+proporcionamos en el editor:  
+```python
+from datetime import timedelta
+from datetime import date
+from datetime import datetime
+
+delta = timedelta(weeks=2, days=2, hours=2)
+print(delta)
+
+delta2 = delta * 2
+print(delta2)
+
+d = date(2019, 10, 4) + delta2
+print(d)
+
+dt = datetime(2019, 10, 4, 14, 53) + delta2
+print(dt)
+```  
+
+Resultado:  
+```
+16 days, 2:00:00
+32 days, 4:00:00
+2019-11-05
+2019-11-05 18:53:00
+```  
+
+El objeto ```timedelta``` se puede multiplicar por un número entero. En nuestro ejemplo, multiplicamos el objeto  
+que representa 16 días y 2 horas por 2. Como resultado, recibimos un objeto ```timedelta``` que representa 32  
+días y 4 horas.  
+
+Toma en cuenta que tanto los días como las horas se han multiplicado por 2. Otra operación interesante  
+usando el objeto ```timedelta``` es la suma. En el ejemplo, hemos sumado el objeto ```timedelta``` alos objetos  
+```date``` y ```datetime```.  
+
+Como resultado de estas operaciones, recibimos objetos ```date``` y ```datetime``` incrementados en días y horas  
+almacenados en el objeto ```timedelta```.  
+
+La operación de multiplicación presentada te permite aumentar rápidamente el valor del objeto ```timedelta```,  
+mientras que la multiplicación también puede ayudar a obtener una fecha en el futuro.  
+
+Por supuesto, las clases ```timedelta```, ```date``` y ```datetime``` admiten muchas más operaciones. Te  
+recomendamos que te familiarices con ellos en la documentación.  
+
+<br></br>  
+
+
+## **Puntos Clave**  
+1. Para crear un objeto ```date```, debes pasar los argumentos de año, mes y día de la siguiente manera:  
+```python
+from datetime import date
+
+my_date = date(2020, 9, 29)
+print("Año:", my_date.year) # Año: 2020
+print("Mes:", my_date.month) # Mes: 9
+print("Día:", my_date.day) # Día: 29
+```  
+El objeto ```date``` tiene tres atributos (de solo lectura): año, mes y día.  
+<br></br>
+
+2. El método ```today``` devuelve un objeto de fecha que representa la fecha local actual:  
+```python
+from datetime import date
+print("Hoy:", date.today()) # Muestra: Hoy: 2020-09-29
+```  
+<br></br>
+
+3. En Unix, la marca de tiempo expresa el número de segundos desde el 1 de Enero de 1970 a las 00:00:00 (UTC). Esta fecha se llama la  
+"época de Unix", porque ahí comenzó el conteo del tiempo en los sistemas Unix. La marca de tiempo es en realidad la diferencia entre  
+una fecha en particular (incluida la hora) y el 1 de Enero de 1970, 00:00:00 (UTC), expresada en segundos. Para crear un objeto de  
+fecha a partir de una marca de tiempo, debemos pasar una marca de tiempo Unix al método ```fromtimestamp```:  
+```python
+from datetime import date
+import time
+
+timestamp = time.time()
+d = date.fromtimestamp(timestamp)
+```  
+Nota: La función ```time``` devuelve el número de segundos desde el 1 de Enero de 1970 hasta el momento actual en forma de número  
+punto flotante.  
+<br></br>
+
+
+4. El constructor de la clase ```time``` acepta seis argumentos (*hour*, *minute*, *second*, *microsecond*, *tzinfo* y *fold*). Cada uno de estos  
+argumentos es opcional.  
+```python
+from datetime import time
+
+t = time(13, 22, 20)
+
+print("Hora:", t.hour) # Hora: 13
+print("Minuto:", t.minute) # Minuto: 22
+print("Segundo:", t.second) # Segundo: 20
+```  
+<br></br>
+
+5. El módulo ```time``` contiene la función ```sleep```, que suspende la ejecución del programa durante un número determinado de  
+segundos, por ejemplo:  
+```python
+import time
+
+time.sleep(10)
+print("¡Hola mundo!") # Este texto se mostrará después de 10 segundos.
+```  
+<br></br>
+
+
+6. En el módulo ```datetime```, la fecha y la hora se pueden representar como objetos separados o como un solo objeto. La clase que  
+combina fecha y hora se llama *datetime*. Todos los argumentos pasados al constructor van a atributos de clase de solo lectura. Son  
+*year*, *month*, *day*, *hour*, *minute*, *second*, *microsecond*, *tzinfo* y *fold*:  
+```python
+from datetime import datetime
+
+dt = datetime(2020, 9, 29, 13, 51)
+print("Fecha y Hora:", dt) # Muestra: Fecha y Hora: 2020-09-29 13:51:00
+```  
+<br></br>
+
+
+7. El método ```strftime``` toma solo un argumento en forma de cadena que especifica un formato que puede constar de directivas.  
+Una directiva es una cadena que consta del carácter ```%``` (porcentaje) y una letra minúscula o mayúscula. A continuación se muestran  
+algunas directivas útiles.  
+
+- ```%y```: devuelve el año con el siglo como número decimal.
+- ```%m```: devuelve el mes como un número decimal con relleno de ceros.
+- ```%d```: devuelve el día como un número decimal con relleno de ceros.
+- ```%H```: devuelve la hora como un número decimal con relleno de ceros.
+- ```%M```: devuelve el minuto como un número decimal con relleno de ceros.
+- ```%S```: devuelve el segundo como un número decimal con relleno de ceros.
+
+Ejemplo:  
+```python
+from datetime import date
+
+d = date(2020, 9, 29)
+print(d.strftime('%Y/%m/%d')) # Muestra: 2020/09/29
+```  
+<br></br>  
+
+
+8.  Es posible realizar cálculos en los objetos ```date``` y ```datetime```, por ejemplo:  
+```python
+from datetime import date
+
+d1 = date(2020, 11, 4)
+d2 = date(2019, 11, 4)
+
+d = d1 - d2
+print(d) # Muestra: 366 days, 0:00:00.
+print(d * 2) # Muestra: 732 days, 0:00:00.
+```  
+El resultado de la resta se devuelve como un objeto ```timedelta``` que expresa la diferencia en días entre las dos fechas en el ejemplo  
+anterior.  
+
+Toma en cuenta que también se muestra la diferencia en horas, minutos y segundos. El objeto ```timedelta``` se puede utilizar para  
+realizar más cálculos (por ejemplo, puedes multiplicarlo por 2).  
+<br></br>  
+
+#  
+[Ejercicios](/Modulo4/Seccion5/Sec5-ej.md)
+<br></br>
+
+[Soluciones](/Modulo4/Seccion5/Sec5-ejsol.md)  
+
+#
+
+[Volver a: Módulo 4 - Miscelaneo](../README.md)
