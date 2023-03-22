@@ -74,6 +74,6 @@ else:
 <br></br>  
 
 #
-- [Soluciones](soltest_mod1.md)
+- [Soluciones](soltest_mod3.md)
 #  
 [Volver a: Módulo 3 - Programación Orientada a Objetos y Procesamiento de Archivos en Python](../README.md)
